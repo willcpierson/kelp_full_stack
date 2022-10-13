@@ -61,6 +61,7 @@ function LoginFormPage() {
   return (
     <>
 
+    <main>
       <h1 id={styles.titlepage}>kelp</h1>
       <h4 id={styles.errors}>{errors}</h4>
       <div id={styles.loginform}>
@@ -97,6 +98,7 @@ function LoginFormPage() {
         </form>
         <img id={styles.kelpLogo} src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="" />
       </div>
+      </main>
     </>
   );
 }
