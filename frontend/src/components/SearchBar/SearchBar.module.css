@@ -1,0 +1,82 @@
+#searchform {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.searchbars {
+    width: 250px;
+    height: 45px;
+    margin-left: 0px;
+    margin-top: 20px;
+    border: none;
+}
+
+#search {
+    height: 53px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgb(240, 18, 18);
+    color: white;
+}
+
+#search:hover {
+    cursor: pointer;
+    background-color: rgb(255, 19, 19);
+}
+
+#subsearches {
+    display: flex;
+    justify-content: space-around;
+    width: 521px;
+    margin-left: 175px;
+}
+
+#kelplogo {
+    font-size: x-large; 
+    font-weight: 700;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 0px;
+}
+
+#signup {
+    background-color: rgb(240, 18, 18);
+    color: white;
+    border-radius: 5px;
+    padding: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 60px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+#signup:hover {
+    cursor: pointer;
+    background-color: rgb(255, 19, 19);    
+}
+
+#login {
+    background-color: rgb(240, 18, 18);
+    color: white;
+    border-radius: 5px;
+    padding: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 15px;
+    margin-right: -25px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+#login:hover {
+    cursor: pointer;
+}
+
+body {
+    background: url("https://cdn.vox-cdn.com/thumbor/WvRdh56SV72gtXbDpyF-Hyv97Bk=/0x0:2200x1238/1200x675/filters:focal(924x443:1276x795)/cdn.vox-cdn.com/uploads/chorus_image/image/65490624/01_Kensinger_east_side_resiliency_DSC_9403.0.jpg");
+    background-size: cover;
+}

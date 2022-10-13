@@ -1,0 +1,2 @@
+class CreateBusiness < ApplicationRecord
+end
