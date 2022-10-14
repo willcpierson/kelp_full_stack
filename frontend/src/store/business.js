@@ -14,10 +14,10 @@ export const receiveBusinesses = (businesses) => {
     }
 }
 
-export const receiveBusiness = (businessId) => {
+export const receiveBusiness = (business) => {
     return {
         type: RECEIVE_BUSINESS,
-        businessId
+        business
     };
 };
 
@@ -37,7 +37,9 @@ export const fetchSpecificBusinesses = (businessType) => async dispatch => {
 }
 
 export const fetchBusiness = (businessId) => async dispatch => {
+    console.log(businessId) //getting id now
     let res = await csrfFetch(`/api/businesses/${businessId}`)
+    console.log(res)
     let data = await res.json()
     dispatch(receiveBusiness(data))
 }
@@ -46,17 +48,18 @@ export const getSpecificBusinesses = (type) => ( { business } ) => business ? Ob
 
 export const getBusinesses = ({ business }) => business ? Object.values(business) : []
 
+export const getBusiness = (businessId) => ({ business }) => business ? business[businessId] : null 
+
 const businessReducer = (state = {}, action ) => {
-    console.log('reducer here!')
     let prevState = {...state}
     switch (action.type) {
         case RECEIVE_BUSINESSES:
-            console.log('reducer hits!')
-            console.log(action.businesses)
-            console.log(state)
             return action.businesses
+        case RECEIVE_BUSINESS:
+            console.log(action.businessId)
+            return {...prevState, [action.business.id]: action.business }
         default:
-            return state
+            return prevState
     }
 } 
 

@@ -18,3 +18,8 @@ h2 {
 body {
     background-color: white;
 }
+
+#businessLink {
+    display: flex;
+    justify-content: flex-start;
+}

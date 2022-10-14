@@ -24,7 +24,7 @@ const BusinessListings = (props) => {
     }, [props])
 
     const mappedBusinesses = businesses.map((business) => {
-            return <BusinessListingsItem business={business} location={props.location} />
+            return <BusinessListingsItem business={business} location={props.location} key={business.id} />
     });
         // will eventually become businessItems, passing in props
     return (

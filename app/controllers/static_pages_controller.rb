@@ -4,4 +4,4 @@ class StaticPagesController < ActionController::Base
         render file: Rails.root.join('public', 'index.html')
     end
 
-end8
+end

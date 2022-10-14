@@ -8,13 +8,11 @@ import { useDispatch } from "react-redux";
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => {
-    // console.log(state);
     return state.session.user;
   });
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  // console.log(sessionUser);
   if (sessionUser) return <Navigate to="/" />;
 
   

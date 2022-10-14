@@ -8,14 +8,13 @@ import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
     const sessionUser = useSelector(state => state.session.user);
-    console.log(sessionUser)
 
     const navigate = useNavigate();
-    const [food, setFood] = useState("")
-    const [cityState, setCityState] = useState("")
-    const [listings, setListings] = useState(null)
-    const [search, setSearch] = useSearchParams("")
-    const [type, setType] = useState("all")
+    const [food, setFood] = useState("");
+    const [cityState, setCityState] = useState("");
+    const [listings, setListings] = useState(null);
+    const [search, setSearch] = useSearchParams("");
+    const [type, setType] = useState("all");
     
     let sessionLinks;
     if (sessionUser) {
@@ -35,7 +34,7 @@ const SearchBar = () => {
         e.preventDefault();
         setSearch(food)
         setListings(<BusinessListings food={food} location={cityState} type={type}/>)
-        let results = (``)
+        return navigate('/') // Have to double click to see items; 1st click resets, 2nd generates
 
         // pass in and populate cityState and food as props in BusinessListings, render CHECK
             // Might need to use useSearchParams. Have down for food but not yet for cityState
@@ -50,6 +49,7 @@ const SearchBar = () => {
     const handleSpecificSubmit = (e) => {
       e.preventDefault()
       setListings(<BusinessListings food={food} location={cityState} type={type}/>)
+      return navigate('/')
     
     }
 
