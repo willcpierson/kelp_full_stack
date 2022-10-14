@@ -8,14 +8,18 @@ class Api::BusinessesController < ApplicationController
         render json: @businesses
     end
 
-    end
-
     def show
         @business = Business.find(params[:id])
     end
     
     def type
-        @businesses = Business
+        @businesses = Business.all
+        filtered_businesses = []
+        @businesses.each do |business|
+            filtered_businesses << business if business.business_type === 'food'
+        end
+
+        render json: filtered_businesses
     end
     
     def business_params

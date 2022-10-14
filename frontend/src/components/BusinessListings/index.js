@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import csrfFetch from "../../store/csrf";
-import { fetchBusinesses, getBusinesses } from "../../store/business";
+import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/business";
 import { useDispatch } from "react-redux";
 import BusinessListingsItem from "../BusinessListingItem";
 import styles from './BusinessListings.module.css'
@@ -11,13 +11,13 @@ import styles from './BusinessListings.module.css'
 const BusinessListings = (props) => {
     
     const dispatch = useDispatch()
-    const businesses = useSelector(getBusinesses)
+    const businesses = useSelector(getSpecificBusinesses('food'))
     console.log(businesses)
     const [] = useState()
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
-        dispatch(fetchBusinesses())
+        dispatch(fetchSpecificBusinesses('food'))
 
     }, [])
 

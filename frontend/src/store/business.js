@@ -22,11 +22,13 @@ export const fetchBusinesses = () => async dispatch => {
     dispatch(receiveBusinesses(data))
 }
 
-export const fetchSpecificBusinesses = (condition) => async dispatch => {
-    let res = await csrfFetch('/api/businesses') // ADD QUERY HERE (food key is true?)
+export const fetchSpecificBusinesses = (type) => async dispatch => {
+    let res = await csrfFetch(`/api/businesses/category/${type}`) // ADD QUERY HERE (food key is true?)
     let data = await res.json()
     dispatch(receiveBusinesses(data))
 }
+
+export const getSpecificBusinesses = (type) => ( { business } ) => business ? Object.values(business) : []
 
 export const getBusinesses = ({ business }) => business ? Object.values(business) : []
 
