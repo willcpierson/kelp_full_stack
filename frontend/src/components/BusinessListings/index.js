@@ -1,15 +1,17 @@
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import csrfFetch from "../../store/csrf";
 import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/business";
 import { useDispatch } from "react-redux";
 import BusinessListingsItem from "../BusinessListingItem";
 import styles from './BusinessListings.module.css'
+import SearchBar from "../SearchBar";
 
 
 const BusinessListings = (props) => {
-
+    const navigate = useNavigate()
     const businessType = props.type
     
     const dispatch = useDispatch()
@@ -19,7 +21,6 @@ const BusinessListings = (props) => {
         // On every render of page we fetch inputted items
     useEffect(() => {
         dispatch(fetchSpecificBusinesses(businessType))
-
     }, [props])
 
     const mappedBusinesses = businesses.map((business) => {

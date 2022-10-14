@@ -12,7 +12,7 @@ function App() {
         <Route path="/login" element={<LoginFormPage />} />
         <Route path='/signup' element={<SignupFormPage />} />
         <Route path='/listings' element={<BusinessListings />}/>
-        <Route path='/business' element={<BusinessItemShow />}/>
+        <Route path='/business/:id' element={<BusinessItemShow />}/>
         <Route path='/' element={<HomePage />} />
       </Routes>
   );

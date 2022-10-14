@@ -50,12 +50,18 @@ const SearchBar = () => {
     const handleSpecificSubmit = (e) => {
       e.preventDefault()
       setListings(<BusinessListings food={food} location={cityState} type={type}/>)
+    
+    }
+
+    const handleClick = (e) => {
+      e.preventDefault()
+      return navigate('/')
     }
 
     return (
         <>
             <form id={styles.searchform} onSubmit={handleSearchSubmit}>
-                <NavLink id={styles.kelplogo} exact='true' to="/">Kelp</NavLink>
+                <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div>
                     <label>
                       <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder=" tacos, cheap dinner, Max's" onChange={(e) => setFood(e.target.value)}/>
