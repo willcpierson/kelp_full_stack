@@ -5,6 +5,7 @@ import { json } from "react-router-dom";
 import csrfFetch from "./csrf";
 
 export const RECEIVE_BUSINESSES = 'businesses/RECEIVE_BUSINESSES'
+export const RECEIVE_BUSINESS = 'businesses/RECEIVE_BUSINESS'
 
 export const receiveBusinesses = (businesses) => {
     return {
@@ -12,6 +13,13 @@ export const receiveBusinesses = (businesses) => {
         businesses
     }
 }
+
+export const receiveBusiness = (businessId) => {
+    return {
+        type: RECEIVE_BUSINESS,
+        businessId
+    };
+};
 
 export const fetchBusinesses = () => async dispatch => {
     console.log('hello catching businesses')
@@ -22,10 +30,16 @@ export const fetchBusinesses = () => async dispatch => {
     dispatch(receiveBusinesses(data))
 }
 
-export const fetchSpecificBusinesses = (type) => async dispatch => {
-    let res = await csrfFetch(`/api/businesses/category/${type}`) // ADD QUERY HERE (food key is true?)
+export const fetchSpecificBusinesses = (businessType) => async dispatch => {
+    let res = await csrfFetch(`/api/businesses/category/${businessType}`) // ADD QUERY HERE (food key is true?)
     let data = await res.json()
     dispatch(receiveBusinesses(data))
+}
+
+export const fetchBusiness = (businessId) => async dispatch => {
+    let res = await csrfFetch(`/api/businesses/${businessId}`)
+    let data = await res.json()
+    dispatch(receiveBusiness(data))
 }
 
 export const getSpecificBusinesses = (type) => ( { business } ) => business ? Object.values(business) : []

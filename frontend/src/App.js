@@ -4,6 +4,7 @@ import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupForm';
 import HomePage from './components/HomePage';
 import BusinessListings from './components/BusinessListings';
+import BusinessItemShow from './components/BusinessItemShow';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/login" element={<LoginFormPage />} />
         <Route path='/signup' element={<SignupFormPage />} />
         <Route path='/listings' element={<BusinessListings />}/>
+        <Route path='/business' element={<BusinessItemShow />}/>
         <Route path='/' element={<HomePage />} />
       </Routes>
   );

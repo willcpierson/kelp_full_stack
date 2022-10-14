@@ -1,15 +1,20 @@
+import { Navigate, useNavigate } from 'react-router-dom';
 import styles from './BusinessListingsItem.module.css'
 
 
 const BusinessListingsItem = (props) => {
-    console.log(props)
+    const navigate = useNavigate()
+
+    const handleClick = (e) => {
+     navigate(`/business`)
+    }
 
     // change street_address to streetAddress on translation
     return (
         <>
             <div id={styles.itemBox}>
                 <li>
-                    <h2>{props.business.name}</h2>
+                    <h2 onClick={handleClick} >{props.business.name}</h2>
                     <br />
                     {props.business.description}
                     <br />
