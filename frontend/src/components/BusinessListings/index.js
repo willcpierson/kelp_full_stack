@@ -13,15 +13,14 @@ const BusinessListings = (props) => {
     const businessType = props.type
     
     const dispatch = useDispatch()
-    const businesses = useSelector(getSpecificBusinesses()) // Why does this not require an arg
-    console.log(businesses)
+    const businesses = useSelector(getSpecificBusinesses()) // Why does this not require an arg lol
     const [] = useState()
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
         dispatch(fetchSpecificBusinesses(businessType))
 
-    }, [])
+    }, [props])
 
     const mappedBusinesses = businesses.map((business) => {
             return <BusinessListingsItem business={business} location={props.location} />

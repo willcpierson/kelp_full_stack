@@ -34,7 +34,6 @@ const SearchBar = () => {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         setSearch(food)
-        console.log(type)
         setListings(<BusinessListings food={food} location={cityState} type={type}/>)
         let results = (``)
 
@@ -48,10 +47,9 @@ const SearchBar = () => {
         // Specifically do NOT wipe search bar after search
     }
 
-    const handleAutoSubmit = (e) => {
+    const handleSpecificSubmit = (e) => {
       e.preventDefault()
-      setType('auto')
-      console.log(type)
+      setListings(<BusinessListings food={food} location={cityState} type={type}/>)
     }
 
     return (
@@ -71,10 +69,10 @@ const SearchBar = () => {
                 <p>LinkedIn</p>
                 {sessionLinks}
             </form>
-            <form id={styles.subsearches}>
-                <button onSubmit={(e) => setType('food')}>Restaurants</button>
-                <button onSubmit={(e) => setType('home')}>Home Services</button>
-                <button onSubmit={handleAutoSubmit}>Auto Services</button>
+            <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
+                <button onClick={(e) => setType('food')}>Restaurants</button>
+                <button onClick={(e) => setType('bar')}>Bar Services</button>
+                <button onClick={(e) => setType('auto')}>Auto Services</button>
 
             </form>
             {listings}
