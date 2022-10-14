@@ -8,18 +8,21 @@ class Api::BusinessesController < ApplicationController
         render json: @businesses
     end
 
+    end
+
     def show
         @business = Business.find(params[:id])
     end
-
+    
+    def type
+        @businesses = Business
+    end
     
     def business_params
         params.require(:business).permit(
             :name,
             :description,
-            :food,
-            :auto,
-            :bar,
+            :business_type,
             :outdoor_seating,
             :delivery,
             :takeout,

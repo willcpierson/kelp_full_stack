@@ -1,6 +1,7 @@
 // Don't need BusinessReducer YET, until I want to ADD businesses (if applicable) // LIAR
 //Simply add fetches for the moment
 //Think about how searchParams will affect searches in the future;
+import { json } from "react-router-dom";
 import csrfFetch from "./csrf";
 
 export const RECEIVE_BUSINESSES = 'businesses/RECEIVE_BUSINESSES'
@@ -18,6 +19,12 @@ export const fetchBusinesses = () => async dispatch => {
     let data = await res.json()
     console.log(data)
     
+    dispatch(receiveBusinesses(data))
+}
+
+export const fetchSpecificBusinesses = (condition) => async dispatch => {
+    let res = await csrfFetch('/api/businesses') // ADD QUERY HERE (food key is true?)
+    let data = await res.json()
     dispatch(receiveBusinesses(data))
 }
 

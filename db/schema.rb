@@ -10,16 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_190920) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_144125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
-    t.boolean "food", null: false
-    t.boolean "auto", null: false
-    t.boolean "bar", null: false
     t.boolean "outdoor_seating", null: false
     t.boolean "delivery", null: false
     t.boolean "takeout", null: false
@@ -33,8 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_190920) do
     t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "business_type", null: false
   end
-  #potentially add photos to above
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
