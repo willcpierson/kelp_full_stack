@@ -15,6 +15,7 @@ const SearchBar = () => {
     const [cityState, setCityState] = useState("")
     const [listings, setListings] = useState(null)
     const [search, setSearch] = useSearchParams("")
+    const [type, setType] = useState("all")
     
     let sessionLinks;
     if (sessionUser) {
@@ -30,10 +31,11 @@ const SearchBar = () => {
       );
     }
 
-    const handleSubmit = (e) => {
+    const handleSearchSubmit = (e) => {
         e.preventDefault();
         setSearch(food)
-        setListings(<BusinessListings food={food} location={cityState}/>)
+        console.log(type)
+        setListings(<BusinessListings food={food} location={cityState} type={type}/>)
         let results = (``)
 
         // pass in and populate cityState and food as props in BusinessListings, render CHECK
@@ -46,9 +48,15 @@ const SearchBar = () => {
         // Specifically do NOT wipe search bar after search
     }
 
+    const handleAutoSubmit = (e) => {
+      e.preventDefault()
+      setType('auto')
+      console.log(type)
+    }
+
     return (
         <>
-            <form id={styles.searchform} onSubmit={handleSubmit}>
+            <form id={styles.searchform} onSubmit={handleSearchSubmit}>
                 <NavLink id={styles.kelplogo} exact='true' to="/">Kelp</NavLink>
                 <div>
                     <label>
@@ -64,9 +72,9 @@ const SearchBar = () => {
                 {sessionLinks}
             </form>
             <form id={styles.subsearches}>
-                <button>Restaurants</button>
-                <button>Home Services</button>
-                <button>Auto Services</button>
+                <button onSubmit={(e) => setType('food')}>Restaurants</button>
+                <button onSubmit={(e) => setType('home')}>Home Services</button>
+                <button onSubmit={handleAutoSubmit}>Auto Services</button>
 
             </form>
             {listings}

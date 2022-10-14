@@ -9,20 +9,22 @@ import styles from './BusinessListings.module.css'
 
 
 const BusinessListings = (props) => {
+
+    const businessType = props.type
     
     const dispatch = useDispatch()
-    const businesses = useSelector(getSpecificBusinesses('food'))
+    const businesses = useSelector(getSpecificBusinesses()) // Why does this not require an arg
     console.log(businesses)
     const [] = useState()
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
-        dispatch(fetchSpecificBusinesses('food'))
+        dispatch(fetchSpecificBusinesses(businessType))
 
     }, [])
 
     const mappedBusinesses = businesses.map((business) => {
-            return <BusinessListingsItem business={business} location={props.location} food={props.food}/>
+            return <BusinessListingsItem business={business} location={props.location} />
     });
         // will eventually become businessItems, passing in props
     return (

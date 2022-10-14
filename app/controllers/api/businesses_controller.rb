@@ -16,7 +16,10 @@ class Api::BusinessesController < ApplicationController
         @businesses = Business.all
         filtered_businesses = []
         @businesses.each do |business|
-            filtered_businesses << business if business.business_type === 'food'
+            puts business.business_type
+            puts params[:type]
+            filtered_businesses << business if business.business_type === params[:type] || params[:type] === 'all'
+            #actual code will be if type array includes that business type
         end
 
         render json: filtered_businesses
