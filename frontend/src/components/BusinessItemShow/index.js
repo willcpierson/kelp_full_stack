@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
 import { createReview, fetchReviews, getReviews } from "../../store/reviews";
+import * as sessionActions from '../../store/session'
 import { useParams } from "react-router-dom";
 
 
@@ -10,6 +11,7 @@ import { useParams } from "react-router-dom";
 
 const BusinessItemShow = () => {
 
+    const sessionUser = useSelector(state => state.session.user)
 
     // Get user? Might need userReducer
     const dispatch = useDispatch();
@@ -17,14 +19,16 @@ const BusinessItemShow = () => {
     const [reviewBody, setReviewBody] = useState('')
     const business = useSelector(getBusiness(businessId.id))
     const reviews = useSelector(getReviews)
-    console.log(business)
 
     useEffect(() => {
         dispatch(fetchReviews())
     }, [])
 
     const mappedReviews = reviews.map((review) => {
-        return <p review={review} key={review.id}> {review.body} {review.created_at}</p>
+        if (parseInt(businessId.id) === review.business_id) {
+            
+            return <p review={review} key={review.id}> {review.body} {review.created_at}</p>
+        }
     });
 
     useEffect(() => {
@@ -33,7 +37,7 @@ const BusinessItemShow = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const reviewObject = {body: reviewBody, user_id: 1, business_id: 1}
+        const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessId.id}
         dispatch(createReview(reviewObject))
         setReviewBody('')
     }  
