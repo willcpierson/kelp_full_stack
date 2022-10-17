@@ -1,6 +1,3 @@
-// Don't need BusinessReducer YET, until I want to ADD businesses (if applicable) // LIAR
-//Simply add fetches for the moment
-//Think about how searchParams will affect searches in the future;
 import { json } from "react-router-dom";
 import csrfFetch from "./csrf";
 

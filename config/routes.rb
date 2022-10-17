@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get '/category/:type', to: 'businesses#type', on: :collection
     end 
     resources :businesses, only: [:show, :index] 
+    resources :reviews, only: [:create, :destroy, :index, :show, :update]
     resource :session, only: [:show, :create, :destroy]
   end
 

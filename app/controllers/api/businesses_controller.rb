@@ -17,7 +17,7 @@ class Api::BusinessesController < ApplicationController
     def type
         @businesses = Business.all
         filtered_businesses = []
-        @businesses.each do |business|
+        @businesses.each do |business| # Instead of shoveling, add to an object and return? instead of Array
             filtered_businesses << business if business.business_type === params[:type] || params[:type] === 'all'
             #actual code will be if type array includes that business type
         end
