@@ -10,7 +10,7 @@ import App from './App';
 import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
-import * as businessActions from './store/business'
+import * as businessActions from './store/businesses'
 
 const store = configureStore();
 

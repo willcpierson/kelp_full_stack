@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import csrfFetch from "../../store/csrf";
-import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/business";
+import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/businesses";
 import { useDispatch } from "react-redux";
 import BusinessListingsItem from "../BusinessListingItem";
 import styles from './BusinessListings.module.css'

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import SearchBar from "../SearchBar";
-import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/business";
+import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
 import { useParams } from "react-router-dom";
 
 

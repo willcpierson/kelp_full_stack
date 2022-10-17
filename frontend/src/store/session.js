@@ -28,7 +28,6 @@ export const sessionReducer = (state = initialState, action) => {
   let prevState = { ...state };
   switch (action.type) {
     case CREATE_SESSION:
-      // debugger;
       prevState["user"] = action.user;
       return prevState;
     case DELETE_SESSION:
