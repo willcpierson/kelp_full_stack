@@ -26,11 +26,10 @@ const BusinessItemShow = () => {
 
     useEffect(() => {
         dispatch(fetchReviews())
-    }, [])
+    }, [dispatch])
 
     const handleClick = (e) => {
         e.preventDefault()
-        debugger
         setReviewId(e.currentTarget.key)
         console.log(e.currentTarget.key)
         // selected reviewId goes in arg; event??
@@ -43,7 +42,7 @@ const BusinessItemShow = () => {
             return (
                 <div className={styles.singleReview}>
                     <p review={review}> {review.body} {review.created_at}</p>
-                    <button onClick={handleClick} key={review.id}> DELETE REVIEW </button> 
+                    <button onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> DELETE REVIEW </button> 
                 </div>
             )
         }
