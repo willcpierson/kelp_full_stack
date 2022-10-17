@@ -25,7 +25,7 @@ export const fetchReviews = () => async dispatch => { // Pass in the ID of the b
     dispatch(receiveReviews(data))
 }
 
-export const createReview = (review) => async dispatch => {
+export const createReview = (review) => async dispatch => { // Needs user_id and business_id
     const res = await csrfFetch(`/api/reviews`, {
         method: 'POST',
         body: JSON.stringify(review),

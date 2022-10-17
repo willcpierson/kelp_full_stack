@@ -10,9 +10,11 @@ import { useParams } from "react-router-dom";
 
 const BusinessItemShow = () => {
 
+
+    // Get user? Might need userReducer
     const dispatch = useDispatch();
     const businessId = useParams()
-    const [newReview, setNewReview] = useState('')
+    const [reviewBody, setReviewBody] = useState('')
     const business = useSelector(getBusiness(businessId.id))
     const reviews = useSelector(getReviews)
     console.log(business)
@@ -22,12 +24,19 @@ const BusinessItemShow = () => {
     }, [])
 
     const mappedReviews = reviews.map((review) => {
-        return <p review={review} key={review.id}> {review.body}</p>
-});
+        return <p review={review} key={review.id}> {review.body} {review.created_at}</p>
+    });
 
     useEffect(() => {
         dispatch(fetchBusiness(businessId.id))
     }, [businessId])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const reviewObject = {body: reviewBody, user_id: 1, business_id: 1}
+        dispatch(createReview(reviewObject))
+        setReviewBody('')
+    }  
 
     return (
         <>  
@@ -37,8 +46,8 @@ const BusinessItemShow = () => {
             <p> {business.rating} 4.0 </p>
             <p> {business.description} </p>
             <br />
-            <form>
-                <input type="textarea" />
+            <form onSubmit={handleSubmit}>
+                <input type="textarea" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
             </form>
 
             <h3>Reviews</h3>
