@@ -11,8 +11,6 @@ const BusinessItemShow = () => {
 
     const dispatch = useDispatch();
     const businessId = useParams()
-    console.log(businessId)
-    console.log('HELP')
     const business = useSelector(getBusiness(businessId.id))
     console.log(business)
 
@@ -23,8 +21,12 @@ const BusinessItemShow = () => {
     return (
         <>  
             <SearchBar />
-            <h4>Here is the Item!</h4>
-            <p>{business.name}</p>
+            <br />
+            <h2>{business.name}</h2>
+            <p> {business.rating} 4.0 </p>
+            <p> {business.description} </p>
+
+
         </>
     );
 };

@@ -50,6 +50,8 @@
 
 #signup {
     background-color: rgb(240, 18, 18);
+    border: 2px solid rgb(240, 18, 18);
+    display: inline-block;
     color: white;
     border-radius: 5px;
     padding: 16px;
@@ -68,14 +70,17 @@
 }
 
 #login {
-    background-color: rgb(240, 18, 18);
+    display: inline-block;
+    border: 2px solid white;
+    background-color: transparent;
+    width: 55px;
     color: white;
     border-radius: 5px;
     padding: 16px;
     padding-top: 12px;
     padding-bottom: 12px;
     margin: 15px;
-    margin-right: -25px;
+    margin-right: 10px;
     margin-top: 25px;
     font-size: 18px;
 }
@@ -87,6 +92,6 @@
 body {
     /* background: url("https://cdn.vox-cdn.com/thumbor/WvRdh56SV72gtXbDpyF-Hyv97Bk=/0x0:2200x1238/1200x675/filters:focal(924x443:1276x795)/cdn.vox-cdn.com/uploads/chorus_image/image/65490624/01_Kensinger_east_side_resiliency_DSC_9403.0.jpg");
      */
-     background-color: aquamarine;
+     background-color: white;
     background-size: cover;
 }

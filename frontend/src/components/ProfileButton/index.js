@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
     // user.firstName not pulling anything; I think it's because it's not included in the sessionUser; pull from DB? ANSWER: jbuilder! add to extract
     return (
       <>
-        <button id="profile-button" onClick={openMenu}>Profile
+        <button id="profile-button" onClick={openMenu}> {user.firstName} {user.lastName}
           <i className="fa-solid fa-user-circle" />
         </button>
         

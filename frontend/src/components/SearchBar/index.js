@@ -71,9 +71,9 @@ const SearchBar = () => {
                     </label>
                     <button type="submit" id={styles.search} value="Search">Search</button>
                 </div>
-                <p>GitHub</p>
-                <p>LinkedIn</p>
-                {sessionLinks}
+                <aside>
+                  {sessionLinks}
+                </aside>
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
                 <button onClick={(e) => setType('food')}>Restaurants</button>

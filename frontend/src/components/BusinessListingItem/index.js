@@ -14,17 +14,17 @@ const BusinessListingsItem = (props) => {
                         <br />
                         {props.business.description}
                         <br />
-                        <p>Rating Goes Here |Float Rating avg | # of reviews</p>
+                        <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
                         <br />
-                        <p>Type of food | Price indicator $$$ | Area</p>
+                        <p id={styles.itemAttributes}>Type of food | Price indicator $$$ | Area</p>
                         <br />
                         {props.business.street_address}, {props.business.city}, {props.business.state}
                     </li>
                     
                     <br />
-                    <p>Open until 10:30 PM</p>
+                    <p id={styles.times}>Open until 10:30 PM</p>
                     <br />
-                    <p>Highest Liked Review Goes Here</p>
+                    <p id={styles.highestReview}>Highest Liked Review Goes Here</p>
                     <br />
                 </div>
             </Link>
