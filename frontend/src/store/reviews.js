@@ -48,7 +48,7 @@ export const createReview = (review) => async dispatch => { // Needs user_id and
 }
 
 export const destroyReview = (reviewId) => async dispatch => {
-    console.log('Destroy Signal Sent')
+    console.log(reviewId)
     await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
@@ -66,7 +66,9 @@ const reviewReducer = (state = {}, action) => {
         case RECEIVE_REVIEWS:
             return action.reviews // Need to specify the business its on
         case REMOVE_REVIEW:
+            console.log('Reducer hits')
             delete prevState[action.reviewId]
+            return prevState
         default:
             return state
     }

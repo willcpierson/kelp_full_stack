@@ -13,12 +13,13 @@ const BusinessItemShow = () => {
 
     const sessionUser = useSelector(state => state.session.user)
     // const reviewUser = useSelector(state => state.users.firstName)
+    const reviewUser = useSelector(state => state)
 
     // Get user? Might need userReducer
     const dispatch = useDispatch();
-    const businessId = useParams()
+    const businessParam = useParams()
     const [reviewBody, setReviewBody] = useState('')
-    const business = useSelector(getBusiness(businessId.id))
+    const business = useSelector(getBusiness(businessParam.id))
     const reviews = useSelector(getReviews)
 
     useEffect(() => {
@@ -27,11 +28,13 @@ const BusinessItemShow = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        dispatch(destroyReview(12))
+        // console.log(reviewUser)
+        // selected reviewId goes in arg; event??
+        dispatch(destroyReview())
     }
 
     const mappedReviews = reviews.map((review) => {
-        if (parseInt(businessId.id) === review.business_id) {
+        if (parseInt(businessParam.id) === review.business_id) {
             
             return (
                 <div>
@@ -43,12 +46,12 @@ const BusinessItemShow = () => {
     });
 
     useEffect(() => {
-        dispatch(fetchBusiness(businessId.id))
-    }, [businessId])
+        dispatch(fetchBusiness(businessParam.id))
+    }, [businessParam])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessId.id}
+        const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessParam.id}
         dispatch(createReview(reviewObject))
         setReviewBody('')
     }  
