@@ -64,7 +64,7 @@ const reviewReducer = (state = {}, action) => {
             prevState[action.review.id] = action.review
             return prevState
         case RECEIVE_REVIEWS:
-            return action.reviews // Need to specify the business its on
+            return action.reviews
         case REMOVE_REVIEW:
             console.log('Reducer hits')
             delete prevState[action.reviewId]
