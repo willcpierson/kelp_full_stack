@@ -12,7 +12,12 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-
+        puts @review
+        if @review.destroy!
+            puts 'Successfully destroyed'
+        else
+            puts 'Error'
+        end
     end
 
     def index

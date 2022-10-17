@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS'
+export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
 
 export const receiveReview = (review) => {
     return {
@@ -16,6 +17,15 @@ export const receiveReviews = (reviews) => {
         reviews
     }
 }
+
+export const removeReview = (reviewId) => {
+    return {
+        type: REMOVE_REVIEW,
+        reviewId
+    }
+}
+
+export const getReview = (reviewId) => ({reviews}) => reviews ? reviews[reviewId] : null
 
 export const getReviews = ({reviews}) => reviews ? Object.values(reviews) : []
 
@@ -37,6 +47,14 @@ export const createReview = (review) => async dispatch => { // Needs user_id and
     dispatch(receiveReview(data))
 }
 
+export const destroyReview = (reviewId) => async dispatch => {
+    console.log('Destroy Signal Sent')
+    await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: 'DELETE'
+    })
+    dispatch(removeReview(reviewId))
+}
+
 
 
 const reviewReducer = (state = {}, action) => {
@@ -47,6 +65,8 @@ const reviewReducer = (state = {}, action) => {
             return prevState
         case RECEIVE_REVIEWS:
             return action.reviews // Need to specify the business its on
+        case REMOVE_REVIEW:
+            delete prevState[action.reviewId]
         default:
             return state
     }

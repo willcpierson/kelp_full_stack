@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
-import { createReview, fetchReviews, getReviews } from "../../store/reviews";
+import { createReview, fetchReviews, getReviews, destroyReview, getReview } from "../../store/reviews";
 import * as sessionActions from '../../store/session'
 import { useParams } from "react-router-dom";
 
@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 const BusinessItemShow = () => {
 
     const sessionUser = useSelector(state => state.session.user)
+    // const reviewUser = useSelector(state => state.users.firstName)
 
     // Get user? Might need userReducer
     const dispatch = useDispatch();
@@ -24,10 +25,20 @@ const BusinessItemShow = () => {
         dispatch(fetchReviews())
     }, [])
 
+    const handleClick = (e) => {
+        e.preventDefault()
+        dispatch(destroyReview(12))
+    }
+
     const mappedReviews = reviews.map((review) => {
         if (parseInt(businessId.id) === review.business_id) {
             
-            return <p review={review} key={review.id}> {review.body} {review.created_at}</p>
+            return (
+                <div>
+                    <p review={review} key={review.id}> {review.body} {review.created_at}</p>
+                    <button onClick={handleClick} > DELETE REVIEW </button> 
+                </div>
+            )
         }
     });
 
