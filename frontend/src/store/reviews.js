@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf";
 
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
+export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS'
 
 export const receiveReview = (review) => {
     return {
@@ -9,7 +10,20 @@ export const receiveReview = (review) => {
     }
 }
 
+export const receiveReviews = (reviews) => {
+    return {
+        type: RECEIVE_REVIEWS,
+        reviews
+    }
+}
+
 export const getReviews = ({reviews}) => reviews ? Object.values(reviews) : []
+
+export const fetchReviews = () => async dispatch => { // Pass in the ID of the business
+    const res = await csrfFetch(`/api/reviews`)
+    const data = await res.json()
+    dispatch(receiveReviews(data))
+}
 
 export const createReview = (review) => async dispatch => {
     const res = await csrfFetch(`/api/reviews`, {
@@ -31,6 +45,8 @@ const reviewReducer = (state = {}, action) => {
         case RECEIVE_REVIEW:
             prevState[action.review.id] = action.review
             return prevState
+        case RECEIVE_REVIEWS:
+            return action.reviews // Need to specify the business its on
         default:
             return state
     }

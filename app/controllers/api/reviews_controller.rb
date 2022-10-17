@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 
-    before_action :require_logged_in
+    before_action :require_logged_in, only: [:create, :destroy]
 
     def create
         @review = Review.new()
@@ -16,7 +16,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-
+        @reviews = Review.all()
+        
+        render json: @reviews
     end
 
     def review_params
