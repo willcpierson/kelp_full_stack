@@ -26,6 +26,8 @@ class Api::ReviewsController < ApplicationController
         render json: @reviews
     end
 
+    private
+
     def review_params
         params.require(:review).permit(:body, :user_id, :business_id)
     end
