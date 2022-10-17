@@ -1,0 +1,13 @@
+#reviewHeader {
+    font-size: 24px;
+    color: black;
+    margin: 10px;
+}
+
+.reviews {
+    margin-left: 40px;
+}
+
+.singleReview {
+    margin-bottom: 20px;
+}

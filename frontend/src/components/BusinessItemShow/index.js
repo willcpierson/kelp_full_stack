@@ -5,6 +5,7 @@ import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/b
 import { createReview, fetchReviews, getReviews, destroyReview, getReview } from "../../store/reviews";
 import * as sessionActions from '../../store/session'
 import { useParams } from "react-router-dom";
+import styles from './BusinessItemShow.module.css'
 
 
 
@@ -18,6 +19,7 @@ const BusinessItemShow = () => {
     // Get user? Might need userReducer
     const dispatch = useDispatch();
     const businessParam = useParams()
+    const [reviewId, setReviewId] = useState('')
     const [reviewBody, setReviewBody] = useState('')
     const business = useSelector(getBusiness(businessParam.id))
     const reviews = useSelector(getReviews)
@@ -28,18 +30,20 @@ const BusinessItemShow = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        // console.log(reviewUser)
+        debugger
+        setReviewId(e.currentTarget.key)
+        console.log(e.currentTarget.key)
         // selected reviewId goes in arg; event??
-        dispatch(destroyReview())
+        dispatch(destroyReview(reviewId))
     }
 
     const mappedReviews = reviews.map((review) => {
         if (parseInt(businessParam.id) === review.business_id) {
             
             return (
-                <div>
-                    <p review={review} key={review.id}> {review.body} {review.created_at}</p>
-                    <button onClick={handleClick} > DELETE REVIEW </button> 
+                <div className={styles.singleReview}>
+                    <p review={review}> {review.body} {review.created_at}</p>
+                    <button onClick={handleClick} key={review.id}> DELETE REVIEW </button> 
                 </div>
             )
         }
@@ -67,9 +71,10 @@ const BusinessItemShow = () => {
             <form onSubmit={handleSubmit}>
                 <input type="textarea" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
             </form>
-
-            <h3>Reviews</h3>
-            {mappedReviews}
+            <div className={styles.reviews}>
+                <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
+                {mappedReviews}
+            </div>
             
 
         </>
