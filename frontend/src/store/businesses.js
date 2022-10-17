@@ -41,11 +41,11 @@ export const fetchBusiness = (businessId) => async dispatch => {
     dispatch(receiveBusiness(data))
 }
 
-export const getSpecificBusinesses = (type) => ( { business } ) => business ? Object.values(business) : []
+export const getSpecificBusinesses = (type) => ( { businesses } ) => businesses ? Object.values(businesses) : []
 
-export const getBusinesses = ({ business }) => business ? Object.values(business) : []
+export const getBusinesses = ({ businesses }) => businesses ? Object.values(businesses) : []
 
-export const getBusiness = (businessId) => ({ business }) => business ? business[businessId] : null 
+export const getBusiness = (businessId) => ({ businesses }) => businesses ? businesses[businessId] : null 
 
 const businessReducer = (state = {}, action ) => {
     let prevState = {...state}
