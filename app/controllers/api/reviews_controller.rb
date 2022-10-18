@@ -34,6 +34,7 @@ class Api::ReviewsController < ApplicationController
         @reviews = Review.all()
         
         render json: @reviews
+        # render
     end
 
     private

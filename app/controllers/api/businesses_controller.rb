@@ -5,7 +5,8 @@ class Api::BusinessesController < ApplicationController
     def index
         @businesses = Business.all #will be search(params) instead of all
 
-        render json: @businesses
+        # render json: @businesses
+        render :index
     end
 
     def show
@@ -21,8 +22,8 @@ class Api::BusinessesController < ApplicationController
             filtered_businesses << business if business.business_type === params[:type] || params[:type] === 'all'
             #actual code will be if type array includes that business type
         end
-
-        render json: filtered_businesses
+        @businesses = filtered_businesses
+        render :index
     end
     
     def business_params

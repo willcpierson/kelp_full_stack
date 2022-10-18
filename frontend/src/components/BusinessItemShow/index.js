@@ -22,9 +22,17 @@ const BusinessItemShow = () => {
     const reviews = useSelector(getReviews)
 
     useEffect(() => {
+        if (!business) {
+            dispatch(fetchBusiness(businessParam.id))
+        }
+    }, [businessParam.id])
+
+    useEffect(() => {
         dispatch(fetchReviews())
         dispatch(fetchUsers())
     }, [dispatch] )
+
+    if (!business) return null
 
     const mappedReviews = reviews.map((review) => {
         let reviewUserName = ''
@@ -58,10 +66,6 @@ const BusinessItemShow = () => {
             )
         }
     });
-
-    useEffect(() => {
-        dispatch(fetchBusiness(businessParam.id))
-    }, [businessParam])
 
     const handleSubmit = (e) => {
         e.preventDefault();
