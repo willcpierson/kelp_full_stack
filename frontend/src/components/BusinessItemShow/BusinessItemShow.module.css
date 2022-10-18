@@ -1,3 +1,20 @@
+#businessName {
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#businessRating {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#businessDescription {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 #reviewHeader {
     font-size: 24px;
     color: black;
