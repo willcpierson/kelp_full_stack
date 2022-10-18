@@ -1,11 +1,17 @@
+#searchBarDiv {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0));
+    padding-bottom: 30px;
+}
+
 #searchform {
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0))
+   
     
 }
 
 .searchbars {
+    display:inline-block;
     width: 250px;
     height: 45px;
     margin-left: 0px;
@@ -33,10 +39,15 @@
 }
 
 #subsearches {
-    display: flex;
-    justify-content: space-around;
+    display:flex;
+    justify-content: flex-start;
     width: 521px;
-    margin-left: 175px;
+    margin-left: 250px;
+    /* position: absolute; */
+}
+
+.subSearch {
+    margin-left: 70px;
 }
 
 #kelplogo {

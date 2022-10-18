@@ -29,9 +29,9 @@ const BusinessListings = (props) => {
         // will eventually become businessItems, passing in props
     return (
         <>
-            <h1>Browsing {props.location} for {props.food}</h1>
-            <h4>All Results</h4>
-            <ol>
+            <h1 id={styles.browsing}> Browsing {props.location} for {props.food}</h1>
+            <h4 id={styles.allResults}>All Results</h4>
+            <ol className={styles.mappedBusinesses}>
                 {mappedBusinesses}
             </ol>
         </>

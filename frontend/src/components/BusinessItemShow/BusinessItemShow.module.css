@@ -10,4 +10,48 @@
 
 .singleReview {
     margin-bottom: 20px;
+    width: 500px;
+}
+
+.paragraph {
+    color: black;
+}
+
+.reviewerName {
+    color: black;
+    font-weight: 600;
+}
+
+.cityState {
+    color: black;
+}
+
+.submitReview {
+    margin-left: 40px;
+    display: flex;
+    justify-content: flex-start;
+    height: 150px;
+    width: 500px;
+}
+
+.submitReviewForm {
+    background-color: rgb(240, 18, 18);
+    border: 2px solid rgb(240, 18, 18);
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    border-radius: 3px;
+    padding: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.submitReviewForm:hover {
+    cursor: pointer;
+    background-color: rgb(255, 19, 19);    
 }

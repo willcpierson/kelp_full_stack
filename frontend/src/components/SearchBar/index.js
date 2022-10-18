@@ -59,7 +59,7 @@ const SearchBar = () => {
     }
 
     return (
-        <>
+        <><div id={styles.searchBarDiv}>
             <form id={styles.searchform} onSubmit={handleSearchSubmit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div>
@@ -76,11 +76,12 @@ const SearchBar = () => {
                 </aside>
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
-                <button onClick={(e) => setType('food')}>Restaurants</button>
-                <button onClick={(e) => setType('bar')}>Bar Services</button>
-                <button onClick={(e) => setType('auto')}>Auto Services</button>
+                <button className={styles.subSearch} onClick={(e) => setType('food')}>Restaurants</button>
+                <button className={styles.subSearch} onClick={(e) => setType('bar')}>Bar Services</button>
+                <button className={styles.subSearch} onClick={(e) => setType('auto')}>Auto Services</button>
 
             </form>
+          </div>
             {listings}
       </>
     );

@@ -40,7 +40,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USERS:
             return action.users
         case RECEIVE_USER:
-            prevState[action.user.id] = action.user
+            prevState[action.user.id] = action.user // CURRENTLY EDITS USERS, DONT USE
             return prevState
         default:
             return state

@@ -1,6 +1,23 @@
-h2 {
+#businessName {
+    color: black;
     font-weight: 700;
     font-size: 25px;
+}
+
+#businessLocation {
+    color: black;
+}
+
+#itemAttributes {
+    color: black;
+}
+
+#times {
+    color: black;
+}
+
+#highestReview {
+    color: black;
 }
 
 #itemBox {

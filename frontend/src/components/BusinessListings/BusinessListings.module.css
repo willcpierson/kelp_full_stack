@@ -1,7 +1,17 @@
-h1 {
+#browsing {
     background-color: transparent;
     color: black;
     display: flex;
     justify-content: flex-start;
     font-size: 28px;
+    padding-left: 20px;
+}
+
+#allResults {
+    padding-left: 20px;
+}
+
+.mappedBusinesses {
+    text-decoration: none;
+    list-style: none;
 }

@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find(params[:id])
         if @review.destroy!
-            puts 'Successfully destroyed'
+            puts 'henlo'
         else
             puts 'Error'
         end

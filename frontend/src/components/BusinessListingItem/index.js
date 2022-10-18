@@ -10,15 +10,13 @@ const BusinessListingsItem = (props) => {
             <Link id={styles.businessLink} to={`/business/${props.business.id}`} >
                 <div id={styles.itemBox}>
                     <li>
-                        <h2>{props.business.name}</h2>
-                        <br />
-                        {props.business.description}
+                        <h2 id={styles.businessName}> {props.business.name}</h2>
                         <br />
                         <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
                         <br />
-                        <p id={styles.itemAttributes}>Type of food | Price indicator $$$ | Area</p>
+                        <p id={styles.businessLocation}>{props.business.street_address}, {props.business.city}, {props.business.state}</p>
                         <br />
-                        {props.business.street_address}, {props.business.city}, {props.business.state}
+                        <p id={styles.itemAttributes}> {props.business.business_type} | Price indicator $$$ | Area</p>
                     </li>
                     
                     <br />
