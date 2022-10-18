@@ -20,6 +20,16 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def update
+        puts @review
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render json: @review
+        else
+            render json: { errors: @user.errors.full_messages }
+        end
+    end
+
     def index
         @reviews = Review.all()
         

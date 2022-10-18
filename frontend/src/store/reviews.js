@@ -25,6 +25,8 @@ export const removeReview = (reviewId) => {
     }
 }
 
+
+
 export const getReview = (reviewId) => ({reviews}) => reviews ? reviews[reviewId] : null
 
 export const getReviews = ({reviews}) => reviews ? Object.values(reviews) : []
@@ -35,7 +37,7 @@ export const fetchReviews = () => async dispatch => { // Pass in the ID of the b
     dispatch(receiveReviews(data))
 }
 
-export const createReview = (review) => async dispatch => { // Needs user_id and business_id
+export const createReview = (review) => async dispatch => {
     const res = await csrfFetch(`/api/reviews`, {
         method: 'POST',
         body: JSON.stringify(review),
@@ -48,14 +50,24 @@ export const createReview = (review) => async dispatch => { // Needs user_id and
 }
 
 export const destroyReview = (reviewId) => async dispatch => {
-    console.log(reviewId)
     await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
     dispatch(removeReview(reviewId))
 }
 
-
+export const updateReview = (review) => async dispatch => {
+    console.log(review)
+    const res = await csrfFetch(`/api/reviews/${review.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const data = res.json()
+    dispatch(receiveReview(data))
+}
 
 const reviewReducer = (state = {}, action) => {
     let prevState = {...state}
@@ -66,7 +78,6 @@ const reviewReducer = (state = {}, action) => {
         case RECEIVE_REVIEWS:
             return action.reviews
         case REMOVE_REVIEW:
-            console.log('Reducer hits')
             delete prevState[action.reviewId]
             return prevState
         default:

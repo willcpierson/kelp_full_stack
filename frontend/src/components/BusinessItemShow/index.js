@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
-import { createReview, fetchReviews, getReviews, destroyReview, getReview } from "../../store/reviews";
+import { createReview, fetchReviews, getReviews, getReview, destroyReview,  updateReview } from "../../store/reviews";
 import { fetchUsers, getUsers } from "../../store/users";
 import * as sessionActions from '../../store/session'
 import { useParams } from "react-router-dom";
@@ -15,10 +15,8 @@ const BusinessItemShow = () => {
 
     const sessionUser = useSelector(state => state.session.user)
     const allUsers = useSelector(getUsers)
-    // Get user? Might need userReducer
     const dispatch = useDispatch();
     const businessParam = useParams()
-    const [reviewId, setReviewId] = useState('')
     const [reviewBody, setReviewBody] = useState('')
     const business = useSelector(getBusiness(businessParam.id))
     const reviews = useSelector(getReviews)
@@ -37,9 +35,14 @@ const BusinessItemShow = () => {
                 reviewUserName = (`${user.first_name} ${user.last_name}`)
             }
         })
-        let deleteButton = ''
+        let deleteAndUpdateButtons = ''
         if (review.user_id === sessionUser.id) {
-            deleteButton = <button onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> DELETE REVIEW </button>
+            deleteAndUpdateButtons = ( 
+            <>
+                <button onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> DELETE REVIEW </button>
+                <button onClick={(e) => dispatch(updateReview(review))} key={review.id}> UPDATE REVIEW </button>
+            </>
+            )
         }
 
             return (
@@ -50,7 +53,7 @@ const BusinessItemShow = () => {
                     <p> Rating: 4/5 | {review.created_at} </p>
                     <br />
                     <p review={review} className={styles.paragraph}> {review.body} Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit provident molestiae quasi sequi at. Expedita consequatur vel ratione necessitatibus vitae commodi accusamus exercitationem cupiditate, sequi omnis accusantium, alias, excepturi sit?</p>
-                    {deleteButton}
+                    {deleteAndUpdateButtons}
                 </div>
             )
         }
