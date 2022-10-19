@@ -6,3 +6,8 @@ json.businesses do
         end
     end
 end
+
+json.array! @businesses do |business|
+    json.extract! business, :id, :name
+    json.photoURL business.photo.url
+end
