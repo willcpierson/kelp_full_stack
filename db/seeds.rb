@@ -42,128 +42,114 @@ ApplicationRecord.transaction do
       }) 
     end
 
-    hans_pizza = Business.create!(
-      name: "Han's Pizza",
-      description: "New York's worst pizza",
-      outdoor_seating: true,
+    hans_aquarium = Business.create!(
+      name: "Han's Aquarium",
       business_type: 'food',
-      delivery: true,
-      takeout: true,
       street_address: '123 Pizza Place',
       city: 'New York',
       zip: 11111,
       state: 'NY'
     )
-    Business.create!(
-      name: "Daniel's Pizza",
-      description: "New York's best pizza. BONKERS good",
+    daniels_aquarium = Business.create!(
+      name: "Daniel's Aqua Party House",
       business_type: 'food',
-      outdoor_seating: true,
-      delivery: true,
-      takeout: true,
       street_address: '321 AppleJuice Lane',
       city: 'New York',
       zip: 11111,
       state: 'NY'
     )
-    Business.create!(
-      name: "William's Auto Repair",
-      description: 'Mr. President will fix your car now',
-      business_type: 'auto',
-      outdoor_seating: false,
-      delivery: false,
-      takeout: false,
+    williams_aquarium = Business.create!(
+      name: "William's School For Fishies",
+      business_type: 'food',
       street_address: '64 Duplicate Drive',
       city: 'New York',
       zip: 13245,
       state: 'NY'
     )
 
-    Business.create!(
-      name: "Freddy's Pizza",
-      description: "New York's  second best pizza",
+    freddys_aquarium = Business.create!(
+      name: "Freddy's Fancy Fish",
       business_type: 'food',
-      outdoor_seating: true,
-      delivery: true,
-      takeout: true,
       street_address: '64 Demonic Drive',
       city: 'New York',
       zip: 11111,
       state: 'NY'
     )
 
-    Business.create!(
-      name: "May's Autobot Factory",
-      description: "Are Autobots cars?",
+    mays_seafood = Business.create!(
+      name: "May's Seafood Shop",
       business_type: 'auto',
-      outdoor_seating: false,
-      delivery: false,
-      takeout: false,
       street_address: 'The Planet Cybertron',
       city: 'Tron',
       zip: 99999,
       state: 'Cyber'
     )
 
-    Business.create!(
-      name: "Ben's Bike Shop",
-      description: "Cars are overrated, buy a bike!",
+    bens_seafood = Business.create!(
+      name: "Ben's Baked Fish",
       business_type: 'auto',
-      outdoor_seating: false,
-      delivery: false,
-      takeout: false,
       street_address: '123 ABC Street',
       city: 'New York',
       zip: 54321,
       state: 'NY'
     )
 
-    Business.create!(
-      name: "Handle's Bar",
-      description: "Bet you can't ride a bike without these",
-      outdoor_seating: false,
+    paytons_pier = Business.create!(
+      name: "Payton's Perfect Pier",
       business_type: 'bar',
-      delivery: false,
-      takeout: false,
       street_address: '2005 Flobots Avenue',
       city: 'New York',
       zip: 15243,
       state: 'NY'
     )
 
-    Business.create!(
-      name: "Bar Be Queue",
-      description: "Long line, but worth for the drinks and food!",
+    ronnys_pier = Business.create!(
+      name: "Ronny's Regular Pier",
       business_type: 'bar',
-      outdoor_seating: true,
-      delivery: false,
-      takeout: false,
       street_address: '77 Food Bar Lane',
       city: 'New York',
       zip: 11651,
       state: 'NY'
     )
 
-    Business.create!(
-      name: "Seedy Sam's",
-      description: "Watermelon, Apple, you name it we got it",
-      business_type: 'food',
-      outdoor_seating: true,
-      delivery: true,
-      takeout: true,
+    kats_pier = Business.create!(
+      name: "Kat's Krazy Pier",
+      business_type: 'auto',
       street_address: ' 9876 Applejack Place',
       city: 'New York',
       zip: 12543,
       state: 'NY'
     )
 
-    #Business Photos
+    #Attaching Photos
 
     hans_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/Aqaurium.jpg')
-    hans_pizza.photo.attach(io: hans_file, filename: "aquarium.jpg")
+    hans_aquarium.photo.attach(io: hans_file, filename: "aquarium.jpg")
 
+    daniels_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/aquarium2.jpg')
+    daniels_aquarium.photo.attach(io: daniels_file, filename: "aquarium.jpg")
 
-    #Attaching Photos
+    freddys_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/aquarium3.jpg')
+    freddys_aquarium.photo.attach(io: freddys_file, filename: "aquarium.jpg")
+
+    williams_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/aquarium4.jpg')
+    williams_aquarium.photo.attach(io: williams_file, filename: "aquarium.jpg")
+
+    mays_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/pier57.jpg')
+    mays_seafood.photo.attach(io: mays_file, filename: "aquarium.jpg")
+
+    bens_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/pier97.jpg')
+    bens_seafood.photo.attach(io: bens_file, filename: "aquarium.jpg")
+
+    paytons_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/seafood1.jpg')
+    paytons_pier.photo.attach(io: paytons_file, filename: "aquarium.jpg")
+
+    ronnys_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/seafood2.jpg')
+    ronnys_pier.photo.attach(io: ronnys_file, filename: "aquarium.jpg")
+
+    kats_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/Aqaurium.jpg')
+    kats_pier.photo.attach(io: kats_file, filename: "aquarium.jpg")
+
     puts 'Attaching Photos...'
   
     puts "Done!"

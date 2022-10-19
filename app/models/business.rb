@@ -1,6 +1,6 @@
 class Business < ApplicationRecord
 
-    validates :name, :description, :zip, :street_address, :city, :state, presence: true
+    validates :name, :zip, :street_address, :city, :state, presence: true
 
     has_many :reviews
 
