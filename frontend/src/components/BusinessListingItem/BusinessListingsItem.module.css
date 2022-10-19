@@ -21,15 +21,25 @@
 }
 
 #itemBox {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    width: 600px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    width: 500px;
     padding: 30px;
 }
 
 #itemBox:hover {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+#businessPreview {
+    display: inline-block;
+    height: 225px;
+    width: 225px;
+}
+
+#businessList {
+    display: inline-block;
 }
 
 body {

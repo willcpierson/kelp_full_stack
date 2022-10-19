@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'open-uri'
+
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
@@ -40,7 +42,7 @@ ApplicationRecord.transaction do
       }) 
     end
 
-    Business.create!(
+    hans_pizza = Business.create!(
       name: "Han's Pizza",
       description: "New York's worst pizza",
       outdoor_seating: true,
@@ -154,6 +156,15 @@ ApplicationRecord.transaction do
       zip: 12543,
       state: 'NY'
     )
+
+    #Business Photos
+
+    hans_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/Aqaurium.jpg')
+    hans_pizza.photo.attach(io: hans_file, filename: "aquarium.jpg")
+
+
+    #Attaching Photos
+    puts 'Attaching Photos...'
   
     puts "Done!"
   end

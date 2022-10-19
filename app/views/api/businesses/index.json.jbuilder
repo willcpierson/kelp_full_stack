@@ -3,11 +3,7 @@ json.businesses do
         json.set! business.id do
             json.extract! business, :id, :name, :description, :phone_number, :website, :zip,
             :street_address, :city, :state, :lat, :lng, :business_type, :created_at, :updated_at
+            json.photoURL business.photo.url
         end
     end
-end
-
-json.array! @businesses do |business|
-    json.extract! business, :id, :name
-    json.photoURL business.photo.url
 end

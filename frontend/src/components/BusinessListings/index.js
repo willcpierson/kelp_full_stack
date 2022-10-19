@@ -20,8 +20,9 @@ const BusinessListings = (props) => {
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
+        console.log(businesses)
         dispatch(fetchSpecificBusinesses(businessType))
-    }, [props])
+    }, [])
 
     const mappedBusinesses = businesses.map((business) => {
             return <BusinessListingsItem business={business} location={props.location} key={business.id} />

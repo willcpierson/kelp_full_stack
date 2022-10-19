@@ -2,8 +2,8 @@ class Api::BusinessesController < ApplicationController
 
     wrap_parameters include: Business.attribute_names + ['outdoorSeating', 'phoneNumber', 'streetAddress'] # may need to edit or remove
 
-    def index #Job taken over by custom type method
-        @businesses = Business.all #will be search(params) instead of all
+    def index
+        @businesses = Business.all
         render :index
     end
 
