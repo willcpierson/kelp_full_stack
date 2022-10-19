@@ -10,6 +10,16 @@
     margin-bottom: 10px;
 }
 
+#businessImageHolder {
+    display: flex;
+    height: 400px;
+    background-repeat:repeat;
+}
+
+#businessImage {
+
+}
+
 #businessDescription {
     margin-left: 20px;
     margin-bottom: 20px;

@@ -77,10 +77,12 @@ const BusinessItemShow = () => {
     return (
         <>  
             <SearchBar />
+            <div id={styles.businessImageHolder}>
+                <img id={styles.businessImage} src={business.photoURL} alt=""/>
+            </div>
             <br />
             <h2 id={styles.businessName}>{business.name}</h2>
             <p id={styles.businessRating}> {business.rating} 4.0 </p>
-            <p id={styles.businessDescription}> {business.description} </p>
             <br />
             <form  onSubmit={handleSubmit}>
                 <input className={styles.submitReview} type="textarea" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>

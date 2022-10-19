@@ -3,7 +3,6 @@ import styles from './BusinessListingsItem.module.css'
 
 
 const BusinessListingsItem = (props) => {
-    
     const photoPath = props.business.photoURL ? props.business.photoURL : ''
 
     // change street_address to streetAddress on translation
@@ -19,9 +18,9 @@ const BusinessListingsItem = (props) => {
                         <br />
                         <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
                         <br />
-                        <p id={styles.businessLocation}>{props.business.street_address}, {props.business.city}, {props.business.state}</p>
+                        <p id={styles.businessLocation}>{props.business.streetAddress}, {props.business.city}, {props.business.state}</p>
                         <br />
-                        <p id={styles.itemAttributes}> {props.business.business_type} | Price indicator $$$ | Area</p>
+                        <p id={styles.itemAttributes}> {props.business.businessType} | Price indicator $$$ | Area</p>
                     </li>
                     
                     <br />

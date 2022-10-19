@@ -48,6 +48,7 @@ const SearchBar = () => {
 
     const handleSpecificSubmit = (e) => {
       e.preventDefault()
+      console.log(type)
       setListings(<BusinessListings food={food} location={cityState} type={type}/>)
       return navigate('/')
     
@@ -76,9 +77,9 @@ const SearchBar = () => {
                 </aside>
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
-                <button className={styles.subSearch} onClick={(e) => setType('food')}>Restaurants</button>
-                <button className={styles.subSearch} onClick={(e) => setType('bar')}>Bar Services</button>
-                <button className={styles.subSearch} onClick={(e) => setType('auto')}>Auto Services</button>
+                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('food')}>Restaurants</button>
+                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('bar')}>Bar Services</button>
+                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Auto Services</button>
 
             </form>
           </div>

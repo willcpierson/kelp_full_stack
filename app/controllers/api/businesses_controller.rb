@@ -27,11 +27,7 @@ class Api::BusinessesController < ApplicationController
     def business_params
         params.require(:business).permit(
             :name,
-            :description,
             :business_type,
-            :outdoor_seating,
-            :delivery,
-            :takeout,
             :phone_number,
             :website,
             :zip,
