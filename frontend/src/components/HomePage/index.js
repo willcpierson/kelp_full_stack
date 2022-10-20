@@ -11,7 +11,10 @@ const HomePage = () => {
     // If you ever encounter error with exact, doubleback here to li ele
     return (
         <>
-            <SearchBar />
+            <div id={styles.homePage}>
+                <SearchBar id={styles.searchBar}/>
+               
+            </div>
         </>
     );
 };
