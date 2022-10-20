@@ -15,4 +15,28 @@
 
 .profile-dropdown {
     position: absolute;
+    right: 22px;
+    top: 70px;
+    width: 225px;
+    list-style-type: none;
+    background-color: #fff;
+    box-shadow: 0 0 18px #00000026;
+    border-radius: 3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    z-index: 10;
+}
+
+.profileListItem {
+    display: flex;
+    padding: 10px;
+    margin: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profileListItem:hover {
+    cursor: pointer;
+    background-color: rgb(223, 219, 219);
+    border-radius: 4px;
 }

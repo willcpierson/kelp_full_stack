@@ -1,3 +1,7 @@
+#showSearchBar {
+    position: fixed;
+}
+
 #businessName {
     font-size: 28px;
     font-weight: 700;
@@ -16,9 +20,6 @@
     background-repeat:repeat;
 }
 
-#businessImage {
-
-}
 
 #businessDescription {
     margin-left: 20px;

@@ -30,11 +30,14 @@ const BusinessListings = (props) => {
         // will eventually become businessItems, passing in props
     return (
         <>
-            <h1 id={styles.browsing}> Browsing {props.location} for {props.food}</h1>
+            <h1 id={styles.browsing}> Browsing New York, New York</h1>
             <h4 id={styles.allResults}>All Results</h4>
             <ol className={styles.mappedBusinesses}>
                 {mappedBusinesses}
             </ol>
+            <aside id={styles.googleMap}>
+                <img src="" alt="" />
+            </aside>
         </>
     );
 };

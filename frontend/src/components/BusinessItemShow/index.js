@@ -76,7 +76,7 @@ const BusinessItemShow = () => {
 
     return (
         <>  
-            <SearchBar />
+            <SearchBar id={styles.showSearchBar}/>
             <div id={styles.businessImageHolder}>
                 <img id={styles.businessImage} src={business.photoURL} alt=""/>
             </div>

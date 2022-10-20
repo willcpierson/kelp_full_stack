@@ -21,15 +21,7 @@
 }
 
 #itemBox {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    width: 500px;
     padding: 30px;
-}
-
-#itemBox:hover {
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
 }
 
 #businessPreview {
@@ -47,6 +39,20 @@ body {
 }
 
 #businessLink {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 2%;
     display: flex;
     justify-content: flex-start;
+    width: 60%;
+    height: 225px;
+    margin-top: 1px;
+}
+
+#businessLink:hover {
+    border-right: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    box-shadow: 0 0 18px #00000026;
 }
