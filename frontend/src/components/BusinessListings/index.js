@@ -12,11 +12,11 @@ import SearchBar from "../SearchBar";
 
 const BusinessListings = (props) => {
     const navigate = useNavigate()
-    const businessType = props.type
-    
+    if (props.type) console.log('exists')
+    const businessType = props.type ? props.type : 'all' 
+    console.log(props)
     const dispatch = useDispatch()
     const businesses = useSelector(getSpecificBusinesses()) // Why does this not require an arg lol
-    const [] = useState()
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
@@ -30,6 +30,7 @@ const BusinessListings = (props) => {
         // will eventually become businessItems, passing in props
     return (
         <>
+            <SearchBar />
             <h1 id={styles.browsing}> Browsing New York, New York</h1>
             <h4 id={styles.allResults}>All Results</h4>
             <ol className={styles.mappedBusinesses}>

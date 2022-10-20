@@ -1,4 +1,4 @@
-import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import ProfileButton from "../ProfileButton";
@@ -50,8 +50,7 @@ const SearchBar = () => {
       e.preventDefault()
       console.log(type)
       setListings(<BusinessListings food={food} location={cityState} type={type}/>)
-      return navigate('/')
-    
+      return navigate('/listings')
     }
 
     const handleClick = (e) => {
@@ -77,8 +76,8 @@ const SearchBar = () => {
                 </aside>
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
-            <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('food')}>Restaurant Services</button>
-                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('bar')}>Bar Services</button>
+                <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>Seafood</Link>
+                <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>Aquariums</Link>
                 <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Auto Services</button>
 
             </form>

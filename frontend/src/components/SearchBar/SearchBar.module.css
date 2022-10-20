@@ -51,7 +51,11 @@
 }
 
 .subSearch {
-    margin-left: 70px;
+    position: relative;
+
+    margin-left: 15%;
+    color: black;
+    font-size: 16px;
 }
 
 #kelplogo {
