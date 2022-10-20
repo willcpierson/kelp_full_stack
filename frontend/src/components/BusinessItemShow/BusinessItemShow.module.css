@@ -2,8 +2,14 @@
     position: fixed;
 }
 
+.nameRating {
+    position: absolute;
+    top: 400px;
+}
+
 #businessName {
-    font-size: 28px;
+    color: white;
+    font-size: 48px;
     font-weight: 700;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -14,16 +20,30 @@
     margin-bottom: 10px;
 }
 
+.ratingStars {
+    margin: 0;
+    padding: 0;
+    width: 36px;
+}
+
+#businessImage {
+    background-size: contain;
+    background-repeat: repeat;
+    width: 100%;
+}
+
 #businessImageHolder {
     display: flex;
     height: 400px;
-    background-repeat:repeat;
 }
 
-
-#businessDescription {
-    margin-left: 20px;
-    margin-bottom: 20px;
+#numOfReviews {
+    position: absolute;
+    top: 67px;
+    left: 200px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 #reviewHeader {

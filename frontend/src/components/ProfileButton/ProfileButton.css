@@ -1,23 +1,17 @@
 #profile-button {
     display: flex;
     margin: 24px;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
-    background-color: rgb(240, 18, 18);
-    border: 2px solid rgb(240, 18, 18);
 }
 
 #profile-button:hover {
     cursor: pointer;
-    background-color: rgb(255, 19, 19);   
 }
 
 .profile-dropdown {
     position: absolute;
     right: 22px;
     top: 70px;
-    width: 225px;
+    width: 270px;
     list-style-type: none;
     background-color: #fff;
     box-shadow: 0 0 18px #00000026;

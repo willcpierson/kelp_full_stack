@@ -1,7 +1,9 @@
 #searchBarDiv {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0, 0));
     padding-bottom: 30px;
-    /* position: fixed; */
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 #searchform {

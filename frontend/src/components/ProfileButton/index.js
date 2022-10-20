@@ -34,8 +34,8 @@ function ProfileButton({ user }) {
     // user.firstName not pulling anything; I think it's because it's not included in the sessionUser; pull from DB? ANSWER: jbuilder! add to extract
     return (
       <>
-        <button id="profile-button" onClick={openMenu}> {user.firstName} {user.lastName}
-          <i className="fa-solid fa-user-circle" />
+        <button id="profile-button" onClick={openMenu}>
+          <img src="https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_40x40_v2.yji-1b8b3dd9a1cc11cda816.png" alt="profile-picture"/>
         </button>
         
         {showMenu && (
@@ -62,7 +62,7 @@ function ProfileButton({ user }) {
               <svg className="dropDownMenuIcon">
               <path d="M15 2a1 1 0 110 2H4v16h11a1 1 0 110 2H3a1 1 0 01-1-1V3a1 1 0 011-1h12zm1.09 4.72a1 1 0 011.41 0L22 11.3a1 1 0 010 1.4l-4.59 4.58a1 1 0 01-1.41.02 1 1 0 010-1.42L18.87 13H7a1 1 0 110-2h11.87l-2.78-2.86a1 1 0 010-1.42z"></path>
               </svg>
-              Logout
+              Log Out
             </li>
           </ul>
         )}

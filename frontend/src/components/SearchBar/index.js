@@ -77,7 +77,7 @@ const SearchBar = () => {
                 </aside>
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
-                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('food')}>Restaurants</button>
+            <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('food')}>Restaurant Services</button>
                 <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('bar')}>Bar Services</button>
                 <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Auto Services</button>
 
