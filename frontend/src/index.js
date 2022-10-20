@@ -15,13 +15,13 @@ import * as userActions from './store/users'
 
 const store = configureStore();
 
-if (process.env.NODE_ENV !== 'production') {
-  window.store = store;
-  window.csrfFetch = csrfFetch;
-  window.sessionActions = sessionActions;
-  window.businessActions = businessActions;
-  window.userActions = userActions;
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   window.store = store;
+//   window.csrfFetch = csrfFetch;
+//   window.sessionActions = sessionActions;
+//   window.businessActions = businessActions;
+//   window.userActions = userActions;
+// }
 
 function Root() {
   return (

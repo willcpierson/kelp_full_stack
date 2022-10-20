@@ -40,3 +40,10 @@
     background-color: rgb(223, 219, 219);
     border-radius: 4px;
 }
+
+.dropDownMenuIcon {
+    margin: -5px;
+    padding-right: 15px;
+    width: 24px;
+    height: 24px;
+}
