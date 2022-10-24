@@ -30,7 +30,7 @@ const BusinessListings = (props) => {
         // will eventually become businessItems, passing in props
     return (
         <>
-            <SearchBar />
+            <SearchBar id={styles.searchBar}/>
             <h1 id={styles.browsing}> Browsing New York, New York</h1>
             <h4 id={styles.allResults}>All Results</h4>
             <ol className={styles.mappedBusinesses}>

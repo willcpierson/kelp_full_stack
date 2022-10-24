@@ -12,9 +12,9 @@ const HomePage = () => {
     return (
         <>
             <div id={styles.homePage}>
-                <SearchBar id={styles.searchBar}/>
                
             </div>
+            <SearchBar id={styles.searchBar}/>
         </>
     );
 };

@@ -77,8 +77,21 @@ const SearchBar = () => {
             </form>
             <form id={styles.subsearches} onSubmit={handleSpecificSubmit}>
                 <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>Seafood</Link>
-                <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>Aquariums</Link>
-                <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Auto Services</button>
+                <svg className={styles.downArrow}>
+                  <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>
+                  </svg>
+                <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>
+                  Aquariums
+                  <svg className={styles.downArrow}>
+                  <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>
+                  </svg>
+                </Link>
+                <Link to="/listings" food={food} location={cityState} type={type} className={styles.subSearch}>
+                  Piers
+                  <svg className={styles.downArrow}>
+                  <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>
+                  </svg>
+                </Link>
 
             </form>
           </div>
@@ -86,5 +99,7 @@ const SearchBar = () => {
       </>
     );
 };
+
+/* <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Piers</button> */ // Previous working build of preset search buttons
 
 export default SearchBar

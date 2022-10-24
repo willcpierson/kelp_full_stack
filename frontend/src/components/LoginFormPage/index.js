@@ -1,18 +1,21 @@
 import { loginUser } from "../../store/session";
 import { React, useState } from "react";
-import { Routes, Navigate } from "react-router-dom";
+import { Routes, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./LoginFormPage.module.css";
 import { useDispatch } from "react-redux";
 
+
+
 function LoginFormPage() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => {
     return state.session.user;
   });
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState(null);
   if (sessionUser) return <Navigate to="/" />;
 
   
@@ -54,12 +57,15 @@ function LoginFormPage() {
       password
     }))
   }
+
+  const errorPlacement = errors ? <h4 id={styles.errors}>{errors}</h4> : null
+
   return (
     <>
 
     <main>
-      <h1 id={styles.titlepage}>kelp</h1>
-      <h4 id={styles.errors}>{errors}</h4>
+      <h1 id={styles.titlepage} >kelp</h1>
+      {errorPlacement}
       <div id={styles.loginform}>
         <form className="login-form-class" onSubmit={handleSubmit}>
         <h3>Log in to Kelp</h3>

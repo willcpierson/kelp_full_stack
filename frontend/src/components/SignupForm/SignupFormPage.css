@@ -1,3 +1,27 @@
+#header {
+    display: block;
+    justify-content: center;
+    height: 25px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(209, 20, 20);
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#signup-form {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup-form-class {
+    margin-left: 10%;
+    display: inline-block;
+}
+
 .signup-inputs {
     margin-top: 9px;
     margin-bottom: 3px;
@@ -11,6 +35,26 @@
     height: 20px;
     margin-right: 3px;
     margin-left: 3px;
+}
+
+#signup-button {
+    border: 1px solid rgb(209, 20, 20);
+    background-color: rgb(209, 20, 20);
+    padding: 10px;
+    padding-left: 79px;
+    padding-right: 79px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 3px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#signup-kelpLogo {
+    margin-right: 10%;
+    display: inline-block;
 }
 
 body {

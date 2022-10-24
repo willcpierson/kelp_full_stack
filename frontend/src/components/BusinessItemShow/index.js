@@ -47,20 +47,23 @@ const BusinessItemShow = () => {
         if (review.user_id === sessionUser.id) {
             deleteAndUpdateButtons = ( 
             <>
-                <button onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> DELETE REVIEW </button>
-                <button onClick={(e) => dispatch(updateReview(review))} key={review.id}> UPDATE REVIEW </button>
+                <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
+                <button className={styles.editReview} onClick={(e) => dispatch(updateReview(review))} key={review.id}> Update </button>
             </>
             )
         }
 
             return (
                 <div className={styles.singleReview}>
+                    <svg className={styles.reviewMenu}>
+                    <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                    </svg>
                     <p className={styles.reviewerName}>{reviewUserName}</p>
                     <p className={styles.cityState}> New York, NY </p>
                     <br />
                     <p> Rating: 4/5 | {review.created_at} </p>
                     <br />
-                    <p review={review} className={styles.paragraph}> {review.body} Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit provident molestiae quasi sequi at. Expedita consequatur vel ratione necessitatibus vitae commodi accusamus exercitationem cupiditate, sequi omnis accusantium, alias, excepturi sit?</p>
+                    <p review={review} className={styles.paragraph}> {review.body} </p>
                     {deleteAndUpdateButtons}
                 </div>
             )
@@ -116,7 +119,7 @@ const BusinessItemShow = () => {
             </div>
             <br />
             <form  onSubmit={handleSubmit}>
-                <input className={styles.submitReview} type="textarea" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
+                <textarea rows="3" className={styles.submitReview} type="text" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
                 <input className={styles.submitReviewForm} type="submit" value='Submit Review'/>
             </form>
             <div className={styles.reviews}>
