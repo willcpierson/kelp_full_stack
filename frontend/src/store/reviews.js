@@ -34,7 +34,7 @@ export const getReviews = ({reviews}) => reviews ? Object.values(reviews) : []
 export const fetchReviews = () => async dispatch => { // Pass in the ID of the business
     const res = await csrfFetch(`/api/reviews`)
     const data = await res.json()
-    dispatch(receiveReviews(data))
+    dispatch(receiveReviews(data.reviews))
 }
 
 export const createReview = (review) => async dispatch => {

@@ -53,7 +53,6 @@ const businessReducer = (state = {}, action ) => {
         case RECEIVE_BUSINESSES:
             return action.businesses
         case RECEIVE_BUSINESS:
-            console.log(action.businessId)
             return {...prevState, [action.business.id]: action.business }
         default:
             return prevState
