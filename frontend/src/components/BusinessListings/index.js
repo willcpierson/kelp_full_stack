@@ -5,27 +5,27 @@ import { Navigate } from "react-router-dom";
 import csrfFetch from "../../store/csrf";
 import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/businesses";
 import { useDispatch } from "react-redux";
+import { useParams, useLocation } from "react-router-dom";
 import BusinessListingsItem from "../BusinessListingItem";
 import styles from './BusinessListings.module.css'
 import SearchBar from "../SearchBar";
 
 
-const BusinessListings = (props) => {
+const BusinessListings = () => {
     const navigate = useNavigate()
-    if (props.type) console.log('exists')
-    const businessType = props.type ? props.type : 'all' 
-    console.log(props)
+    const { type } = useParams();
+    const businessType = type ? type : 'all' 
     const dispatch = useDispatch()
-    const businesses = useSelector(getSpecificBusinesses()) // Why does this not require an arg lol
+    const businesses = useSelector(getSpecificBusinesses())
     // useEffect
         // On every render of page we fetch inputted items
     useEffect(() => {
         console.log(businesses)
         dispatch(fetchSpecificBusinesses(businessType))
-    }, [])
+    }, [type])
 
     const mappedBusinesses = businesses.map((business) => {
-            return <BusinessListingsItem business={business} location={props.location} key={business.id} />
+            return <BusinessListingsItem business={business} key={business.id} />
     });
         // will eventually become businessItems, passing in props
     return (
