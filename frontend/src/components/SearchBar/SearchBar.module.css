@@ -16,18 +16,22 @@
 
 .searchbars {
     display:inline-block;
-    width: 250px;
+    width: 60%;
     height: 45px;
-    margin-left: 0px;
     margin-top: 20px;
     border: none;
 }
 
-#searchFood {
+#allOfSearchBar {
+    display: inline-block;
+    width: 50%;
+}
+
+/* #searchFood {
     margin-left: -120px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-}
+} */
 
 #search {
     height: 47px;
@@ -38,6 +42,7 @@
     box-shadow: 0 0 18px #00000026;
     padding-left: 5px;
     padding-right: 5px;
+    transition: 300ms;
 }
 
 #search:hover {
@@ -48,8 +53,8 @@
 #subsearches {
     display:flex;
     justify-content: flex-start;
-    width: 521px;
-    margin-left: 250px;
+    width: 50%;
+    margin-left: 17%;
     /* position: absolute; */
 }
 
@@ -70,16 +75,22 @@
 }
 
 #kelplogo {
+    display: inline-block;
     color: rgb(240, 18, 18);
     font-size: x-large; 
     font-weight: 700;
     margin-top: 30px;
-    margin-left: 70px;
-    margin-right: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #kelplogo:hover {
     cursor: pointer;
+}
+
+#sessionLinks {
+    display: inline-block;
+    width: 30%;
 }
 
 #signup {
@@ -93,9 +104,10 @@
     padding-bottom: 12px;
     margin-bottom: 15px;
     margin-left: 0px;
-    margin-right: 60px;
+    margin-right: 1%;
     margin-top: 25px;
     font-size: 18px;
+    transition: 300ms;
 }
 
 #signup:hover {
@@ -115,8 +127,10 @@
     padding-bottom: 12px;
     margin: 15px;
     margin-right: 10px;
+    margin-left: 0;
     margin-top: 25px;
     font-size: 18px;
+    transition: 300ms;
 }
 
 #login:hover {

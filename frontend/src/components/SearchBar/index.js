@@ -62,16 +62,16 @@ const SearchBar = () => {
         <><div id={styles.searchBarDiv}>
             <form id={styles.searchform} onSubmit={handleSearchSubmit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
-                <div>
+                <div id={styles.allOfSearchBar}>
                     <label>
                       <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder=" tacos, cheap dinner, Max's" onChange={(e) => setFood(e.target.value)}/>
                     </label>
-                    <label>
+                    {/* <label>
                       <input type="text" name="search[location]" className={styles.searchbars} value={cityState} placeholder=" New York, NY" onChange={(e) => setCityState(e.target.value)}/>
-                    </label>
+                    </label> */}
                     <button type="submit" id={styles.search} value="Search">Search</button>
                 </div>
-                <aside>
+                <aside id={styles.sessionLinks}>
                   {sessionLinks}
                 </aside>
             </form>
