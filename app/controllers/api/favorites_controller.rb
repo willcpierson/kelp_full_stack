@@ -2,21 +2,23 @@ class FavoritesController < ApplicationController
 
     before_action :require_logged_in, only: [:create, :destroy]
 
-    def index
-        @favorites = Favorite.where(user_id: [params[:id]])
-    end
+    # def index
+    #     @favorites = Favorite.where(user_id: [params[:id]])
+    # end
 
     def create
-        @favorite = Favorite.new(favorite_params)
+        @favorite = Favorite.new()
+        @favorite.user_id = current_user.id
+        2favorite.business_id = params[:id]
         if @favorite.save!
-            render json: @review
+            puts 'Successful favorite save!'
         else
-            render json {errors: @user.errors.full_messages}
+            puts 'Unsuccessful creation of a favorite'
         end
     end
 
     def destroy
-        @favorte = Favorite.find(params[:id])
+        @favorite = Favorite.find(params[:id])
         if @favorite.destroy!
             puts "Successfully destroyed"
         else
