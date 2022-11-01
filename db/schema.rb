@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_01_191818) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_01_195113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_191818) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "business_type", null: false
+    t.bigint "favorite_id"
+    t.index ["favorite_id"], name: "index_businesses_on_favorite_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -85,10 +87,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_191818) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "favorite_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["favorite_id"], name: "index_users_on_favorite_id"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "businesses", "favorites"
+  add_foreign_key "users", "favorites"
 end

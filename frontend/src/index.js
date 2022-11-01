@@ -11,17 +11,19 @@ import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
 import * as businessActions from './store/businesses'
-import * as userActions from './store/users'
+import * as userActions from './store/users';
+import * as favoriteActions from './store/favorites';
 
 const store = configureStore();
 
-// if (process.env.NODE_ENV !== 'production') {
-//   window.store = store;
-//   window.csrfFetch = csrfFetch;
-//   window.sessionActions = sessionActions;
-//   window.businessActions = businessActions;
-//   window.userActions = userActions;
-// }
+if (process.env.NODE_ENV !== 'production') {
+  window.store = store;
+  window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
+  window.businessActions = businessActions;
+  window.userActions = userActions;
+  window.favoriteActions = favoriteActions;
+};
 
 function Root() {
   return (
