@@ -10,17 +10,22 @@ class Api::BusinessesController < ApplicationController
     def show
         @business = Business.find(params[:id])
             
-        render json: @business
+        # render json: @business
+        render :show
     end
     
     def type
-        @businesses = Business.all
-        filtered_businesses = []
-        @businesses.each do |business| # Instead of shoveling, add to an object and return? instead of Array
-            filtered_businesses << business if business.business_type === params[:type] || params[:type] === 'all'
-            #actual code will be if type array includes that business type
+        if params[:type] == "all"
+            @businesses = Business.all
+        else
+            @businesses = Business.where(business_type: params[:type])
         end
-        @businesses = filtered_businesses
+        # filtered_businesses = []
+        # @businesses.each do |business| # Instead of shoveling, add to an object and return? instead of Array
+        #     filtered_businesses << business if business.business_type === params[:type] || params[:type] === 'all'
+        #     #actual code will be if type array includes that business type
+        # end
+        # @businesses = filtered_businesses
         render :index
     end
     

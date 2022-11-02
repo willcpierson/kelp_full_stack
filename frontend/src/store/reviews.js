@@ -29,7 +29,17 @@ export const removeReview = (reviewId) => {
 
 export const getReview = (reviewId) => ({reviews}) => reviews ? reviews[reviewId] : null
 
-export const getReviews = ({reviews}) => reviews ? Object.values(reviews) : []
+export const getReviews = (businessId) => ({reviews}) => {
+    if (businessId && reviews) {
+        businessId = parseInt(businessId);
+        const filteredReviews = Object.values(reviews).filter((review) => review.businessId === businessId);
+        return filteredReviews;
+    } else {
+        return [];
+    }
+    // return reviews ? Object.values(reviews) : []
+};
+
 
 export const fetchReviews = () => async dispatch => { // Pass in the ID of the business
     const res = await csrfFetch(`/api/reviews`)
