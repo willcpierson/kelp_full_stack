@@ -25,7 +25,7 @@ export const getUser = (userId) => ({users}) => users ? users[userId] : null
 export const fetchUsers = () => async dispatch => {
     const res = await csrfFetch(`/api/users`)
     const data = await res.json()
-    dispatch(receiveUsers(data))
+    dispatch(receiveUsers(data.users))
 }
 
 export const fetchUser = (userId) => async dispatch => {
