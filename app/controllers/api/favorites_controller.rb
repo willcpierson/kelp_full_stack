@@ -1,15 +1,15 @@
-class FavoritesController < ApplicationController
+class Api::FavoritesController < ApplicationController
 
     before_action :require_logged_in, only: [:create, :destroy]
 
-    # def index
-    #     @favorites = Favorite.where(user_id: [params[:id]])
-    # end
+    def index
+        @favorites = Favorite.where(user_id: [params[:id]])
+    end
 
     def create
         @favorite = Favorite.new()
         @favorite.user_id = current_user.id
-        2favorite.business_id = params[:id]
+        @favorite.business_id = params[:business_id]
         if @favorite.save!
             puts 'Successful favorite save!'
         else
