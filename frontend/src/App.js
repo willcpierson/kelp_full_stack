@@ -7,12 +7,14 @@ import BusinessListings from './components/BusinessListings';
 import BusinessItemShow from './components/BusinessItemShow';
 import NewReview from './components/NewReview/NewReview';
 import EditReview from './components/EditReview/EditReview';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   return (
       <Routes>
         <Route path="/login" element={<LoginFormPage />} />
         <Route path='/signup' element={<SignupFormPage />} />
+        <Route path='/profile/:id' element={<ProfilePage />}/>
         <Route path='/listings/:type' element={<BusinessListings />}/>
         <Route path='/business/:id' element={<BusinessItemShow />}/>
         <Route path='/business/:id/new' element={<NewReview />}/>
