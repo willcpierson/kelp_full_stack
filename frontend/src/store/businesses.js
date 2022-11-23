@@ -49,12 +49,14 @@ export const getBusiness = (businessId) => ({ businesses }) => businesses ? busi
 
 export const getFavoriteBusinesses = (favoriteBusinessesIds) => ({ businesses }) => {
     if (businesses) {
+        console.log(businesses)
       let favoriteBusinesses = []
       favoriteBusinessesIds.forEach((businessId) => {
         if (businessId) {
             favoriteBusinesses.push(businesses[businessId])
         }
       })
+      console.log(favoriteBusinesses)
       return favoriteBusinesses;
     } else {
         return []
