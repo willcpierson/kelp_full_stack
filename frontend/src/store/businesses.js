@@ -47,6 +47,20 @@ export const getBusinesses = ({ businesses }) => businesses ? Object.values(busi
 
 export const getBusiness = (businessId) => ({ businesses }) => businesses ? businesses[businessId] : null 
 
+export const getFavoriteBusinesses = (favoriteBusinessesIds) => ({ businesses }) => {
+    if (businesses) {
+      let favoriteBusinesses = []
+      favoriteBusinessesIds.forEach((businessId) => {
+        if (businessId) {
+            favoriteBusinesses.push(businesses[businessId])
+        }
+      })
+      return favoriteBusinesses;
+    } else {
+        return []
+    }
+} ;
+
 const businessReducer = (state = {}, action ) => {
     let prevState = {...state}
     switch (action.type) {
