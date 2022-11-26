@@ -15,13 +15,13 @@ const ProfilePage = () => {
     console.log(businesses)
 
     useEffect(() => {
-        console.log('this hits')
+        console.log('this hits') // not hitting lol
         dispatch(fetchBusinesses())
     }, [])
 
     const mappedBusinesses = businesses.map((business) => {
         return <li>{business.name}</li>
-});
+    });
 
 
 

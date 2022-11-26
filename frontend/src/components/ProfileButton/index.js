@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import { useNavigate } from "react-router-dom";
 import './ProfileButton.css'
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const [showMenu, setShowMenu] = useState(false);
+    let sessionUser = useSelector(state => state.session.user);
+    sessionUser = sessionUser ? sessionUser : undefined;
     
     const openMenu = (e) => {
       if (showMenu) return;
@@ -31,6 +35,11 @@ function ProfileButton({ user }) {
       dispatch(sessionActions.logoutUser());
     };
 
+    const handleClick = () => {
+      console.log('clicked Favorites button')
+      return navigate(`/profile/${sessionUser.id}`)
+    }
+
     // user.firstName not pulling anything; I think it's because it's not included in the sessionUser; pull from DB? ANSWER: jbuilder! add to extract
     return (
       <>
@@ -40,11 +49,11 @@ function ProfileButton({ user }) {
         
         {showMenu && (
           <ul className="profile-dropdown">
-            <li className="profileListItem">
+            <li className="profileListItem" onClick={handleClick}>
               <svg className="dropDownMenuIcon">
                 <path d="M12 1a11 11 0 1011 11A11.012 11.012 0 0012 1zm0 2a8.985 8.985 0 017.791 13.485 14.142 14.142 0 00-3.056-1.47 5.286 5.286 0 00.622-2.452V10.57a5.357 5.357 0 10-10.714 0v1.993a5.29 5.29 0 00.62 2.45 14.125 14.125 0 00-3.054 1.474A8.985 8.985 0 0112 3zm-3.357 9.563V10.57a3.357 3.357 0 016.714 0v1.993a3.358 3.358 0 11-6.714 0zM12 21a8.968 8.968 0 01-6.604-2.906 12.19 12.19 0 013.227-1.406 5.241 5.241 0 006.758-.003c1.137.31 2.223.785 3.224 1.408A8.969 8.969 0 0112 21z"></path>
               </svg>
-              About Me Coming Soon 
+              Favorites
             </li>
             {/* <li className="profileListItem">
               <svg className="dropDownMenuIcon">
