@@ -36,8 +36,13 @@ const BusinessItemShow = () => {
         dispatch(fetchUsers()).then(() => dispatch(fetchReviews()))
     }, [dispatch] )
 
-    const handleUpdateClick = () => {
-        navigate(`/business/${businessParam.id}/review/edit/1`)
+    const handleUpdateClick = (reviewId) => {
+        navigate(`/business/${businessParam.id}/review/edit/17`, {
+            state: {
+                businessId: businessParam.id,
+                reviewId: reviewId,
+            }
+        });
     };
 
     if (!business) return null;
@@ -56,7 +61,7 @@ const BusinessItemShow = () => {
             deleteAndUpdateButtons = ( 
             <>
                 <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
-                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick()}> Update </button>
+                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review.id)}> Update </button>
                 {/* onClick={(e) => dispatch(updateReview(review))} key={review.id} */} 
             </>
             )
