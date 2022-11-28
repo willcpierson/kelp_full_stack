@@ -19,6 +19,8 @@ const ProfilePage = () => {
         dispatch(fetchBusinesses())
     }, [])
 
+    if (!businesses) return null;
+
     const mappedBusinesses = businesses.map((business) => {
         return <li>{business.name}</li>
     });

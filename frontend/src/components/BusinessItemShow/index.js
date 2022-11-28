@@ -5,7 +5,8 @@ import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/b
 import { createReview, fetchReviews, getReviews, getReview, destroyReview,  updateReview } from "../../store/reviews";
 import { fetchUsers, getUsers } from "../../store/users";
 import * as sessionActions from '../../store/session'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import EditReview from "../EditReview/EditReview";
 import styles from './BusinessItemShow.module.css'
 
 
@@ -13,16 +14,17 @@ import styles from './BusinessItemShow.module.css'
 
 const BusinessItemShow = () => {
 
-    let sessionUser = useSelector(state => state.session.user)
-    sessionUser = sessionUser ? sessionUser : undefined
-    const allUsers = useSelector(getUsers)
+    let sessionUser = useSelector(state => state.session.user);
+    sessionUser = sessionUser ? sessionUser : undefined;
+    const allUsers = useSelector(getUsers);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const businessParam = useParams()
-    const [reviewBody, setReviewBody] = useState('')
-    const business = useSelector(getBusiness(businessParam.id))
-    const reviews = useSelector(getReviews(businessParam.id))
-    const [reviewCount, setReviewCount] = useState(0)
-    const [reviewsArray, setReviewsArray] = useState([])
+    const businessParam = useParams();
+    const [reviewBody, setReviewBody] = useState('');
+    const business = useSelector(getBusiness(businessParam.id));
+    const reviews = useSelector(getReviews(businessParam.id));
+    const [reviewCount, setReviewCount] = useState(0);
+    const [reviewsArray, setReviewsArray] = useState([]);
     console.log(reviews);
     useEffect(() => {
         if (!business) {
@@ -33,6 +35,10 @@ const BusinessItemShow = () => {
     useEffect(() => {
         dispatch(fetchUsers()).then(() => dispatch(fetchReviews()))
     }, [dispatch] )
+
+    const handleUpdateClick = () => {
+        navigate(`/business/${businessParam.id}/review/edit/1`)
+    };
 
     if (!business) return null;
     // useEffect(() => {
@@ -50,7 +56,8 @@ const BusinessItemShow = () => {
             deleteAndUpdateButtons = ( 
             <>
                 <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
-                <button className={styles.editReview} onClick={(e) => dispatch(updateReview(review))} key={review.id}> Update </button>
+                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick()}> Update </button>
+                {/* onClick={(e) => dispatch(updateReview(review))} key={review.id} */} 
             </>
             )
         }

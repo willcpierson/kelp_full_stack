@@ -64,7 +64,7 @@ const SearchBar = () => {
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
                     <label>
-                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder=" tacos, cheap dinner, Max's" onChange={(e) => setFood(e.target.value)}/>
+                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder="Search functionality coming soon" onChange={(e) => setFood(e.target.value)}/>
                     </label>
                     {/* <label>
                       <input type="text" name="search[location]" className={styles.searchbars} value={cityState} placeholder=" New York, NY" onChange={(e) => setCityState(e.target.value)}/>
