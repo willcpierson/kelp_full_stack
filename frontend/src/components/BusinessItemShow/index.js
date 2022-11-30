@@ -36,11 +36,11 @@ const BusinessItemShow = () => {
         dispatch(fetchUsers()).then(() => dispatch(fetchReviews()))
     }, [dispatch] )
 
-    const handleUpdateClick = (reviewId) => {
+    const handleUpdateClick = (review) => {
         navigate(`/business/${businessParam.id}/review/edit/17`, {
             state: {
                 businessId: businessParam.id,
-                reviewId: reviewId,
+                review: review,
             }
         });
     };
@@ -61,8 +61,8 @@ const BusinessItemShow = () => {
             deleteAndUpdateButtons = ( 
             <>
                 <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
-                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review.id)}> Update </button>
-                {/* onClick={(e) => dispatch(updateReview(review))} key={review.id} */} 
+                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review)}> Update </button>
+                {/* onClick={(e) => dispatch(updateReview(review))} key={review.id} // FOR ABOVE: test passing in an object that includes the review id AND review body, instead of just review.id*/} 
             </>
             )
         }
