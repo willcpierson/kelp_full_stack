@@ -12,6 +12,7 @@ class Api::FavoritesController < ApplicationController
         @favorite.business_id = params[:business_id]
         if @favorite.save!
             puts 'Successful favorite save!'
+            render json: ['completed']
         else
             puts 'Unsuccessful creation of a favorite'
         end

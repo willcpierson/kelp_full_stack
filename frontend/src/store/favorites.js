@@ -29,7 +29,7 @@ export const fetchFavorites = () => async dispatch => {
 
 export const createFavorite = (favorite) => async dispatch => {
     console.log('creating favorite...');
-    const res = await csrfFetch('api/favorites', {
+    const res = await csrfFetch('/api/favorites', {
         method: 'POST',
         body: JSON.stringify(favorite),
         headers: {

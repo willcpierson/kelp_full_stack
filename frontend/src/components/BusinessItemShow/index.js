@@ -37,7 +37,7 @@ const BusinessItemShow = () => {
     }, [dispatch] )
 
     const handleUpdateClick = (review) => {
-        navigate(`/business/${businessParam.id}/review/edit/17`, {
+        navigate(`/business/${businessParam.id}/review/edit/${review.id}`, {
             state: {
                 businessId: businessParam.id,
                 review: review,
