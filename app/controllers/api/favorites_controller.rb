@@ -4,6 +4,7 @@ class Api::FavoritesController < ApplicationController
 
     def index
         @favorites = Favorite.where(user_id: [params[:id]])
+        render :index
     end
 
     def create
@@ -12,7 +13,7 @@ class Api::FavoritesController < ApplicationController
         @favorite.business_id = params[:business_id]
         if @favorite.save!
             puts 'Successful favorite save!'
-            render json: ['completed']
+            render :show
         else
             puts 'Unsuccessful creation of a favorite'
         end
