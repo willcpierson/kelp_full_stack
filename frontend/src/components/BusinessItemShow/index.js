@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
 import { createReview, fetchReviews, getReviews, getReview, destroyReview,  updateReview } from "../../store/reviews";
+import { fetchFavorites, createFavorite } from "../../store/favorites";
 import { fetchUsers, getUsers } from "../../store/users";
 import * as sessionActions from '../../store/session'
 import { useParams, useNavigate } from "react-router-dom";
@@ -25,7 +26,7 @@ const BusinessItemShow = () => {
     const reviews = useSelector(getReviews(businessParam.id));
     const [reviewCount, setReviewCount] = useState(0);
     const [reviewsArray, setReviewsArray] = useState([]);
-    console.log(reviews);
+
     useEffect(() => {
         if (!business) {
             dispatch(fetchBusiness(businessParam.id))
@@ -46,8 +47,7 @@ const BusinessItemShow = () => {
     };
 
     if (!business) return null;
-    // useEffect(() => {
-    // }, [])
+
     const mappedReviews = reviews.map((review) => {
         let reviewUserName = ''
 
@@ -94,9 +94,10 @@ const BusinessItemShow = () => {
     const handleFavoriteSubmit =(e) => {
         e.preventDefault();
         console.log('favorite button clicked!')
+        console.log(businessParam.id)
+        const favoriteObject = {business_id: businessParam.id}
+        dispatch(createFavorite(favoriteObject))
     }
-
-    console.log(reviewsArray)
 
     return (
         <>  
