@@ -32,8 +32,8 @@ const ProfilePage = () => {
     if (!businesses) return null;
 
     const mappedBusinesses = businesses.map((business) => {
-        return <li>{business.name}</li>
-    });
+        return <BusinessListingsItem business={business} key={business.id} />
+});
 
 
 
