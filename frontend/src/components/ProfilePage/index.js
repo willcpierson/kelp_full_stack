@@ -16,7 +16,7 @@ const ProfilePage = () => {
         let array = [];
         favorites.forEach((favorite) => {
             if (favorite.userId === sessionUser.id) {
-                array.push(favorite.userId)
+                array.push(favorite.businessId)
             };
         });
         return array
