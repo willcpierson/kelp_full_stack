@@ -1,6 +1,7 @@
 import { NavLink, useNavigate, useSearchParams, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { fetchFavorites } from "../../store/favorites";
 import ProfileButton from "../ProfileButton";
 import BusinessListings from "../BusinessListings";
 import styles from './SearchBar.module.css'
@@ -8,6 +9,7 @@ import styles from './SearchBar.module.css'
 
 const SearchBar = () => {
     const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
     const [food, setFood] = useState("");
@@ -16,6 +18,10 @@ const SearchBar = () => {
     const [search, setSearch] = useSearchParams("");
     const [type, setType] = useState("all");
     
+    useEffect(() => {
+      dispatch(fetchFavorites());
+    }, [])
+
     let sessionLinks;
     if (sessionUser) {
       sessionLinks = (

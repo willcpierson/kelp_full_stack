@@ -3,20 +3,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchBusinesses, getFavoriteBusinesses } from "../../store/businesses";
 import BusinessListingsItem from "../BusinessListingItem";
+import { fetchFavorites, getFavorites } from "../../store/favorites";
 
 const ProfilePage = () => {
 
     const dispatch = useDispatch();
     let sessionUser = useSelector(state => state.session.user);
     sessionUser = sessionUser ? sessionUser : undefined;
-    const userFavoriteId = sessionUser.id;
-    const businessTestIdArray = [2, 1];
-    const businesses = useSelector(getFavoriteBusinesses(businessTestIdArray));
-    console.log(businesses)
+    const favorites = useSelector(getFavorites)
+
+    const currentUserFavorites = () => { 
+        let array = [];
+        favorites.forEach((favorite) => {
+            if (favorite.userId === sessionUser.id) {
+                array.push(favorite.userId)
+            };
+        });
+        return array
+    }
+    const businesses = useSelector(getFavoriteBusinesses(currentUserFavorites()));
 
     useEffect(() => {
         console.log('this hits') // not hitting lol
         dispatch(fetchBusinesses())
+        dispatch(fetchFavorites())
     }, [])
 
     if (!businesses) return null;
