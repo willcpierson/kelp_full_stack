@@ -133,8 +133,7 @@
 .submitReviewForm {
     background-color: rgb(240, 18, 18);
     border: 2px solid rgb(240, 18, 18);
-    display: flex;
-    justify-content: flex-start;
+    display: inline-block;
     color: white;
     border-radius: 3px;
     padding: 12px;
@@ -142,7 +141,6 @@
     padding-bottom: 8px;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 50px;
     font-size: 16px;
     font-weight: 700;
 }
@@ -150,4 +148,28 @@
 .submitReviewForm:hover {
     cursor: pointer;
     background-color: rgb(255, 19, 19);    
+}
+
+.submitFavoriteForm {
+    background-color: rgb(240, 18, 18);
+    border: 2px solid rgb(240, 18, 18);
+    display: inline-block;
+    color: white;
+    border-radius: 3px;
+    padding: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.submitFavoriteForm:hover {
+    cursor: pointer;
+}
+
+.buttonForm {
+    display: inline-block;
 }

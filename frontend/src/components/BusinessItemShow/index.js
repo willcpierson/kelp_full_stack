@@ -140,13 +140,15 @@ const BusinessItemShow = () => {
                 </p>
             </div>
             <br />
-            <form  onSubmit={handleSubmit}>
-                <textarea rows="3" className={styles.submitReview} type="text" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
-                <input className={styles.submitReviewForm} type="submit" value='Submit Review'/>
-            </form>
-            <form onSubmit={handleFavoriteSubmit}>
-            <input className={styles.submitReviewForm} type="submit" value='Add To Favorites'/>
-            </form>
+            <div id={styles.reviewAndFavoriteButtons}>
+                <form  onSubmit={handleSubmit} className={styles.buttonForm}>
+                    <textarea rows="3" className={styles.submitReview} type="text" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
+                    <input className={styles.submitReviewForm} type="submit" value='Submit Review'/>
+                </form>
+                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+                <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
+                </form>
+            </div>
             <div className={styles.reviews}>
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
                 {mappedReviews}
