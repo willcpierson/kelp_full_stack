@@ -29,7 +29,7 @@ const ProfilePage = () => {
         dispatch(fetchFavorites())
     }, [])
 
-    if (!businesses) return null;
+    if (!businesses) return null; // fix this to check each value for an undefined
 
     const mappedBusinesses = businesses.map((business) => {
         return <BusinessListingsItem business={business} key={business.id} />

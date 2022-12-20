@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
 import { createReview, fetchReviews, getReviews, getReview, destroyReview,  updateReview } from "../../store/reviews";
-import { fetchFavorites, createFavorite } from "../../store/favorites";
+import { fetchFavorites, createFavorite, getFavorites } from "../../store/favorites";
 import { fetchUsers, getUsers } from "../../store/users";
 import * as sessionActions from '../../store/session'
 import { useParams, useNavigate } from "react-router-dom";
@@ -23,6 +23,7 @@ const BusinessItemShow = () => {
     const businessParam = useParams();
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
+    // const favorites = useSelector(getFavorites())
     const reviews = useSelector(getReviews(businessParam.id));
     const [reviewCount, setReviewCount] = useState(0);
     const [reviewsArray, setReviewsArray] = useState([]);
@@ -31,6 +32,9 @@ const BusinessItemShow = () => {
         if (!business) {
             dispatch(fetchBusiness(businessParam.id))
         }
+        // if (!favorites) {
+        //     dispatch(fetchFavorites())
+        // }
     }, [businessParam.id])
 
     useEffect(() => {
@@ -47,6 +51,7 @@ const BusinessItemShow = () => {
     };
 
     if (!business) return null;
+    // if (!favorites) return null;
 
     const mappedReviews = reviews.map((review) => {
         let reviewUserName = ''

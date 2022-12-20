@@ -5,6 +5,7 @@ import { fetchFavorites } from "../../store/favorites";
 import ProfileButton from "../ProfileButton";
 import BusinessListings from "../BusinessListings";
 import styles from './SearchBar.module.css'
+import { fetchBusinesses } from "../../store/businesses";
 
 
 const SearchBar = () => {
@@ -20,6 +21,7 @@ const SearchBar = () => {
     
     useEffect(() => {
       dispatch(fetchFavorites());
+      dispatch(fetchBusinesses())
     }, [])
 
     let sessionLinks;

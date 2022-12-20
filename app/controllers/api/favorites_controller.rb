@@ -3,7 +3,7 @@ class Api::FavoritesController < ApplicationController
     before_action :require_logged_in, only: [:create, :destroy]
 
     def index
-        @favorites = Favorite.where(user_id: [params[:id]])
+        @favorites = Favorite.where(user_id: current_user.id)
         render :index
     end
 

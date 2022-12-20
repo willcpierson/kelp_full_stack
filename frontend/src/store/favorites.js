@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_FAVORITES = '/favorites/RECEIVE_FAVORITES'
 export const RECEIVE_FAVORITE = '/favorites/RECEIVE_FAVORITE'
+export const REMOVE_FAVORITE = '/favorites/REMOVE_FAVORITE'
 
 export const receiveFavorites = (favorites) => {
     return {
@@ -14,6 +15,13 @@ export const receiveFavorite = (favorite) => {
     return {
         type: RECEIVE_FAVORITE,
         favorite
+    }
+}
+
+export const removeFavorite = (favoriteId) => {
+    return {
+        type: REMOVE_FAVORITE,
+        favoriteId
     }
 }
 
@@ -40,6 +48,14 @@ export const createFavorite = (favorite) => async dispatch => {
     dispatch(receiveFavorite(data)) // may need singular fetch here
 };
 
+export const destroyFavorite = (favoriteId) => async dispatch => {
+    console.log('destroying favorite...');
+    const res = await csrfFetch(`/api/favorites/${favoriteId}`, {
+        method: 'DELETE'
+    })
+    dispatch(removeFavorite(favoriteId))
+}
+
 const favoritesReducer = ( state = {}, action ) => {
     let prevState = {...state}
     switch (action.type) {
@@ -51,6 +67,9 @@ const favoritesReducer = ( state = {}, action ) => {
             };
         case RECEIVE_FAVORITE:
             prevState[action.favorite.id] = action.favorite
+            return prevState
+        case REMOVE_FAVORITE:
+            delete prevState[action.favoriteId]
             return prevState
         default:
             return prevState;
