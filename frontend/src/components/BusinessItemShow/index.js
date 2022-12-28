@@ -18,12 +18,14 @@ const BusinessItemShow = () => {
     let sessionUser = useSelector(state => state.session.user);
     sessionUser = sessionUser ? sessionUser : undefined;
     const allUsers = useSelector(getUsers);
+    console.log(allUsers)
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const businessParam = useParams();
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
     // const favorites = useSelector(getFavorites())
+    const testFavoriteDelete = true // TEST TEST TEST TEST TEST DELETE LATER
     const reviews = useSelector(getReviews(businessParam.id));
     const [reviewCount, setReviewCount] = useState(0);
     const [reviewsArray, setReviewsArray] = useState([]);
@@ -58,7 +60,7 @@ const BusinessItemShow = () => {
 
         allUsers.forEach((user) => {
             if (user.id === review.userId) {
-                reviewUserName = (`${user.first_name} ${user.last_name}`)
+                reviewUserName = (`${user.firstName} ${user.lastName}`)
             };
         })
         let deleteAndUpdateButtons = ''
@@ -102,6 +104,22 @@ const BusinessItemShow = () => {
         console.log(businessParam.id)
         const favoriteObject = {business_id: businessParam.id}
         dispatch(createFavorite(favoriteObject))
+    }
+
+    const addRemoveFavorite = () => {
+        if (testFavoriteDelete) {
+            return (
+                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+                <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
+                </form>
+            );
+        } else {
+            return (
+                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+                <input className={styles.submitFavoriteForm} type="submit" value='Remove From Favorites'/>
+                </form>
+            )
+        }
     }
 
     return (
@@ -150,9 +168,7 @@ const BusinessItemShow = () => {
                     <textarea rows="3" className={styles.submitReview} type="text" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
                     <input className={styles.submitReviewForm} type="submit" value='Submit Review'/>
                 </form>
-                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
-                <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
-                </form>
+                {addRemoveFavorite()}
             </div>
             <div className={styles.reviews}>
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
