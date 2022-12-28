@@ -17,11 +17,11 @@ const BusinessItemShow = () => {
 
     let sessionUser = useSelector(state => state.session.user);
     sessionUser = sessionUser ? sessionUser : undefined;
+    const businessParam = useParams();
     const allUsers = useSelector(getUsers);
-    console.log(allUsers)
+    const allFavorites = useSelector(getFavorites)
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const businessParam = useParams();
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
     // const favorites = useSelector(getFavorites())
@@ -107,19 +107,40 @@ const BusinessItemShow = () => {
     }
 
     const addRemoveFavorite = () => {
-        if (testFavoriteDelete) {
-            return (
-                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
-                <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
-                </form>
-            );
-        } else {
-            return (
-                <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
-                <input className={styles.submitFavoriteForm} type="submit" value='Remove From Favorites'/>
-                </form>
-            )
-        }
+        if (!sessionUser) return null
+        allFavorites.forEach((favorite) => {
+            console.log(`1st arg; favorite.userId: ${favorite.userId}, sessionUser: ${sessionUser.id} | 2nd arg; favorite.businessId: ${favorite.businessId}, businessParam.id: ${businessParam.id} `)
+            console.log(favorite.userId === sessionUser.id)
+            console.log(favorite.businessId === parseInt(businessParam.id))
+            if (favorite.userId === sessionUser.id && favorite.businessId === parseInt(businessParam.id)) {
+                console.log('Remove Button Displaying...')
+                return (
+                    <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+                    <input className={styles.submitFavoriteForm} type="submit" value='Remove From Favorites'/>
+                    </form>
+                );
+            }
+        });
+
+        return (
+            <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+            <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
+            </form>
+        )
+
+        // if (testFavoriteDelete) {
+        //     return (
+        //         <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+        //         <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
+        //         </form>
+        //     );
+        // } else {
+        //     return (
+        //         <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
+        //         <input className={styles.submitFavoriteForm} type="submit" value='Remove From Favorites'/>
+        //         </form>
+        //     )
+        // }
     }
 
     return (
