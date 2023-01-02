@@ -17,17 +17,15 @@ const BusinessListings = () => {
     const businessType = type ? type : 'all' 
     const dispatch = useDispatch()
     const businesses = useSelector(getSpecificBusinesses())
-    // useEffect
-        // On every render of page we fetch inputted items
+
     useEffect(() => {
-        console.log(businesses)
         dispatch(fetchSpecificBusinesses(businessType))
     }, [type])
 
     const mappedBusinesses = businesses.map((business) => {
             return <BusinessListingsItem business={business} key={business.id} />
     });
-        // will eventually become businessItems, passing in props
+
     return (
         <>
             <SearchBar id={styles.searchBar}/>

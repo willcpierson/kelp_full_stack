@@ -22,8 +22,6 @@ const EditReview = (props) => {
     return (
         <> 
             <p>Hello from Edit Review</p>
-            <p>Business ID: {location.state.businessId}</p>
-            <p>Review ID: {location.state.review.id}</p>
             <form action="" onSubmit={handleSubmit}>
                 <input type="textarea" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)}/>
                 <input type="submit" value='Update Review'/>

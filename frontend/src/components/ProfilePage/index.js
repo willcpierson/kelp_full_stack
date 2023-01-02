@@ -24,12 +24,11 @@ const ProfilePage = () => {
     const businesses = useSelector(getFavoriteBusinesses(currentUserFavorites()));
 
     useEffect(() => {
-        console.log('this hits') // not hitting lol
         dispatch(fetchBusinesses())
         dispatch(fetchFavorites())
     }, [])
 
-    if (!businesses) return null; // fix this to check each value for an undefined
+    if (!businesses) return null;
 
     const mappedBusinesses = businesses.map((business) => {
         return <BusinessListingsItem business={business} key={business.id} />

@@ -8,7 +8,7 @@ import SearchBar from "../SearchBar";
 
 
 const HomePage = () => {
-    // If you ever encounter error with exact, doubleback here to li ele
+
     return (
         <>
             <div id={styles.homePage}>

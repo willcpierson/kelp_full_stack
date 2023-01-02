@@ -33,7 +33,6 @@ function LoginFormPage() {
         password,
       })
     ).catch(async (res) => {
-      console.log(res)
       let data;
       try {
         data = await res.clone().json();
@@ -43,8 +42,6 @@ function LoginFormPage() {
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
-      console.log(data.errors)
-      console.log(errors)
     });
   };
 

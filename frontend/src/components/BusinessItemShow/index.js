@@ -10,9 +10,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import EditReview from "../EditReview/EditReview";
 import styles from './BusinessItemShow.module.css'
 
-
-
-
 const BusinessItemShow = () => {
 
     let sessionUser = useSelector(state => state.session.user);
@@ -24,8 +21,6 @@ const BusinessItemShow = () => {
     const dispatch = useDispatch();
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
-    // const favorites = useSelector(getFavorites())
-    const testFavoriteDelete = true // TEST TEST TEST TEST TEST DELETE LATER
     const reviews = useSelector(getReviews(businessParam.id));
     const [reviewCount, setReviewCount] = useState(0);
     const [reviewsArray, setReviewsArray] = useState([]);
@@ -34,9 +29,6 @@ const BusinessItemShow = () => {
         if (!business) {
             dispatch(fetchBusiness(businessParam.id))
         }
-        // if (!favorites) {
-        //     dispatch(fetchFavorites())
-        // }
     }, [businessParam.id])
 
     useEffect(() => {
@@ -53,7 +45,6 @@ const BusinessItemShow = () => {
     };
 
     if (!business) return null;
-    // if (!favorites) return null;
 
     const mappedReviews = reviews.map((review) => {
         let reviewUserName = ''
@@ -90,8 +81,6 @@ const BusinessItemShow = () => {
         )
     });
 
-    // setReviewsArray(mappedReviews)
-
     const handleSubmit = (e) => {
         const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessParam.id}
         dispatch(createReview(reviewObject))
@@ -100,15 +89,12 @@ const BusinessItemShow = () => {
 
     const handleFavoriteSubmit =(e) => {
         e.preventDefault();
-        console.log('favorite button clicked!')
-        console.log(businessParam.id)
         const favoriteObject = {business_id: businessParam.id}
         dispatch(createFavorite(favoriteObject))
     }
 
     const handleFavoriteDelete = (e) => {
         e.preventDefault();
-        console.log('favorite remove button clicked!');
         let deleteFavoriteId = null
         allFavorites.forEach((favorite) => {
             if (favorite.userId === sessionUser.id && favorite.businessId === parseInt(businessParam.id)) {
@@ -121,12 +107,8 @@ const BusinessItemShow = () => {
         let removeIsTrue = false
         if (!sessionUser) return null
         allFavorites.forEach((favorite) => {
-            console.log(`1st arg; favorite.userId: ${favorite.userId}, sessionUser: ${sessionUser.id} | 2nd arg; favorite.businessId: ${favorite.businessId}, businessParam.id: ${businessParam.id} `)
-            console.log(favorite.userId === sessionUser.id)
-            console.log(favorite.businessId === parseInt(businessParam.id))
             if (favorite.userId === sessionUser.id && favorite.businessId === parseInt(businessParam.id)) {
-                console.log('Remove Button Displaying...')
-                removeIsTrue = true
+                removeIsTrue = true;      
             }
         });
 
@@ -143,20 +125,6 @@ const BusinessItemShow = () => {
                 </form>
             );
         }
-
-        // if (testFavoriteDelete) {
-        //     return (
-        //         <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
-        //         <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
-        //         </form>
-        //     );
-        // } else {
-        //     return (
-        //         <form onSubmit={handleFavoriteSubmit} className={styles.buttonForm}>
-        //         <input className={styles.submitFavoriteForm} type="submit" value='Remove From Favorites'/>
-        //         </form>
-        //     )
-        // }
     }
 
     return (

@@ -67,7 +67,6 @@ export const destroyReview = (reviewId) => async dispatch => {
 }
 
 export const updateReview = (review) => async dispatch => {
-    console.log(review)
     const res = await csrfFetch(`/api/reviews/${review.id}`, {
         method: 'PATCH',
         body: JSON.stringify(review),

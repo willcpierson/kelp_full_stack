@@ -50,13 +50,11 @@ const SearchBar = () => {
         // map over list of results and display as list items
         // navigate('/login?aa')
         
-        
         // Specifically do NOT wipe search bar after search
     }
 
     const handleSpecificSubmit = (e) => {
       e.preventDefault()
-      console.log(type)
       setListings(<BusinessListings food={food} location={cityState} type={type}/>)
       return navigate('/listings')
     }
@@ -107,7 +105,5 @@ const SearchBar = () => {
       </>
     );
 };
-
-/* <button className={styles.subSearch} onClick={(e) => console.log(type) && setType('auto')}>Piers</button> */ // Previous working build of preset search buttons
 
 export default SearchBar

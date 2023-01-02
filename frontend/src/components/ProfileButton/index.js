@@ -36,11 +36,9 @@ function ProfileButton({ user }) {
     };
 
     const handleClick = () => {
-      console.log('clicked Favorites button')
       return navigate(`/profile/${sessionUser.id}`)
     }
 
-    // user.firstName not pulling anything; I think it's because it's not included in the sessionUser; pull from DB? ANSWER: jbuilder! add to extract
     return (
       <>
         <button id="profile-button" onClick={openMenu}>

@@ -29,14 +29,12 @@ export const getFavorites = ({favorites}) => favorites ? Object.values(favorites
 export const getFavorite = (favoriteId) => ({favorites}) => favorites ? favorites[favoriteId] : null;
 
 export const fetchFavorites = () => async dispatch => {
-    console.log('catching all favorites...');
     const res = await csrfFetch('/api/favorites');
     const data = await res.json();
     dispatch(receiveFavorites(data.favorites));
 };
 
 export const createFavorite = (favorite) => async dispatch => {
-    console.log('creating favorite...');
     const res = await csrfFetch('/api/favorites', {
         method: 'POST',
         body: JSON.stringify(favorite),
@@ -49,7 +47,6 @@ export const createFavorite = (favorite) => async dispatch => {
 };
 
 export const destroyFavorite = (favoriteId) => async dispatch => {
-    console.log('destroying favorite...');
     const res = await csrfFetch(`/api/favorites/${favoriteId}`, {
         method: 'DELETE'
     })

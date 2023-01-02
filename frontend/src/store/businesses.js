@@ -19,24 +19,19 @@ export const receiveBusiness = (business) => {
 };
 
 export const fetchBusinesses = () => async dispatch => {
-    console.log('catching all businesses...')
     let res = await csrfFetch('/api/businesses')
     let data = await res.json()
-    console.log(data)
     dispatch(receiveBusinesses(data.businesses))
 }
 
 export const fetchSpecificBusinesses = (businessType) => async dispatch => {
-    console.log('catching specific businesses...')
     let res = await csrfFetch(`/api/businesses/category/${businessType}`) // ADD QUERY HERE (food key is true?)
     let data = await res.json()
     dispatch(receiveBusinesses(data.businesses))
 }
 
 export const fetchBusiness = (businessId) => async dispatch => {
-    console.log(businessId) //getting id now
     let res = await csrfFetch(`/api/businesses/${businessId}`)
-    console.log(res)
     let data = await res.json()
     dispatch(receiveBusiness(data))
 }
@@ -49,14 +44,12 @@ export const getBusiness = (businessId) => ({ businesses }) => businesses ? busi
 
 export const getFavoriteBusinesses = (favoriteBusinessesIds) => ({ businesses }) => {
     if (businesses) {
-        console.log(businesses)
       let favoriteBusinesses = []
       favoriteBusinessesIds.forEach((businessId) => {
         if (businessId) {
             favoriteBusinesses.push(businesses[businessId])
         }
       })
-      console.log(favoriteBusinesses)
       return favoriteBusinesses;
     } else {
         return []
