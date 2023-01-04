@@ -12,7 +12,6 @@ const EditReview = (props) => {
     const business = useSelector(getBusiness(location.state.businessId));
 
     useEffect(() => {
-        // console.log(location) remove when done with page
     }, []);
     
     const handleSubmit = (e) => {

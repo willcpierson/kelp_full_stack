@@ -84,3 +84,8 @@ production:
   database: kelp_production
   username: kelp
   password: <%= ENV["KELP_DATABASE_PASSWORD"] %>
+
+# might need to change to below:
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
