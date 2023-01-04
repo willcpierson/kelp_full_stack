@@ -12,18 +12,21 @@ const EditReview = (props) => {
     const business = useSelector(getBusiness(location.state.businessId));
 
     useEffect(() => {
-        console.log(location)
+        // console.log(location) remove when done with page
     }, []);
     
     const handleSubmit = (e) => {
         e.preventDefault();
         location.state.review.body = reviewBody;
         dispatch(updateReview(location.state.review));
+        // take user back to business page
+        // will need to use portal
     }
 
     return (
         <> 
             <p id={styles.kelplogo}>Kelp</p>
+            {/* add creation of portal to front page thru the logo onClick */}
             <form action="" onSubmit={handleSubmit}>
                 <h2 id={styles.businessName} >{business.name}</h2>
                 <br />
