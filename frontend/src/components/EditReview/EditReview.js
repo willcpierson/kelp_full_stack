@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updateReview } from "../../store/reviews";
 import { getBusiness } from "../../store/businesses";
@@ -8,23 +8,28 @@ import styles from './EditReview.module.css'
 const EditReview = (props) => {
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigate = useNavigate();
     const [reviewBody, setReviewBody] = useState(location.state.review.body);
     const business = useSelector(getBusiness(location.state.businessId));
 
     useEffect(() => {
     }, []);
     
+    const handleClick = (e) => {
+        e.preventDefault()
+        return navigate('/')
+      }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         location.state.review.body = reviewBody;
         dispatch(updateReview(location.state.review));
-        // take user back to business page
-        // will need to use portal
+        navigate(`/business/${business.id}`)
     }
 
     return (
         <> 
-            <p id={styles.kelplogo}>Kelp</p>
+            <p id={styles.kelpLogo} onClick={handleClick}>Kelp</p>
             {/* add creation of portal to front page thru the logo onClick */}
             <form action="" onSubmit={handleSubmit}>
                 <h2 id={styles.businessName} >{business.name}</h2>

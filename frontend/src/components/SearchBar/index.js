@@ -59,6 +59,10 @@ const SearchBar = () => {
       return navigate('/listings')
     }
 
+    const handleTempSearchSumbit = (e) => {
+      e.preventDefault()
+    }
+
     const handleClick = (e) => {
       e.preventDefault()
       return navigate('/')
@@ -66,7 +70,7 @@ const SearchBar = () => {
 
     return (
         <><div id={styles.searchBarDiv}>
-            <form id={styles.searchform} onSubmit={handleSearchSubmit}>
+            <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
                     <label>

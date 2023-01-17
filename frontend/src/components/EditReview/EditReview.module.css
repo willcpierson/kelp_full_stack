@@ -2,7 +2,7 @@
     width: 500px;
 }
 
-#kelplogo {
+#kelpLogo {
     display: block;
     color: rgb(240, 18, 18);
     font-size: x-large; 
@@ -13,6 +13,10 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid gray;
+}
+
+#kelpLogo:hover {
+    cursor: pointer;
 }
 
 #businessName {
@@ -34,4 +38,10 @@
     margin-left: 10px;
     font-size: 16px;
     font-weight: 700;
+}
+
+#submitUpdatedReview:hover {
+    cursor: pointer;
+    background-color: rgb(255, 41, 41);
+    border: 2px solid rgb(255, 41, 41);
 }
