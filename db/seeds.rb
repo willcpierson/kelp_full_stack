@@ -206,6 +206,31 @@ ApplicationRecord.transaction do
       user_id: 1,
       body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here :)"
     )
+
+    Review.create!(
+      business_id: 1,
+      user_id: 3,
+      body: "One of the fish kept looking at my child and I funny. Had to spend half of the day consoling my child, somebody needs to teach these fish some proper respect. Will not be returning."
+    )
   
+    Review.create!(
+      business_id: 1,
+      user_id: 7,
+      body: "Was visiting NYC and I heard I just HAD to go visit this aquarium. No regrets, one of the most memorable parts of the trip."
+    )
+
+    Review.create!(
+      business_id: 7,
+      user_id: 7,
+      body: "I love this business! Very hip!"
+    )
+
+    Review.create!(
+      business_id: 5,
+      user_id: 6,
+      body: "I'm allergic to fish and seawater, did NOT have a good time"
+    )
+
     puts "Done!"
+
   end
