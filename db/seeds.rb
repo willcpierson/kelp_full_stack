@@ -31,16 +31,63 @@ ApplicationRecord.transaction do
       password: 'password'
     )
   
-    # More users
-    10.times do 
-      User.create!({
+    User.create!({
         email: Faker::Internet.unique.email,
         first_name: 'Willard',
         last_name: 'Pillard',
         zip: 12345,
         password: 'password'
-      }) 
-    end
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Jeremy',
+        last_name: 'Apples',
+        zip: 86753,
+        password: 'password'
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Tony',
+        last_name: 'Hawk',
+        zip: 11221,
+        password: 'password'
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Johnny',
+        last_name: 'Brightside',
+        zip: 11226,
+        password: 'password'
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Augusta',
+        last_name: 'Summers',
+        zip: 27707,
+        password: 'password'
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Adam',
+        last_name: 'Lindgren',
+        zip: 38339,
+        password: 'password'
+    }) 
+
+    User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: 'Ken',
+        last_name: 'Marth',
+        zip: 27514,
+        password: 'password'
+    }) 
+
+    puts "creating Businesses..."
 
     hans_aquarium = Business.create!(
       name: "Han's Aquarium",
