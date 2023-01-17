@@ -16,18 +16,18 @@ const BusinessListingsItem = (props) => {
                     <li id={styles.businessList}>
                         <h2 id={styles.businessName}> {props.business.name}</h2>
                         <br />
-                        <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
-                        <br />
+                        {/* <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
+                        <br /> */}
                         <p id={styles.businessLocation}>{props.business.streetAddress}, {props.business.city}, {props.business.state}</p>
-                        <br />
-                        <p id={styles.itemAttributes}> {props.business.businessType} | Price indicator $$$ | Area</p>
+                        {/* <br />
+                        <p id={styles.itemAttributes}> {props.business.businessType} | Price indicator $$$ | Area</p> */}
                     </li>
                     
-                    <br />
+                    {/* <br />
                     <p id={styles.times}>Open until 10:30 PM</p>
                     <br />
                     <p id={styles.highestReview}>Highest Liked Review Goes Here</p>
-                    <br />
+                    <br /> */}
                 </div>
             </Link>
         </>

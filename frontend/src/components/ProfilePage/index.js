@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { fetchBusinesses, getFavoriteBusinesses } from "../../store/businesses";
 import BusinessListingsItem from "../BusinessListingItem";
 import { fetchFavorites, getFavorites } from "../../store/favorites";
+import styles from "./ProfilePage.module.css"
 
 const ProfilePage = () => {
 
@@ -39,9 +40,7 @@ const ProfilePage = () => {
     return (
         <>
         <SearchBar />
-        <h2>Hello from ProfilePage, {sessionUser.firstName} {sessionUser.lastName[0]}.</h2>
-        <h5>From New York, NY</h5>
-        <h3>Favorite Businesses</h3>
+        <h3 id={styles.mainHeader}> {sessionUser.firstName}'s Favorite Businesses</h3>
         <div>
             <ul>
                 {mappedBusinesses}
