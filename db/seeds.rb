@@ -123,6 +123,8 @@ ApplicationRecord.transaction do
 
     #Attaching Photos
 
+    puts 'Attaching Photos...'
+
     hans_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/Aqaurium.jpg')
     hans_aquarium.photo.attach(io: hans_file, filename: "aquarium.jpg")
 
@@ -150,7 +152,13 @@ ApplicationRecord.transaction do
     kats_file = URI.open('https://kelpfsp-seeds.s3.amazonaws.com/Aqaurium.jpg')
     kats_pier.photo.attach(io: kats_file, filename: "aquarium.jpg")
 
-    puts 'Attaching Photos...'
+    puts 'adding Reviews...'
+
+    Review.create!(
+      business_id: 1,
+      user_id: 1,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here :)"
+    )
   
     puts "Done!"
   end
