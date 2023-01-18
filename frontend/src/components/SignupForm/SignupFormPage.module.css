@@ -11,18 +11,22 @@
     font-weight: 600;
 }
 
-#signup-form {
+#header:hover {
+    cursor: pointer;
+}
+
+#signupForm {
     margin-top: 10%;
     display: flex;
     justify-content: space-around;
 }
 
-.signup-form-class {
+.signupFormClass {
     margin-left: 10%;
     display: inline-block;
 }
 
-.signup-inputs {
+.signupInputs {
     margin-top: 9px;
     margin-bottom: 3px;
     width: 220px;
@@ -30,14 +34,14 @@
 
 }
 
-.name-inputs {
+.nameInputs {
     width: 103px;
     height: 20px;
     margin-right: 3px;
     margin-left: 3px;
 }
 
-#signup-button {
+#signupButton {
     border: 1px solid rgb(209, 20, 20);
     background-color: rgb(209, 20, 20);
     padding: 10px;
@@ -52,7 +56,13 @@
     font-weight: 700;
 }
 
-#signup-kelpLogo {
+#signupButton:hover {
+    cursor: pointer;
+    border: 1px solid rgb(236, 42, 42);
+    background-color: rgb(236, 42, 42);
+}
+
+#signupKelpLogo {
     margin-right: 10%;
     display: inline-block;
 }

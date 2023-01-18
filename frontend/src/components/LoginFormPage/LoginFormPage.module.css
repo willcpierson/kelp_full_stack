@@ -1,4 +1,4 @@
-#titlepage {
+  #titlePage {
     display: block;
     justify-content: center;
     height: 25px;
@@ -9,6 +9,10 @@
     font-family: 'Questrial', sans-serif;
     font-size: 30px;
     font-weight: 600;
+  }
+
+  #titlePage:hover {
+    cursor: pointer;
   }
 
   #errors {
@@ -33,6 +37,10 @@
   #signupHere {
     margin-bottom: 10px;
     font-size: 14px
+  }
+
+  #signupHere:hover {
+    cursor: pointer;
   }
 
   h5 {
@@ -135,4 +143,8 @@
   
   main {
     background-color: white;
+  }
+
+  #newToKelp:hover {
+    cursor: pointer;
   }
