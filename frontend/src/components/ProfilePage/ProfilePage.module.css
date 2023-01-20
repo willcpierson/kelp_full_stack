@@ -1,3 +1,10 @@
 #mainHeader {
     margin-left: 25px;
 }
+
+#noFavorites {
+    margin-top: 30px;
+    margin-left: 35px;
+    color: black;
+    font-size: x-large;
+}

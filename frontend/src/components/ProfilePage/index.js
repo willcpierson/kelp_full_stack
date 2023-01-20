@@ -33,9 +33,16 @@ const ProfilePage = () => {
 
     const mappedBusinesses = businesses.map((business) => {
         return <BusinessListingsItem business={business} key={business.id} />
-});
+    });
 
-
+    
+    const favoriteBusinesses = () => {
+        if (mappedBusinesses.length <= 0) {
+            return <p id={styles.noFavorites}>You don't have any favorite businesses yet :/</p>
+        } else {
+            return mappedBusinesses
+        }
+    }
 
     return (
         <>
@@ -43,7 +50,7 @@ const ProfilePage = () => {
         <h3 id={styles.mainHeader}> {sessionUser.firstName}'s Favorite Businesses</h3>
         <div>
             <ul>
-                {mappedBusinesses}
+                {favoriteBusinesses()}
             </ul>
         </div>
         </>
