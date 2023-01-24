@@ -90,13 +90,13 @@ const SearchBar = () => {
                 <svg className={styles.downArrow}>
                   <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>
                   </svg>
-                <Link to={ { pathname: '/listings/bar' } } food={food} location={cityState} className={styles.subSearch}>
+                <Link to={ { pathname: '/listings/aquarium' } } food={food} location={cityState} className={styles.subSearch}>
                   Aquariums
                   <svg className={styles.downArrow}>
                   <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>
                   </svg>
                 </Link>
-                <Link to={ { pathname: '/listings/auto' } } food={food} location={cityState} className={styles.subSearch}>
+                <Link to={ { pathname: '/listings/pier' } } food={food} location={cityState} className={styles.subSearch}>
                   Piers
                   <svg className={styles.downArrow}>
                   <path d="M12 15.25a1 1 0 01-.7-.29l-4.58-4.5A1.011 1.011 0 018.12 9L12 12.85 15.88 9a1 1 0 111.4 1.42L12.7 15a1 1 0 01-.7.25z"></path>

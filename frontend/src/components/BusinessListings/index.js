@@ -1,18 +1,13 @@
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import csrfFetch from "../../store/csrf";
-import { fetchBusinesses, fetchSpecificBusinesses, getSpecificBusinesses, getBusinesses } from "../../store/businesses";
-import { useDispatch } from "react-redux";
-import { useParams, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchSpecificBusinesses, getSpecificBusinesses } from "../../store/businesses";
+import SearchBar from "../SearchBar";
 import BusinessListingsItem from "../BusinessListingItem";
 import styles from './BusinessListings.module.css'
-import SearchBar from "../SearchBar";
 
 
 const BusinessListings = () => {
-    const navigate = useNavigate()
     const { type } = useParams();
     const businessType = type ? type : 'all' 
     const dispatch = useDispatch()

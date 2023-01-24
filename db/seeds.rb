@@ -91,7 +91,7 @@ ApplicationRecord.transaction do
 
     hans_aquarium = Business.create!(
       name: "Han's Aquarium",
-      business_type: 'food',
+      business_type: 'aquarium', #food
       street_address: '123 Pizza Place',
       city: 'New York',
       zip: 11111,
@@ -99,7 +99,7 @@ ApplicationRecord.transaction do
     )
     daniels_aquarium = Business.create!(
       name: "Daniel's Aqua Party House",
-      business_type: 'food',
+      business_type: 'aquarium',
       street_address: '321 AppleJuice Lane',
       city: 'New York',
       zip: 11111,
@@ -107,7 +107,7 @@ ApplicationRecord.transaction do
     )
     williams_aquarium = Business.create!(
       name: "William's School For Fishies",
-      business_type: 'food',
+      business_type: 'aquarium',
       street_address: '64 Duplicate Drive',
       city: 'New York',
       zip: 13245,
@@ -116,7 +116,7 @@ ApplicationRecord.transaction do
 
     freddys_aquarium = Business.create!(
       name: "Freddy's Fancy Fish",
-      business_type: 'food',
+      business_type: 'aquarium',
       street_address: '64 Demonic Drive',
       city: 'New York',
       zip: 11111,
@@ -125,7 +125,7 @@ ApplicationRecord.transaction do
 
     mays_seafood = Business.create!(
       name: "May's Seafood Shop",
-      business_type: 'auto',
+      business_type: 'food', #auto
       street_address: 'The Planet Cybertron',
       city: 'Tron',
       zip: 99999,
@@ -134,7 +134,7 @@ ApplicationRecord.transaction do
 
     bens_seafood = Business.create!(
       name: "Ben's Baked Fish",
-      business_type: 'auto',
+      business_type: 'food',
       street_address: '123 ABC Street',
       city: 'New York',
       zip: 54321,
@@ -143,7 +143,7 @@ ApplicationRecord.transaction do
 
     paytons_pier = Business.create!(
       name: "Payton's Perfect Pier",
-      business_type: 'bar',
+      business_type: 'pier', #bar
       street_address: '2005 Flobots Avenue',
       city: 'New York',
       zip: 15243,
@@ -152,7 +152,7 @@ ApplicationRecord.transaction do
 
     ronnys_pier = Business.create!(
       name: "Ronny's Regular Pier",
-      business_type: 'bar',
+      business_type: 'pier',
       street_address: '77 Food Bar Lane',
       city: 'New York',
       zip: 11651,
@@ -161,7 +161,7 @@ ApplicationRecord.transaction do
 
     kats_pier = Business.create!(
       name: "Kat's Krazy Pier",
-      business_type: 'auto',
+      business_type: 'pier',
       street_address: ' 9876 Applejack Place',
       city: 'New York',
       zip: 12543,
