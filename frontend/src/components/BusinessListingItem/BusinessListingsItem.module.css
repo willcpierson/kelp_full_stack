@@ -16,7 +16,14 @@
     color: black;
 }
 
-#highestReview {
+#firstReview {
+    font-size: 14px;
+    color: black;
+}
+
+#firstReviewMissing {
+    font-size: 20px;
+    font-weight: bold;
     color: black;
 }
 

@@ -1,9 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getReviews } from '../../store/reviews';
 import styles from './BusinessListingsItem.module.css'
 
-
 const BusinessListingsItem = (props) => {
-    const photoPath = props.business.photoURL ? props.business.photoURL : ''
+    const photoPath = props.business.photoURL ? props.business.photoURL : '';
+    const allReviews = useSelector(getReviews(props.business.id));
+
+
+    const firstReview = () => {
+        if (allReviews[0]) {
+            return (
+                <p id={styles.firstReview}>{`"${allReviews[0].body}"`}</p>
+            );
+        } else {
+            return (
+                <p id={styles.firstReviewMissing}>No reviews yet... be the first! </p>
+            )
+        }
+    }
+    console.log(allReviews);
 
     // change street_address to streetAddress on translation
     return (
@@ -21,13 +37,9 @@ const BusinessListingsItem = (props) => {
                         <p id={styles.businessLocation}>{props.business.streetAddress}, {props.business.city}, {props.business.state}</p>
                         {/* <br />
                         <p id={styles.itemAttributes}> {props.business.businessType} | Price indicator $$$ | Area</p> */}
+                        <br />
+                        <p id={styles.firstReview}>{firstReview()}</p>
                     </li>
-                    
-                    {/* <br />
-                    <p id={styles.times}>Open until 10:30 PM</p>
-                    <br />
-                    <p id={styles.highestReview}>Highest Liked Review Goes Here</p>
-                    <br /> */}
                 </div>
             </Link>
         </>

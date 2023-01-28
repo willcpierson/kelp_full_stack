@@ -2,6 +2,7 @@ import { NavLink, useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { fetchFavorites } from "../../store/favorites";
+import { fetchReviews } from "../../store/reviews";
 import ProfileButton from "../ProfileButton";
 import BusinessListings from "../BusinessListings";
 import styles from './SearchBar.module.css'
@@ -21,7 +22,8 @@ const SearchBar = () => {
     
     useEffect(() => {
       dispatch(fetchFavorites());
-      dispatch(fetchBusinesses())
+      dispatch(fetchBusinesses());
+      dispatch(fetchReviews());
     }, [])
 
     let sessionLinks;
