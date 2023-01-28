@@ -19,53 +19,53 @@ export const receiveBusiness = (business) => {
 };
 
 export const fetchBusinesses = () => async dispatch => {
-    let res = await csrfFetch('/api/businesses')
-    let data = await res.json()
-    dispatch(receiveBusinesses(data.businesses))
+    let res = await csrfFetch('/api/businesses');
+    let data = await res.json();
+    dispatch(receiveBusinesses(data.businesses));
 }
 
 export const fetchSpecificBusinesses = (businessType) => async dispatch => {
-    let res = await csrfFetch(`/api/businesses/category/${businessType}`) // ADD QUERY HERE (food key is true?)
-    let data = await res.json()
-    dispatch(receiveBusinesses(data.businesses))
+    let res = await csrfFetch(`/api/businesses/category/${businessType}`);
+    let data = await res.json();
+    dispatch(receiveBusinesses(data.businesses));
 }
 
 export const fetchBusiness = (businessId) => async dispatch => {
-    let res = await csrfFetch(`/api/businesses/${businessId}`)
-    let data = await res.json()
-    dispatch(receiveBusiness(data))
+    let res = await csrfFetch(`/api/businesses/${businessId}`);
+    let data = await res.json();
+    dispatch(receiveBusiness(data));
 }
 
-export const getSpecificBusinesses = (type) => ( { businesses } ) => businesses ? Object.values(businesses) : []
+export const getSpecificBusinesses = (type) => ( { businesses } ) => businesses ? Object.values(businesses) : [];
 
-export const getBusinesses = ({ businesses }) => businesses ? Object.values(businesses) : []
+export const getBusinesses = ({ businesses }) => businesses ? Object.values(businesses) : [];
 
-export const getBusiness = (businessId) => ({ businesses }) => businesses ? businesses[businessId] : null 
+export const getBusiness = (businessId) => ({ businesses }) => businesses ? businesses[businessId] : null; 
 
 export const getFavoriteBusinesses = (favoriteBusinessesIds) => ({ businesses }) => {
     if (businesses) {
-      let favoriteBusinesses = []
+      let favoriteBusinesses = [];
       favoriteBusinessesIds.forEach((businessId) => {
         if (businessId) {
-            favoriteBusinesses.push(businesses[businessId])
+            favoriteBusinesses.push(businesses[businessId]);
         }
       })
       return favoriteBusinesses;
     } else {
-        return []
+        return [];
     }
 } ;
 
 const businessReducer = (state = {}, action ) => {
-    let prevState = {...state}
+    let prevState = {...state};
     switch (action.type) {
         case RECEIVE_BUSINESSES:
-            return action.businesses
+            return action.businesses;
         case RECEIVE_BUSINESS:
-            return {...prevState, [action.business.id]: action.business }
+            return {...prevState, [action.business.id]: action.business };
         default:
-            return prevState
+            return prevState;
     }
 } 
 
-export default businessReducer
+export default businessReducer;

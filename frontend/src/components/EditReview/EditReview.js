@@ -30,7 +30,6 @@ const EditReview = (props) => {
     return (
         <> 
             <p id={styles.kelpLogo} onClick={handleClick}>Kelp</p>
-            {/* add creation of portal to front page thru the logo onClick */}
             <form action="" onSubmit={handleSubmit}>
                 <h2 id={styles.businessName} >{business.name}</h2>
                 <br />

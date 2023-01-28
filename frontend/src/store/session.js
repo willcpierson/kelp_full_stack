@@ -38,8 +38,6 @@ export const sessionReducer = (state = initialState, action) => {
   }
 };
 
-//thunk action
-// user = { email: 'someVal', password: 'password' }
 export const loginUser = ({ credential, password }) => async (dispatch) => {
   let response = await csrfFetch("/api/session", {
     method: "POST",
@@ -50,13 +48,12 @@ export const loginUser = ({ credential, password }) => async (dispatch) => {
   });
 
   let data = await response.json();
-  //sessionStorage.setItem("currentUser", JSON.stringify(data.user));
   storeCurrentUser(data.user);
   dispatch(createSession(data.user));
 };
 
 export const signup = (user) => async (dispatch) => {
-  const { email, password, firstName, lastName, zip } = user; //firstName, lastName, zip
+  const { email, password, firstName, lastName, zip } = user;
   const response = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify({
@@ -77,8 +74,6 @@ export const logoutUser = () => async (dispatch) => {
     let response = await csrfFetch("/api/session", {
     method: "DELETE"
   });
-
-  //sessionStorage.setItem("currentUser", null);
   storeCurrentUser(null);
   dispatch(deleteSession());
 };
@@ -96,10 +91,4 @@ export const restoreSession = () => async (dispatch) => {
 const initialState = {
   user: JSON.parse(sessionStorage.getItem("currentUser")),
 };
-// const thunkMiddleWare = (store) => (next) => (action) => {
-//   if (typeof action === "function") {
-//     return action(store.dispatch, store.getState);
-//   }
-//   return next(action);
-// };
 

@@ -1,4 +1,3 @@
-import { receiveBusiness } from "./businesses";
 import csrfFetch from "./csrf";
 
 export const RECEIVE_USERS = 'users/RECEIVE_USERS'
@@ -40,11 +39,11 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USERS:
             return action.users
         case RECEIVE_USER:
-            prevState[action.user.id] = action.user // CURRENTLY EDITS USERS, DONT USE
+            prevState[action.user.id] = action.user
             return prevState
         default:
             return state
-    }
-}
+    };
+};
 
-export default usersReducer
+export default usersReducer;

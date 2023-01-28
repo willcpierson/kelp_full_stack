@@ -1,13 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
-import { fetchBusiness, getBusiness, getSpecificBusinesses } from "../../store/businesses";
-import { createReview, fetchReviews, getReviews, getReview, destroyReview,  updateReview } from "../../store/reviews";
-import { fetchFavorites, createFavorite, destroyFavorite, getFavorites } from "../../store/favorites";
+import { fetchBusiness, getBusiness } from "../../store/businesses";
+import { createReview, fetchReviews, getReviews, destroyReview } from "../../store/reviews";
+import { createFavorite, destroyFavorite, getFavorites } from "../../store/favorites";
 import { fetchUsers, getUsers } from "../../store/users";
-import * as sessionActions from '../../store/session'
 import { useParams, useNavigate } from "react-router-dom";
-import EditReview from "../EditReview/EditReview";
 import styles from './BusinessItemShow.module.css'
 
 const BusinessItemShow = () => {
@@ -22,8 +20,6 @@ const BusinessItemShow = () => {
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
     const reviews = useSelector(getReviews(businessParam.id));
-    const [reviewCount, setReviewCount] = useState(0);
-    const [reviewsArray, setReviewsArray] = useState([]);
 
     useEffect(() => {
         if (!business) {
@@ -60,7 +56,6 @@ const BusinessItemShow = () => {
             <>
                 <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
                 <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review)}> Update </button>
-                {/* onClick={(e) => dispatch(updateReview(review))} key={review.id} // FOR ABOVE: test passing in an object that includes the review id AND review body, instead of just review.id*/} 
             </>
             )
         }
@@ -179,8 +174,6 @@ const BusinessItemShow = () => {
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
                 {mappedReviews}
             </div>
-            
-
         </>
     );
 };

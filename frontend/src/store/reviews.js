@@ -37,11 +37,10 @@ export const getReviews = (businessId) => ({reviews}) => {
     } else {
         return [];
     }
-    // return reviews ? Object.values(reviews) : []
 };
 
 
-export const fetchReviews = () => async dispatch => { // Pass in the ID of the business
+export const fetchReviews = () => async dispatch => {
     const res = await csrfFetch(`/api/reviews`)
     const data = await res.json()
     dispatch(receiveReviews(data.reviews))

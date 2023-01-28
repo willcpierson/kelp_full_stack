@@ -10,10 +10,9 @@ function SignupFormPage() {
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [zip, setZip] = useState("") // Must be EXACTLY 5 characters; specify in users table
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [zip, setZip] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Navigate to="/" />;
@@ -21,7 +20,7 @@ function SignupFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, password, firstName, lastName, zip })) // Add firstName, lastName, ZIP, bday once added to users table
+      return dispatch(sessionActions.signup({ email, password, firstName, lastName, zip }))
         .catch(async (res) => {
         let data;
         try {

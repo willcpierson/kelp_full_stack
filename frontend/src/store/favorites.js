@@ -43,7 +43,7 @@ export const createFavorite = (favorite) => async dispatch => {
         }
     });
     const data = await res.json();
-    dispatch(receiveFavorite(data)) // may need singular fetch here
+    dispatch(receiveFavorite(data))
 };
 
 export const destroyFavorite = (favoriteId) => async dispatch => {

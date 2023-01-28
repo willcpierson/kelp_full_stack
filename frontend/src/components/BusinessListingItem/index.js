@@ -7,11 +7,13 @@ const BusinessListingsItem = (props) => {
     const photoPath = props.business.photoURL ? props.business.photoURL : '';
     const allReviews = useSelector(getReviews(props.business.id));
 
-
     const firstReview = () => {
         if (allReviews[0]) {
             return (
-                <p id={styles.firstReview}>{`"${allReviews[0].body}"`}</p>
+                <>
+                    <p id={styles.firstReview}>{`"${allReviews[0].body}"`}</p>
+                    <br />
+                </>
             );
         } else {
             return (
@@ -19,9 +21,7 @@ const BusinessListingsItem = (props) => {
             )
         }
     }
-    console.log(allReviews);
 
-    // change street_address to streetAddress on translation
     return (
         <>
             <Link id={styles.businessLink} to={`/business/${props.business.id}`} >
@@ -32,11 +32,7 @@ const BusinessListingsItem = (props) => {
                     <li id={styles.businessList}>
                         <h2 id={styles.businessName}> {props.business.name}</h2>
                         <br />
-                        {/* <p id={styles.rating}>Rating Goes Here |Float Rating avg | # of reviews</p>
-                        <br /> */}
                         <p id={styles.businessLocation}>{props.business.streetAddress}, {props.business.city}, {props.business.state}</p>
-                        {/* <br />
-                        <p id={styles.itemAttributes}> {props.business.businessType} | Price indicator $$$ | Area</p> */}
                         <br />
                         <p id={styles.firstReview}>{firstReview()}</p>
                     </li>
