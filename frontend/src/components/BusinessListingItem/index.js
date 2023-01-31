@@ -9,12 +9,22 @@ const BusinessListingsItem = (props) => {
 
     const firstReview = () => {
         if (allReviews[0]) {
-            return (
-                <>
-                    <p id={styles.firstReview}>{`"${allReviews[0].body}"`}</p>
-                    <br />
-                </>
-            );
+            if (allReviews[0].body.split('').length > 100) {
+                let shortenedReview = allReviews[0].body.slice(0, 101) + '...'
+                return (
+                    <>
+                        <p id={styles.firstReview}>{`"${shortenedReview}"`}</p>
+                        <br />
+                    </>
+                );
+            } else {
+                return (
+                    <>
+                        <p id={styles.firstReview}>{`"${allReviews[0].body}"`}</p>
+                        <br />
+                    </>
+                );
+            }
         } else {
             return (
                 <p id={styles.firstReviewMissing}>No reviews yet... be the first! </p>
