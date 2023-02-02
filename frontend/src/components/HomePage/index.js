@@ -10,14 +10,14 @@ const HomePage = () => {
 
     // }, []);
 
-    const carouselHomePage = () => {
-        setInterval(
-        if (background < 2) {
-            setBackground(background + 1)
-        } else {
-            setBackground(0)
-        });
-    };
+    // const carouselHomePage = () => {
+    //     setInterval(
+    //     if (background < 2) {
+    //         setBackground(background + 1)
+    //     } else {
+    //         setBackground(0)
+    //     });
+    // };
 
     return (
         <>
