@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 const HomePage = () => {
 
     const [background, setBackground] = useState(0);
+    const [color, setColor] = useState();
     
     // useEffect(() => {
 
@@ -18,6 +19,7 @@ const HomePage = () => {
     //         setBackground(0)
     //     });
     // };
+
 
     return (
         <>
