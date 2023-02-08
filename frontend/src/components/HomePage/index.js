@@ -7,17 +7,15 @@ const HomePage = () => {
     const [background, setBackground] = useState(0);
     const [color, setColor] = useState();
     
-    useEffect(() => {
-
-    }, []);
 
     const carouselHomePage = () => {
-            setBackground(background + 1);
             if (background === 1) {
+                setBackground(background + 1);
                 return (
                     <div id={styles.homePage1}> </div>
                 );
             } else if (background === 2) {
+                setBackground(background + 1);
                 return (
                     <div id={styles.homePage2}> </div>
                 );
@@ -29,11 +27,10 @@ const HomePage = () => {
             };
     };
 
-    setInterval(carouselHomePage(), 2000)
-
     return (
         <>
-            {setInterval(carouselHomePage(), 2000)}
+            {/* {setInterval(carouselHomePage(), 2000)} */}
+            <div id={styles.homePage1}> </div>
             <SearchBar id={styles.searchBar}/>
         </>
     );
