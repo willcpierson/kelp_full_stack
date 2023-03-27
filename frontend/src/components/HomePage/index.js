@@ -1,6 +1,7 @@
 import styles from './HomePage.module.css';
 import SearchBar from "../SearchBar";
 import { useState, useEffect } from 'react';
+import Carousel from '../Carousel';
 
 const HomePage = () => {
 
@@ -38,8 +39,8 @@ const HomePage = () => {
     return (
         <>
             {/* <div id={styles.homePage1}> </div> */}
-            {carouselHomePage()}
             <SearchBar id={styles.searchBar}/>
+            <Carousel />
         </>
     );
 };
