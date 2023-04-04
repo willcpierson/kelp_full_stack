@@ -73,7 +73,8 @@ const SearchBar = () => {
     }
 
     return (
-        <><div id={styles.searchBarDiv}>
+        <>
+          <div id={styles.searchBarDiv}>
             <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
@@ -108,8 +109,8 @@ const SearchBar = () => {
                 </Link>
 
             </form>
-          </div>
             {listings}
+          </div>
       </>
     );
 };

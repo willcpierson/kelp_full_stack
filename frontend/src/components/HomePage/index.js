@@ -39,8 +39,10 @@ const HomePage = () => {
     return (
         <>
             {/* <div id={styles.homePage1}> </div> */}
-            <SearchBar id={styles.searchBar}/>
-            <Carousel />
+            <div id={styles.container}>
+                <SearchBar id={styles.searchBar}/>
+                <Carousel />
+            </div>
         </>
     );
 };
