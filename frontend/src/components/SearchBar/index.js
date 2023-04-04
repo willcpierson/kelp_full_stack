@@ -20,6 +20,7 @@ const SearchBar = () => {
     const [listings, setListings] = useState(null);
     const [search, setSearch] = useSearchParams("");
     const [type, setType] = useState("all");
+    const [transparent, setTransparent] = useState(true);
     
     useEffect(() => {
       dispatch(fetchFavorites());
@@ -44,8 +45,8 @@ const SearchBar = () => {
 
     const handleSearchSubmit = (e) => {
         e.preventDefault();
-        setSearch(food)
-        setListings(<BusinessListings food={food} location={cityState} type={type}/>)
+        setSearch(food);
+        setListings(<BusinessListings food={food} location={cityState} type={type}/>);
         return navigate('/') // Have to double click to see items; 1st click resets, 2nd generates
 
         // pass in and populate cityState and food as props in BusinessListings, render CHECK
@@ -58,13 +59,14 @@ const SearchBar = () => {
     }
 
     const handleSpecificSubmit = (e) => {
-      e.preventDefault()
-      setListings(<BusinessListings food={food} location={cityState} type={type}/>)
-      return navigate('/listings')
+      e.preventDefault();
+      setTransparent(false);
+      setListings(<BusinessListings food={food} location={cityState} type={type}/>);
+      return navigate('/listings');
     }
 
     const handleTempSearchSumbit = (e) => {
-      e.preventDefault()
+      e.preventDefault();
     }
 
     const handleClick = (e) => {
