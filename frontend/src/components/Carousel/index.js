@@ -16,14 +16,24 @@ const Carousel = () => {
     useEffect(() => {
         const interval = setInterval(() => {
           setImageIndex((imageIndex + 1) % backgroundImages.length);
-          console.log(imageIndex)
-        }, 15000);
+          console.log(`loading ${imageIndex}...`)
+        }, 9000);
         return () => clearInterval(interval);
       }, [imageIndex]);
+
+    const setFollowingDivImage = () => {
+        console.log('loading following image...')
+        if (imageIndex === 2) {
+            return 0;
+        } else {
+            return imageIndex + 1;
+        };
+    };
 
     return (
         <div className={styles.carouselContainer}>
             <div className={styles.currentBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[imageIndex]})` }} />
+            <div className={styles.followingBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[setFollowingDivImage()]})` }}/>
         </div>
     );
 };
