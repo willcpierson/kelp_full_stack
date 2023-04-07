@@ -33,8 +33,10 @@
 
 #businessPreview {
     display: inline-block;
+    object-fit: cover;
     height: 225px;
     width: 225px;
+    border-radius: 4px;
 }
 
 #businessList {
