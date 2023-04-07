@@ -16,9 +16,33 @@
     color: black;
 }
 
+#firstReviewBox {
+    display: flex;
+    flex-direction: row;
+}
+
+#reviewIcon {
+    height: 16px;
+    width: 24px;
+}
+
 #firstReview {
-    font-size: 20px;
-    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgba(110, 112, 114, 1);
+}
+
+#moreReview {
+    display: inline-block;
+    color: rgba(2, 122, 151, 1);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#moreReview:hover {
+    text-decoration: underline;
 }
 
 #firstReviewMissing {
@@ -28,7 +52,10 @@
 }
 
 #itemBox {
-    padding: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #businessPreview {
@@ -37,10 +64,6 @@
     height: 225px;
     width: 225px;
     border-radius: 4px;
-}
-
-#businessList {
-    display: inline-block;
 }
 
 body {
