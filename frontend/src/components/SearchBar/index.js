@@ -43,6 +43,19 @@ const SearchBar = () => {
       );
     }
 
+    const fixedFunction = () => {
+      if (window.location.pathname == '/') {
+        console.log('works!');
+        return {position: "absolute"};
+      } else {
+        console.log('works for listings!');
+        return {
+          position: "sticky",
+          background: "white",
+        };
+      };
+    };
+
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         setSearch(food);
@@ -76,7 +89,7 @@ const SearchBar = () => {
 
     return (
         <>
-          <div id={styles.searchBarDiv}>
+          <div id={styles.searchBarDiv} style={fixedFunction()}>
             <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
