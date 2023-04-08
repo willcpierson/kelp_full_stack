@@ -1,5 +1,6 @@
 import styles from './HomePage.module.css';
 import SearchBar from "../SearchBar";
+import HomePageBusinessPreview from '../HomePageBusinessPreview';
 import { useState, useEffect } from 'react';
 import Carousel from '../Carousel';
 
@@ -12,6 +13,7 @@ const HomePage = () => {
                 <Carousel />
             </div>
             <h2 id={styles.nextReviewHeader}>Your Next Review Awaits</h2>
+            <HomePageBusinessPreview />
         </>
     );
 };

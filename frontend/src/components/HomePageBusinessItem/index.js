@@ -1,12 +1,12 @@
-
+import styles from './HomePageBusinessItem.module.css'
 
 
 const HomePageBusinessItem = () => {
 
 
     return (
-        <div>
-            
+        <div className={styles.homePageBusinessItemContainer}>
+                <h2>Business Item</h2>
         </div>
     );
 };
