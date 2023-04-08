@@ -1,6 +1,6 @@
 #homePageBusinessPreviewContainer {
     display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
+    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
 }

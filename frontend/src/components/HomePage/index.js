@@ -1,7 +1,6 @@
 import styles from './HomePage.module.css';
 import SearchBar from "../SearchBar";
 import HomePageBusinessPreview from '../HomePageBusinessPreview';
-import { useState, useEffect } from 'react';
 import Carousel from '../Carousel';
 
 const HomePage = () => {
