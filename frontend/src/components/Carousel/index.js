@@ -32,8 +32,9 @@ const Carousel = () => {
 
     return (
         <div className={styles.carouselContainer}>
-            <div className={styles.currentBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[imageIndex]})` }} />
-            <div className={styles.followingBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[setFollowingDivImage()]})` }}/>
+            <div className={styles.currentBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[0]})` }} />
+            <div className={styles.followingBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[1]})` }}/>
+            <div className={styles.followingBackgroundImage} style={{ backgroundImage: `url(${backgroundImages[2]})` }}/>
         </div>
     );
 };
