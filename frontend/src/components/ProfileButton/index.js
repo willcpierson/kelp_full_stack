@@ -6,7 +6,7 @@ import './ProfileButton.css'
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [showMenu, setShowMenu] = useState(false);
     let sessionUser = useSelector(state => state.session.user);
     sessionUser = sessionUser ? sessionUser : undefined;
@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
 
     const handleClick = () => {
       return navigate(`/profile/${sessionUser.id}`)
-    }
+    };
 
     return (
       <>
@@ -72,9 +72,9 @@ function ProfileButton({ user }) {
               Log Out
             </li>
           </ul>
-        )}
+        )};
       </>
     );
-  }
+  };
   
   export default ProfileButton;

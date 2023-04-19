@@ -19,12 +19,12 @@ function LoginFormPage() {
   if (sessionUser) return <Navigate to="/" />;
 
   const handleLogoClick = (e) => {
-    navigate('/')
-  }
+    navigate('/');
+  };
   
   const handleClickNew = (e) => {
-    navigate('/signup')
-  }
+    navigate('/signup');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,19 +49,18 @@ function LoginFormPage() {
 
   const demoHandleClick = (e) => {
     e.preventDefault();
-    setCredential('demo@user.io')
-    setPassword('password')
+    setCredential('demo@user.io');
+    setPassword('password');
     return dispatch (loginUser({
       credential,
       password
-    }))
-  }
+    }));
+  };
 
-  const errorPlacement = errors ? <h4 id={styles.errors}>{errors}</h4> : null
+  const errorPlacement = errors ? <h4 id={styles.errors}>{errors}</h4> : null;
 
   return (
     <>
-
     <main>
       <h1 id={styles.titlePage} onClick={handleLogoClick}>kelp</h1>
       {errorPlacement}
@@ -101,6 +100,6 @@ function LoginFormPage() {
       </main>
     </>
   );
-}
+};
 
 export default LoginFormPage;
