@@ -16,16 +16,16 @@ const EditReview = (props) => {
     }, []);
     
     const handleClick = (e) => {
-        e.preventDefault()
-        return navigate('/')
-      }
+        e.preventDefault();
+        return navigate('/');
+      };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         location.state.review.body = reviewBody;
         dispatch(updateReview(location.state.review));
-        navigate(`/business/${business.id}`)
-    }
+        navigate(`/business/${business.id}`);
+    };
 
     return (
         <> 
