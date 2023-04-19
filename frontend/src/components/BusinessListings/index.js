@@ -9,13 +9,13 @@ import styles from './BusinessListings.module.css'
 
 const BusinessListings = () => {
     const { type } = useParams();
-    const businessType = type ? type : 'all' 
-    const dispatch = useDispatch()
-    const businesses = useSelector(getSpecificBusinesses())
+    const businessType = type ? type : 'all' ;
+    const dispatch = useDispatch();
+    const businesses = useSelector(getSpecificBusinesses());
 
     useEffect(() => {
-        dispatch(fetchSpecificBusinesses(businessType))
-    }, [type])
+        dispatch(fetchSpecificBusinesses(businessType));
+    }, [type]);
 
     const mappedBusinesses = businesses.map((business) => {
             return <BusinessListingsItem business={business} key={business.id} />
