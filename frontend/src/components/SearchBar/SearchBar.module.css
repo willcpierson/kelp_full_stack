@@ -1,4 +1,7 @@
 #searchBarDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgb(0, 0, 0, 0));
     padding-bottom: 30px;
     top: 0;
@@ -9,9 +12,7 @@
 
 #searchform {
     display: flex;
-    justify-content: space-between;
-   
-    
+    justify-content: space-between; 
 }
 
 .pathDownArrow {
@@ -22,13 +23,17 @@
     display:inline-block;
     width: 60%;
     height: 45px;
-    margin-top: 20px;
     border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #allOfSearchBar {
-    display: inline-block;
-    width: 50%;
+    margin-top: 25px;
+    margin-left: 14%;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 60%;
 }
 
 /* #searchFood {
@@ -47,6 +52,13 @@
     padding-left: 5px;
     padding-right: 5px;
     transition: 300ms;
+}
+
+#searchIcon {
+    height: 24px;
+    width: 24px;
+    fill: white;
+    
 }
 
 #search:hover {
@@ -94,7 +106,9 @@
 }
 
 #sessionLinks {
-    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     width: 30%;
 }
 

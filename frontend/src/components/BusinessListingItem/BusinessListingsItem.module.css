@@ -16,6 +16,11 @@
     color: black;
 }
 
+#listingContent {
+    display: flex;
+    flex-direction: column;
+}
+
 #firstReviewBox {
     display: flex;
     flex-direction: row;

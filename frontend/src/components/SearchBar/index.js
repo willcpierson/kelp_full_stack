@@ -85,13 +85,15 @@ const SearchBar = () => {
             <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
-                    <label>
                       <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder="Search functionality coming soon" onChange={(e) => setFood(e.target.value)}/>
-                    </label>
                     {/* <label>
                       <input type="text" name="search[location]" className={styles.searchbars} value={cityState} placeholder=" New York, NY" onChange={(e) => setCityState(e.target.value)}/>
                     </label> */}
-                    <button type="submit" id={styles.search} value="Search">Search</button>
+                    <button type="submit" id={styles.search} value="Search">
+                      <svg id={styles.searchIcon}>
+                        <path d="M21.853 20.355l-3.444-3.443a9.428 9.428 0 10-16.761-6.171 9.428 9.428 0 0015.348 7.586l3.443 3.442a1 1 0 101.414-1.414zM5.82 16.245a7.429 7.429 0 115.253 2.175 7.38 7.38 0 01-5.253-2.176z"></path>
+                      </svg>
+                    </button>
                 </div>
                 <aside id={styles.sessionLinks}>
                   {sessionLinks}

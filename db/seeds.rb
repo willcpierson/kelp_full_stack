@@ -204,19 +204,24 @@ ApplicationRecord.transaction do
     Review.create!(
       business_id: 1,
       user_id: 1,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here :)"
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
     )
 
     Review.create!(
       business_id: 1,
       user_id: 3,
-      body: "One of the fish kept looking at my child and I funny. Had to spend half of the day consoling my child, somebody needs to teach these fish some proper respect. Will not be returning."
+      body: "One of the fish kept looking at my child and I funny. Had to spend half of the day consoling my child,
+       somebody needs to teach these fish some proper respect. Will not be returning."
     )
   
     Review.create!(
       business_id: 1,
       user_id: 7,
-      body: "Was visiting NYC and I heard I just HAD to go visit this aquarium. No regrets, one of the most memorable parts of the trip."
+      body: "Was visiting NYC and I heard I just HAD to go visit this aquarium. I've loved clown fish ever since I saw
+      the movie 'Finding Nemo'. Thankfully they had a beautiful clown fish exhibit, hundreds of them! Made me feel like a kid again,
+      very happy I chose to come here."
     )
 
     Review.create!(
@@ -228,7 +233,7 @@ ApplicationRecord.transaction do
     Review.create!(
       business_id: 5,
       user_id: 6,
-      body: "I'm allergic to fish and seawater, did NOT have a good time"
+      body: "I'm allergic to fish and seawater, did NOT have a good time."
     )
 
     puts "Done!"
