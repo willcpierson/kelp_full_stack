@@ -60,15 +60,7 @@ const SearchBar = () => {
         e.preventDefault();
         setSearch(food);
         setListings(<BusinessListings food={food} location={cityState} type={type}/>);
-        return navigate('/') // Have to double click to see items; 1st click resets, 2nd generates
-
-        // pass in and populate cityState and food as props in BusinessListings, render CHECK
-            // Might need to use useSearchParams. Have down for food but not yet for cityState
-        // use search values and fetch information from businesses controller backend
-        // map over list of results and display as list items
-        // navigate('/login?aa')
-        
-        // Specifically do NOT wipe search bar after search
+        return navigate('/');
     }
 
     const handleSpecificSubmit = (e) => {
