@@ -212,25 +212,17 @@ ApplicationRecord.transaction do
     Review.create!(
       business_id: 2,
       user_id: 2,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
-      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
-      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+      body: "To be honest I wasn't sure what to expect when I saw the sign for 'Daniel's Aqua Party House'... but I was
+      not disappointed! Lots of festivities, hands on exhibits with the sea creatures, and a nifty little gift shop at the end
+      of the tour! Pro Tip: Try the fish sticks in the dining area; a great taste for an even greater price!"
     )
 
     Review.create!(
       business_id: 3,
       user_id: 3,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
-      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
-      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
-    )
-
-    Review.create!(
-      business_id: 4,
-      user_id: 4,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
-      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
-      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+      body: "This 'business' is terribly advertised. The name would lead you to believe this was a fish school, where you could
+      teach your fish to do cool tricks and such, but in REALITY it's just a dingy little aquarium! Fish owners beware, security
+        wouldn't even let me take my darling clown fish through. Will not be returning."
     )
 
     Review.create!(
