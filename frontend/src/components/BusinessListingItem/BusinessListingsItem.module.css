@@ -21,6 +21,15 @@
     flex-direction: column;
 }
 
+#reviewScore {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewStar {
+    margin-right: 2px;
+}
+
 #firstReviewBox {
     display: flex;
     flex-direction: row;
