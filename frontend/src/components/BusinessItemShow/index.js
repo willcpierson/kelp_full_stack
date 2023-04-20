@@ -62,10 +62,12 @@ const BusinessItemShow = () => {
         
         return (
             <div key={review.id} className={styles.singleReview}>
-                <svg className={styles.reviewMenu}>
-                <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-                </svg>
-                <p className={styles.reviewerName}>{reviewUserName}</p>
+                <div className={styles.reviewUserInfo}>
+                    <p className={styles.reviewerName}>{reviewUserName}</p>
+                    <svg className={styles.reviewMenu}>
+                    <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                    </svg>
+                </div>
                 <p className={styles.cityState}> New York, NY </p>
                 <br />
                 <p> Rating: 4/5 | {review.created_at} </p>

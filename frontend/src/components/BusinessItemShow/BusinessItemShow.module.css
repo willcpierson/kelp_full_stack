@@ -70,7 +70,15 @@
     box-shadow: 0 0 18px #00000026;
 }
 
+.reviewUserInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
 .reviewMenu {
+    display: inline-block;
     width: 24px;
     height: 24px;
     border-radius: 20px;
@@ -79,6 +87,7 @@
 .reviewMenu:hover {
     background-color: rgb(192, 186, 186);
     cursor: pointer;
+    transition: 2s;
 }
 
 .paragraph {
