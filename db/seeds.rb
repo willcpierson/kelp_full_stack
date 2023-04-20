@@ -126,10 +126,10 @@ ApplicationRecord.transaction do
     mays_seafood = Business.create!(
       name: "May's Seafood Shop",
       business_type: 'food', #auto
-      street_address: 'The Planet Cybertron',
-      city: 'Tron',
+      street_address: '987 Fish Lane',
+      city: 'New York',
       zip: 99999,
-      state: 'Cyber'
+      state: 'NY'
     )
 
     bens_seafood = Business.create!(
@@ -210,10 +210,51 @@ ApplicationRecord.transaction do
     )
 
     Review.create!(
+      business_id: 2,
+      user_id: 2,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+    )
+
+    Review.create!(
+      business_id: 3,
+      user_id: 3,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+    )
+
+    Review.create!(
+      business_id: 4,
+      user_id: 4,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+    )
+
+    Review.create!(
+      business_id: 5,
+      user_id: 5,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+    )
+
+    Review.create!(
+      business_id: 6,
+      user_id: 6,
+      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
+      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
+      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+    )
+
+    Review.create!(
       business_id: 1,
       user_id: 3,
       body: "One of the fish kept looking at my child and I funny. Had to spend half of the day consoling my child,
-       somebody needs to teach these fish some proper respect. Will not be returning."
+       somebody needs to teach these fish some proper respect. Tried talking to management about their fish's horrible conduct (not professional)
+       but they kept requesting that I 'leave the premises'. Will not be returning."
     )
   
     Review.create!(
@@ -227,7 +268,10 @@ ApplicationRecord.transaction do
     Review.create!(
       business_id: 7,
       user_id: 7,
-      body: "I love this business! Very hip!"
+      body: "I love this business! Very hip! There were traveling performers doing a show by the end of the pier,
+      and my son was enamored by it! I though the carousel was the cherry on top, little Sally (my daughter) couldn't wait
+      to get on, and thankfully the line wasn't too long! Will definitely be returning and telling my friends this is a MUST see
+      attraction in New York!"
     )
 
     Review.create!(
