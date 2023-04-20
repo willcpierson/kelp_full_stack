@@ -228,17 +228,20 @@ ApplicationRecord.transaction do
     Review.create!(
       business_id: 5,
       user_id: 5,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
-      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
-      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+      body: "I've been looking for a romantic seafood restaurant where I could take my fiance. A couple of friends recommended this
+      hidden gem, and I'm happy to say I'll definitely be a regular from here on in! My husband got the popcorn shrimp, and I decided
+      I would go with the seared lobster. We shared plates and loved both entrees. Can't wait to be back and try the rest of the food
+      options, they look delicious!"
     )
 
     Review.create!(
       business_id: 6,
       user_id: 6,
-      body: "Han's Aquarium was an amazing experience! I've never felt more IMMERSED in the world of ocean life until my experience here.
-      walking through the underwater tunnels, seeing fish swim above our heads, truly an memory I will never forget.
-      The concessions were definitely a little bit on the expensive side however. Cost $4 for a bottle of water!"
+      body: "I'm not a picky eater, and I've been known to have an iron stomach. But this 'restaurant', if you can call it that,
+      has really tested the limits of what I can handle. My family of 5 and I have all had food poisoning since coming here, and it
+      wasn't until halfway through the meal, when I had to use the restroom, did I notice the 'D' level grade they had for cleanliness,
+      hidden behind the mini aquarium. I don't even know if that's legal. Any future newcomers, heed this warning and DO NOT SUPPORT THIS
+      BUSINESS!"
     )
 
     Review.create!(
