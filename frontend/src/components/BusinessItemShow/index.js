@@ -70,8 +70,8 @@ const BusinessItemShow = () => {
                 </div>
                 <p className={styles.cityState}> New York, NY </p>
                 <br />
-                <p> Rating: 4/5 | {review.created_at} </p>
-                <br />
+                {/* <p> Rating: 4/5 | {review.created_at} </p>
+                <br /> */}
                 <p review={review} className={styles.paragraph}> {review.body} </p>
                 {deleteAndUpdateButtons}
             </div>

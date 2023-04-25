@@ -11,6 +11,7 @@ import { fetchBusinesses } from "../../store/businesses";
 
 
 const SearchBar = () => {
+    console.log(window.location.pathname)
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
@@ -45,16 +46,28 @@ const SearchBar = () => {
 
     const fixedFunction = () => {
       if (window.location.pathname == '/') {
-        console.log('works!');
         return {position: "absolute"};
       } else {
-        console.log('works for listings!');
         return {
           position: "sticky",
           background: "white",
         };
       };
     };
+
+    const searchBarBorder = () => {
+        if (window.location.pathname == '/') {
+          console.log('no changes to searchbar');
+        } else {
+          return {
+            border: "1.5px solid black",
+            borderRight: "none",
+            borderRadiusTopLeft: "5px",
+            borderRadiusBottomLeft: "5px",
+            height: "42.5px"
+          };
+        };
+    }
 
     const handleSearchSubmit = (e) => {
         e.preventDefault();
@@ -85,7 +98,7 @@ const SearchBar = () => {
             <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
-                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} value={food} placeholder="Search functionality coming soon" onChange={(e) => setFood(e.target.value)}/>
+                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} style={searchBarBorder()} value={food} placeholder="Search functionality coming soon" onChange={(e) => setFood(e.target.value)}/>
                     {/* <label>
                       <input type="text" name="search[location]" className={styles.searchbars} value={cityState} placeholder=" New York, NY" onChange={(e) => setCityState(e.target.value)}/>
                     </label> */}
