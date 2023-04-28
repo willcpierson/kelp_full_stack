@@ -30,6 +30,15 @@ const SearchBar = () => {
       dispatch(fetchUsers());
     }, []);
 
+    const loginBorder = () => {
+      if (window.location.pathname !== '/') {
+        return {
+          border: "2px solid black",
+          color: "black"
+        };
+      };
+    };
+
     let sessionLinks;
     if (sessionUser) {
       sessionLinks = (
@@ -38,11 +47,11 @@ const SearchBar = () => {
     } else {
       sessionLinks = (
         <>
-          <NavLink id={styles.login} to="/login">Log In</NavLink>
+          <NavLink id={styles.login} style={loginBorder()} to="/login">Log In</NavLink>
           <NavLink id={styles.signup} to="/signup">Sign Up</NavLink>
         </>
       );
-    }
+    };
 
     const fixedFunction = () => {
       if (window.location.pathname == '/') {
@@ -67,16 +76,16 @@ const SearchBar = () => {
             height: "42.5px"
           };
         };
-    }
+    };
 
     const subSearchColor = () => {
       if (window.location.pathname !== '/') {
         return {
           fill: "black",
           color: "black"
-        }
-      }
-    }
+        };
+      };
+    };
 
     const handleSearchSubmit = (e) => {
         e.preventDefault();

@@ -25,11 +25,11 @@ const BusinessItemShow = () => {
         if (!business) {
             dispatch(fetchBusiness(businessParam.id))
         }
-    }, [businessParam.id])
+    }, [businessParam.id]);
 
     useEffect(() => {
         dispatch(fetchUsers()).then(() => dispatch(fetchReviews()))
-    }, [dispatch] )
+    }, [dispatch]);
 
     const handleUpdateClick = (review) => {
         navigate(`/business/${businessParam.id}/review/edit/${review.id}`, {
@@ -49,7 +49,7 @@ const BusinessItemShow = () => {
             if (user.id === review.userId) {
                 reviewUserName = (`${user.firstName} ${user.lastName}`)
             };
-        })
+        });
         let deleteAndUpdateButtons = ''
         if (sessionUser && review.userId === sessionUser.id) {
             deleteAndUpdateButtons = ( 
@@ -57,8 +57,8 @@ const BusinessItemShow = () => {
                 <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
                 <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review)}> Update </button>
             </>
-            )
-        }
+            );
+        };
         
         return (
             <div key={review.id} className={styles.singleReview}>
@@ -75,28 +75,28 @@ const BusinessItemShow = () => {
                 <p review={review} className={styles.paragraph}> {review.body} </p>
                 {deleteAndUpdateButtons}
             </div>
-        )
+        );
     });
 
     const handleSubmit = (e) => {
-        const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessParam.id}
-        dispatch(createReview(reviewObject))
-        setReviewBody('')
-    } 
+        const reviewObject = {body: reviewBody, user_id: sessionUser.id, business_id: businessParam.id};
+        dispatch(createReview(reviewObject));
+        setReviewBody('');
+    };
 
     const handleFavoriteSubmit =(e) => {
         e.preventDefault();
-        const favoriteObject = {business_id: businessParam.id}
-        dispatch(createFavorite(favoriteObject))
-    }
+        const favoriteObject = {business_id: businessParam.id};
+        dispatch(createFavorite(favoriteObject));
+    };
 
     const handleFavoriteDelete = (e) => {
         e.preventDefault();
-        let deleteFavoriteId = null
+        let deleteFavoriteId = null;
         allFavorites.forEach((favorite) => {
             if (favorite.userId === sessionUser.id && favorite.businessId === parseInt(businessParam.id)) {
-                dispatch(destroyFavorite(favorite.id))
-            }
+                dispatch(destroyFavorite(favorite.id));
+            };
         });
     };
 
@@ -106,7 +106,7 @@ const BusinessItemShow = () => {
         allFavorites.forEach((favorite) => {
             if (favorite.userId === sessionUser.id && favorite.businessId === parseInt(businessParam.id)) {
                 removeIsTrue = true;      
-            }
+            };
         });
 
         if (removeIsTrue) {
@@ -121,8 +121,8 @@ const BusinessItemShow = () => {
                 <input className={styles.submitFavoriteForm} type="submit" value='Add To Favorites'/>
                 </form>
             );
-        }
-    }
+        };
+    };
 
     return (
         <>  
