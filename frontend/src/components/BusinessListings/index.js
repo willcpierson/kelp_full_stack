@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchSpecificBusinesses, getSpecificBusinesses } from "../../store/businesses";
 import SearchBar from "../SearchBar";
 import BusinessListingsItem from "../BusinessListingItem";
-import styles from './BusinessListings.module.css'
+import styles from './BusinessListings.module.css';
 
 
 const BusinessListings = () => {
