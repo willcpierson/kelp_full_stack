@@ -26,6 +26,6 @@
     right: 0;
     top: 125px;
     z-index: -100;
-    background-image: url('../../../../app/assets/images/mapPlaceHolder.jpg');
+    background-image: url('../../../../app/assets/images/mapPlaceHolderText.jpg');
     background-size: cover;
 }

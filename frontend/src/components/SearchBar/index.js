@@ -116,7 +116,7 @@ const SearchBar = () => {
             <form id={styles.searchform} onSubmit={handleTempSearchSumbit}>
                 <h3 id={styles.kelplogo} onClick={handleClick}>Kelp</h3>
                 <div id={styles.allOfSearchBar}>
-                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} style={searchBarBorder()} value={food} placeholder="Search functionality coming soon" onChange={(e) => setFood(e.target.value)}/>
+                      <input type="text" name="search[food]" id={styles.searchFood} className={styles.searchbars} style={searchBarBorder()} value={food} placeholder="Search functionality coming soon!" onChange={(e) => setFood(e.target.value)}/>
                     {/* <label>
                       <input type="text" name="search[location]" className={styles.searchbars} value={cityState} placeholder=" New York, NY" onChange={(e) => setCityState(e.target.value)}/>
                     </label> */}
