@@ -1,5 +1,5 @@
 import styles from './KelpMap.module.css';
-import { Wrapper, GoogleMap } from '@googlemaps/react-wrapper';
+import { Wrapper } from '@googlemaps/react-wrapper';
 
 const KelpMap = () => {
 
