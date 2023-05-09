@@ -33,3 +33,10 @@
 
 # byebug
 .byebug_history
+
+#API Keys
+/frontend/env.development.local 
+
+#misc
+/frontend/node_modules
+/node_modules
