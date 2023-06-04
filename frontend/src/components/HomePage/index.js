@@ -11,8 +11,7 @@ const HomePage = () => {
                 <SearchBar id={styles.searchBar}/>
                 <Carousel />
             </div>
-            {/* <h2 id={styles.nextReviewHeader}>Your Next Review Awaits</h2>
-            <HomePageBusinessPreview /> */}
+            <HomePageBusinessPreview />
         </>
     );
 };

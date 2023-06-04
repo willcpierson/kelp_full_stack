@@ -14,6 +14,7 @@ const HomePageBusinessPreview = () => {
 
     return (
         <div id={styles.HomePageBusinessPreviewContainer}>
+            <h1 id={styles.checkOutTheseBusinesses}>Check out these businesses</h1>
             {/* {mappedBusinesses} */}
             <HomePageBusinessItem />
             <HomePageBusinessItem />
