@@ -26,6 +26,7 @@ const HomePageBusinessPreview = () => {
             <HomePageBusinessItem />
             <HomePageBusinessItem />
             <HomePageBusinessItem />
+            <h4></h4>
         </div>
     );
 };
