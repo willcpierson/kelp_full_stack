@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchSpecificBusinesses, getSpecificBusinesses } from "../../store/businesses";
 import SearchBar from "../SearchBar";
 import BusinessListingsItem from "../BusinessListingItem";
+import KelpMap from "../KelpMap";
 import styles from './BusinessListings.module.css';
 
 
@@ -30,7 +31,8 @@ const BusinessListings = () => {
                 {mappedBusinesses}
             </ol>
             <aside id={styles.googleMap}>
-                <img src="" alt="" />
+                {/* <img src="" alt="" /> */}
+                <KelpMap />
             </aside>
         </>
     );
