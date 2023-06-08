@@ -5,13 +5,13 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 const KelpMap = () => {
 
     const containerStyle = {
-        width: '500px',
-        height: '800px'
+        width: '455px',
+        height: '500px'
       };
       
       const center = {
-        lat: -3.745,
-        lng: -38.523
+        lat: 40.7831,
+        lng: -73.9712
       };
 
     return (
@@ -20,7 +20,7 @@ const KelpMap = () => {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={10}
+                    zoom={11}
                 >
                 </GoogleMap>
             </LoadScript>
