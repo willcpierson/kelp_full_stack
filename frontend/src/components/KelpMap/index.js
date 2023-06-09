@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const KelpMap = () => {
 
-    const API_KEY = process.env.GOOGLEMAPS_API_KEY
+    const API_KEY = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
 
     const containerStyle = {
         width: '455px',
