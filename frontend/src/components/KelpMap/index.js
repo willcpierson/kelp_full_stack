@@ -16,9 +16,6 @@ const KelpMap = () => {
         lng: -73.9712
       };
 
-
-      
-
     return (
         <>
             <LoadScript googleMapsApiKey={API_KEY}>
