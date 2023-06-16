@@ -95,7 +95,9 @@ ApplicationRecord.transaction do
       street_address: '123 Pizza Place',
       city: 'New York',
       zip: 11111,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.766487,
+      lng: -73.983467
     )
     daniels_aquarium = Business.create!(
       name: "Daniel's Aqua Party House",
@@ -103,7 +105,9 @@ ApplicationRecord.transaction do
       street_address: '321 AppleJuice Lane',
       city: 'New York',
       zip: 11111,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.753288,
+      lng: -73.979601
     )
     williams_aquarium = Business.create!(
       name: "William's School For Fishies",
@@ -111,7 +115,9 @@ ApplicationRecord.transaction do
       street_address: '64 Duplicate Drive',
       city: 'New York',
       zip: 13245,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.760296,
+      lng: -73.995682
     )
 
     freddys_aquarium = Business.create!(
@@ -120,7 +126,9 @@ ApplicationRecord.transaction do
       street_address: '64 Demonic Drive',
       city: 'New York',
       zip: 11111,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.743021,
+      lng: -73.980637
     )
 
     mays_seafood = Business.create!(
@@ -129,7 +137,9 @@ ApplicationRecord.transaction do
       street_address: '987 Fish Lane',
       city: 'New York',
       zip: 99999,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.734869,
+      lng: -73.998457
     )
 
     bens_seafood = Business.create!(
@@ -138,7 +148,9 @@ ApplicationRecord.transaction do
       street_address: '123 ABC Street',
       city: 'New York',
       zip: 54321,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.718238,
+      lng: -73.995239
     )
 
     paytons_pier = Business.create!(
@@ -147,7 +159,9 @@ ApplicationRecord.transaction do
       street_address: '2005 Flobots Avenue',
       city: 'New York',
       zip: 15243,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.721237,
+      lng: -74.013843
     )
 
     ronnys_pier = Business.create!(
@@ -156,7 +170,9 @@ ApplicationRecord.transaction do
       street_address: '77 Food Bar Lane',
       city: 'New York',
       zip: 11651,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.733144,
+      lng: -74.011828
     )
 
     kats_pier = Business.create!(
@@ -165,7 +181,9 @@ ApplicationRecord.transaction do
       street_address: ' 9876 Applejack Place',
       city: 'New York',
       zip: 12543,
-      state: 'NY'
+      state: 'NY',
+      lat: 40.705380,
+      lng: -74.001440
     )
 
     #Attaching Photos
