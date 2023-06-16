@@ -32,7 +32,7 @@ const BusinessListings = () => {
             </ol>
             <aside id={styles.googleMap}>
                 {/* <img src="" alt="" /> */}
-                <KelpMap business={businesses} />
+                <KelpMap businesses={businesses} />
             </aside>
         </>
     );

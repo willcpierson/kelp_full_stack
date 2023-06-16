@@ -2,7 +2,7 @@ import styles from './KelpMap.module.css';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const KelpMap = (props) => {
+const KelpMap = ( {businesses} ) => {
 
     const API_KEY = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
 
@@ -12,15 +12,15 @@ const KelpMap = (props) => {
       };
       
       const center = {
-        lat: 40.7831,
-        lng: -73.9712
+        lat: 40.735361,
+        lng: -73.993242
       };
 
-      const placeAllMarkers = () => {
+      const placeAllMarkers = businesses.map((business) => {
+        return <Marker position={ {lat: business.lat, lng: business.lng} }/>
+      });
 
-      }
-
-      console.log(props.business);
+      console.log(businesses);
 
     return (
         <>
@@ -28,9 +28,9 @@ const KelpMap = (props) => {
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={11}
+                    zoom={11.75}
                 >
-                    <Marker  position={ { lat: 40.7831, lng: -73.9712 } }/>
+                    {placeAllMarkers}
                 </GoogleMap>
             </LoadScript>
         </>
