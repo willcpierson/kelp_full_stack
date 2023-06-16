@@ -5,7 +5,6 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 const KelpMap = () => {
 
     const API_KEY = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
-    
 
     const containerStyle = {
         width: '455px',
@@ -25,6 +24,7 @@ const KelpMap = () => {
                     center={center}
                     zoom={11}
                 >
+                    <Marker  position={ { lat: 40.7831, lng: -73.9712 } }/>
                 </GoogleMap>
             </LoadScript>
         </>
