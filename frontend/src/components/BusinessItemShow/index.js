@@ -6,7 +6,8 @@ import { createReview, fetchReviews, getReviews, destroyReview } from "../../sto
 import { createFavorite, destroyFavorite, getFavorites } from "../../store/favorites";
 import { fetchUsers, getUsers } from "../../store/users";
 import { useParams, useNavigate } from "react-router-dom";
-import styles from './BusinessItemShow.module.css'
+import styles from './BusinessItemShow.module.css';
+import KelpMap from "../KelpMap";
 
 const BusinessItemShow = () => {
 
@@ -20,6 +21,8 @@ const BusinessItemShow = () => {
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
     const reviews = useSelector(getReviews(businessParam.id));
+
+    console.log(business)
 
     useEffect(() => {
         if (!business) {
@@ -70,8 +73,6 @@ const BusinessItemShow = () => {
                 </div>
                 <p className={styles.cityState}> New York, NY </p>
                 <br />
-                {/* <p> Rating: 4/5 | {review.created_at} </p>
-                <br /> */}
                 <p review={review} className={styles.paragraph}> {review.body} </p>
                 {deleteAndUpdateButtons}
             </div>
@@ -176,6 +177,7 @@ const BusinessItemShow = () => {
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
                 {mappedReviews}
             </div>
+            <KelpMap businesses={business} />
         </>
     );
 };
