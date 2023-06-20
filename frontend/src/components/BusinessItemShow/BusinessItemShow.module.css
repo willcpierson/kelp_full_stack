@@ -182,3 +182,14 @@
 .buttonForm {
     display: inline-block;
 }
+
+#googleMap {
+    display: inline-block;
+    height: 90%;
+    width: 35%;
+    position: fixed;
+    right: 0;
+    top: 125px;
+    z-index: -100;
+    background-size: cover;
+}
