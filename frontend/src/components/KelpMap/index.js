@@ -17,8 +17,8 @@ const KelpMap = ( {businesses} ) => {
       };
 
       if (!Array.isArray(businesses)) {
-        businesses = [ businesses ]
-      }
+        businesses = [ businesses ];
+      };
 
       const placeAllMarkers = businesses.map((business) => {
         return <Marker position={ {lat: business.lat, lng: business.lng} }/>
