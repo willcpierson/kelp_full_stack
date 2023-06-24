@@ -20,8 +20,8 @@ const KelpMap = ( {businesses} ) => {
         businesses = [ businesses ];
       };
 
-      const placeAllMarkers = businesses.map((business) => {
-        return <Marker position={ {lat: business.lat, lng: business.lng} }/>
+      const placeAllMarkers = businesses.map((business, index) => {
+        return <Marker id={index} position={ {lat: business.lat, lng: business.lng} }/>
       });
 
     return (
