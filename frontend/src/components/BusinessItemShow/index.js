@@ -177,9 +177,9 @@ const BusinessItemShow = () => {
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
                 {mappedReviews}
             </div>
-            <aside id={styles.googleMap}>
+            {/* <aside id={styles.googleMap}>
                 <KelpMap businesses={business} />
-            </aside>
+            </aside> */}
         </>
     );
 };
