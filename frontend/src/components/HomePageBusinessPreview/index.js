@@ -15,18 +15,19 @@ const HomePageBusinessPreview = () => {
     return (
         <div id={styles.HomePageBusinessPreviewContainer}>
             <h1 id={styles.checkOutTheseBusinesses}>Check out these businesses</h1>
+            <div id={styles.businessesGrid}>
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+                <HomePageBusinessItem />
+            </div>
             {/* {mappedBusinesses} */}
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <HomePageBusinessItem />
-            <h4></h4>
         </div>
     );
 };
