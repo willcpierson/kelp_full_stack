@@ -31,7 +31,6 @@ const BusinessListings = () => {
                 {mappedBusinesses}
             </ol>
             <aside id={styles.googleMap}>
-                {/* <img src="" alt="" /> */}
                 <KelpMap businesses={businesses} />
             </aside>
         </>
