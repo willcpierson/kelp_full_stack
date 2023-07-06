@@ -9,6 +9,7 @@ const HomePageBusinessItem = (props) => {
     
     const dispatch = useDispatch();
     const business = useSelector(getBusiness(props.business));
+    const photoPath = props.business.photoURL ? props.business.photoURL : '';
 
     useEffect(() => {
         if (!business) {
@@ -20,11 +21,11 @@ const HomePageBusinessItem = (props) => {
         return <p>Loading...</p>
     } else {
         return (
-            <div className={styles.homePageBusinessItemContainer}>
+            <Link className={styles.homePageBusinessItemContainer} to={`/business/${props.business}`}>
                     <h2>Business Item {props.business}</h2>
                     <p>{business.name}</p>
-                    <p></p>
-            </div>
+                    <p>ID Number: {props.business}</p>
+            </Link>
         );
     };
 };
