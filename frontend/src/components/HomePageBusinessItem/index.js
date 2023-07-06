@@ -16,13 +16,17 @@ const HomePageBusinessItem = (props) => {
         }
     }, []);
 
-
-    return (
-        <div className={styles.homePageBusinessItemContainer}>
-                <h2>Business Item {props.business}</h2>
-                <p>{business.name}</p>
-        </div>
-    );
+    if (!business) {
+        return <p>Loading...</p>
+    } else {
+        return (
+            <div className={styles.homePageBusinessItemContainer}>
+                    <h2>Business Item {props.business}</h2>
+                    <p>{business.name}</p>
+                    <p></p>
+            </div>
+        );
+    };
 };
 
 export default HomePageBusinessItem;
