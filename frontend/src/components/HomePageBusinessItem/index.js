@@ -22,9 +22,12 @@ const HomePageBusinessItem = (props) => {
     } else {
         return (
             <Link className={styles.homePageBusinessItemContainer} to={`/business/${props.business}`}>
-                    <h2>Business Item {props.business}</h2>
-                    <p>{business.name}</p>
-                    <p>ID Number: {props.business}</p>
+                <aside>
+                    <img id={styles.businessPhoto} src={business.photoURL}/>
+                </aside>
+                <h2>Business Item {props.business}</h2>
+                <p>{business.name}</p>
+                <p>ID Number: {props.business}</p>
             </Link>
         );
     };

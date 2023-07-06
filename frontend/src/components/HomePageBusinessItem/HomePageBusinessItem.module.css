@@ -1,5 +1,7 @@
 .homePageBusinessItemContainer {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    
     border: 1px solid black;
     height: 200px;
     width: 40%;
@@ -7,3 +9,14 @@
     margin-right: 2.5%;
 }
 
+#picture {
+    display: inline-block;
+}
+
+#businessPhoto {
+    display: inline-block;
+    object-fit: cover;
+    height: 175px;
+    width: 175px;
+    border-radius: 4px;
+}

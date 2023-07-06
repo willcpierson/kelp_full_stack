@@ -41,7 +41,7 @@ const BusinessListingsItem = (props) => {
     return (
         <>
             <Link id={styles.businessLink} to={`/business/${props.business.id}`} >
-                <aside>
+                <aside ide={styles.picture}>
                 <img id={styles.businessPreview} src={photoPath}/>
                 </aside>
                 <div id={styles.itemBox}>
