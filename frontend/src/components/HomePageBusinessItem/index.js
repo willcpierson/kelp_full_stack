@@ -25,9 +25,10 @@ const HomePageBusinessItem = (props) => {
                 <aside>
                     <img id={styles.businessPhoto} src={business.photoURL}/>
                 </aside>
-                <h2>Business Item {props.business}</h2>
-                <p>{business.name}</p>
-                <p>ID Number: {props.business}</p>
+                <aside>
+                    <h2 id={styles.businessName}>{business.name}</h2>
+                    <p>ID Number: {props.business}</p>
+                </aside>
             </Link>
         );
     };

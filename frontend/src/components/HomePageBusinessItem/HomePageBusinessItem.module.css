@@ -1,7 +1,7 @@
 .homePageBusinessItemContainer {
     display: flex;
     flex-direction: row;
-    
+    justify-content: flex-start;
     border: 1px solid black;
     height: 200px;
     width: 40%;
@@ -16,7 +16,13 @@
 #businessPhoto {
     display: inline-block;
     object-fit: cover;
-    height: 175px;
-    width: 175px;
+    width: 200px;
+    height: 200px;
     border-radius: 4px;
+}
+
+#businessName {
+    color: black;
+    font-weight: 700;
+    font-size: 25px;
 }
