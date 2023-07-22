@@ -9,9 +9,7 @@
     margin-bottom: 40px;
 };
 
-.homePageBusinesses {
-    background-color: red;
+#homePageBusinesses {
     display: flex;
     flex-wrap: wrap;
-}
-
+};
