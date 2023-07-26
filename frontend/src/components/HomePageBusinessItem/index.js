@@ -2,7 +2,7 @@ import styles from './HomePageBusinessItem.module.css'
 import { getBusiness,fetchBusiness } from '../../store/businesses';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const HomePageBusinessItem = (props) => {
@@ -10,6 +10,7 @@ const HomePageBusinessItem = (props) => {
     const dispatch = useDispatch();
     const business = useSelector(getBusiness(props.business));
     const photoPath = props.business.photoURL ? props.business.photoURL : '';
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!business) {
@@ -17,11 +18,15 @@ const HomePageBusinessItem = (props) => {
         }
     }, []);
 
+    const handleClick = () => {
+        return navigate(`/business/${business.id}`)
+    }
+
     if (!business) {
         return <p>Loading...</p>
     } else {
             return (
-                <div id={styles.displayInlineBlock}>
+                <div id={styles.displayInlineBlock} onClick={handleClick}>
                     <div className={styles.homePageBusinessItemContainer}>
                         <aside>
                             <img id={styles.businessPhoto} src={business.photoURL}/>
