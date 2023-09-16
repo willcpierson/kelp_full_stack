@@ -33,7 +33,7 @@ const BusinessListingsItem = (props) => {
             }
         } else {
             return (
-                <p id={styles.firstReviewMissing}>No reviews yet... be the first! </p>
+                <p id={styles.firstReviewMissing}>No reviews yet... be the first!</p>
             );
         };
     };
