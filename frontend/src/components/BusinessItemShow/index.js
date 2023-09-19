@@ -8,6 +8,7 @@ import { fetchUsers, getUsers } from "../../store/users";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from './BusinessItemShow.module.css';
 import KelpMap from "../KelpMap";
+import ReviewMenu from "../ReviewMenu";
 
 const BusinessItemShow = () => {
 
@@ -43,6 +44,10 @@ const BusinessItemShow = () => {
         });
     };
 
+    const handleReviewMenuClick = () => {
+        <ReviewMenu />
+    }
+
     if (!business) return null;
 
     const mappedReviews = reviews.map((review) => {
@@ -63,7 +68,7 @@ const BusinessItemShow = () => {
             );
             showMenu = (
                 <>
-                    <svg className={styles.reviewMenu}>
+                    <svg className={styles.reviewMenu} onClikc={handleReviewMenuClick}>
                         <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
                     </svg>
                 </>
