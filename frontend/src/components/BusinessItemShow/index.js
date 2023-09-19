@@ -46,8 +46,8 @@ const BusinessItemShow = () => {
     if (!business) return null;
 
     const mappedReviews = reviews.map((review) => {
-        let reviewUserName = ''
-
+        let reviewUserName = '';
+        let showMenu;
         allUsers.forEach((user) => {
             if (user.id === review.userId) {
                 reviewUserName = (`${user.firstName} ${user.lastName}`)
@@ -61,6 +61,13 @@ const BusinessItemShow = () => {
                 <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review)}> Update </button>
             </>
             );
+            showMenu = (
+                <>
+                    <svg className={styles.reviewMenu}>
+                        <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                    </svg>
+                </>
+            )
         };
         
         return (
@@ -70,9 +77,7 @@ const BusinessItemShow = () => {
                         <img src="https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_40x40_v2.yji-1b8b3dd9a1cc11cda816.png" alt="profile-picture"/>
                         <p className={styles.reviewerName}>{reviewUserName}</p>
                     </div>
-                    <svg className={styles.reviewMenu}>
-                    <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-                    </svg>
+                    {showMenu}
                 </div>
                 <p className={styles.cityState}> New York, NY </p>
                 <br />
