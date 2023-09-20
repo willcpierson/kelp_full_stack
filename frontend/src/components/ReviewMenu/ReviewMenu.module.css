@@ -1,0 +1,12 @@
+.reviewMenu {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 20px;
+}
+
+.reviewMenu:hover {
+    background-color: rgb(192, 186, 186);
+    cursor: pointer;
+    transition: 1s;
+}

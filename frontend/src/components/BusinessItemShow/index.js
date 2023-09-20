@@ -45,7 +45,9 @@ const BusinessItemShow = () => {
     };
 
     const handleReviewMenuClick = () => {
+        return (
         <ReviewMenu />
+        )
     }
 
     if (!business) return null;
@@ -67,11 +69,7 @@ const BusinessItemShow = () => {
             </>
             );
             showMenu = (
-                <>
-                    <svg className={styles.reviewMenu} onClikc={handleReviewMenuClick}>
-                        <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-                    </svg>
-                </>
+                <ReviewMenu />
             )
         };
         
