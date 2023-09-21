@@ -6,12 +6,12 @@ import { fetchReviews } from "../../store/reviews";
 import { fetchUsers } from "../../store/users";
 import ProfileButton from "../ProfileButton";
 import BusinessListings from "../BusinessListings";
-import styles from './SearchBar.module.css'
+import styles from './SearchBar.module.css';
 import { fetchBusinesses } from "../../store/businesses";
 
 
 const SearchBar = () => {
-    console.log(window.location.pathname)
+    console.log(window.location.pathname);
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 

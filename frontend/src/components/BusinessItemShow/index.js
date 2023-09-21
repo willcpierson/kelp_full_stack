@@ -44,12 +44,6 @@ const BusinessItemShow = () => {
         });
     };
 
-    const handleReviewMenuClick = () => {
-        return (
-        <ReviewMenu />
-        )
-    }
-
     if (!business) return null;
 
     const mappedReviews = reviews.map((review) => {
@@ -69,7 +63,7 @@ const BusinessItemShow = () => {
             </>
             );
             showMenu = (
-                <ReviewMenu />
+                <ReviewMenu props = {review}/>
             )
         };
         
