@@ -39,10 +39,7 @@ const ReviewMenu = ({props}) => {
                     <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(props.id))} key={props.id}> Delete </button>
                 </li>
                 <li>
-                    Boop 
-                </li>
-                <li> 
-                    Beep
+                    <button className={styles.deleteReview} onClick={(e) => dispatch(updateReview(props.id))} key={props.id}>Edit</button> 
                 </li>
             </ul>
             )};
