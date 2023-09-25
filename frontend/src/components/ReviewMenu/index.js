@@ -36,7 +36,7 @@ const ReviewMenu = ({props}) => {
             {showMenu && (
                 <div id={styles.buttons}>
                     <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(props.id))} key={props.id}> Delete </button>
-                    <button className={styles.deleteReview} onClick={(e) => dispatch(updateReview(props.id))} key={props.id}>Edit</button> 
+                    <button className={styles.editReview} onClick={(e) => dispatch(updateReview(props.id))} key={props.id}>Edit</button> 
                 </div>
             )}
         </>
