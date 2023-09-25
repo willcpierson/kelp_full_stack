@@ -56,12 +56,6 @@ const BusinessItemShow = () => {
         });
         let deleteAndUpdateButtons = ''
         if (sessionUser && review.userId === sessionUser.id) {
-            deleteAndUpdateButtons = ( 
-            <>
-                <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(review.id))} key={review.id}> Delete </button>
-                <button className={styles.editReview} key={review.id} onClick={(e) => handleUpdateClick(review)}> Update </button>
-            </>
-            );
             showMenu = (
                 <ReviewMenu props = {review}/>
             )
