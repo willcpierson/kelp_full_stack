@@ -34,15 +34,11 @@ const ReviewMenu = ({props}) => {
                 <path d="M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-16 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
             </svg>
             {showMenu && (
-            <ul>
-                <li>
+                <div id={styles.buttons}>
                     <button className={styles.deleteReview} onClick={(e) => dispatch(destroyReview(props.id))} key={props.id}> Delete </button>
-                </li>
-                <li>
                     <button className={styles.deleteReview} onClick={(e) => dispatch(updateReview(props.id))} key={props.id}>Edit</button> 
-                </li>
-            </ul>
-            )};
+                </div>
+            )}
         </>
     );
 };

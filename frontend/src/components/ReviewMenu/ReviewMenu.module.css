@@ -38,3 +38,9 @@
     cursor: pointer;
     background-color: rgb(240, 240, 240);
 }
+
+#buttons {
+    margin-top: 25px;
+    position: absolute;
+    left: 440px;
+}

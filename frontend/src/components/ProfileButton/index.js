@@ -72,7 +72,7 @@ function ProfileButton({ user }) {
               Log Out
             </li>
           </ul>
-        )};
+        )}
       </>
     );
   };
