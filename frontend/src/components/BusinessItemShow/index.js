@@ -16,15 +16,12 @@ const BusinessItemShow = () => {
     sessionUser = sessionUser ? sessionUser : undefined;
     const businessParam = useParams();
     const allUsers = useSelector(getUsers);
-    const allFavorites = useSelector(getFavorites)
+    const allFavorites = useSelector(getFavorites);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [reviewBody, setReviewBody] = useState('');
     const business = useSelector(getBusiness(businessParam.id));
     const reviews = useSelector(getReviews(businessParam.id));
-
-    console.log(business)
-
     useEffect(() => {
         if (!business) {
             dispatch(fetchBusiness(businessParam.id))
@@ -58,7 +55,7 @@ const BusinessItemShow = () => {
         if (sessionUser && review.userId === sessionUser.id) {
             showMenu = (
                 <ReviewMenu props = {review}/>
-            )
+            );
         };
         
         return (

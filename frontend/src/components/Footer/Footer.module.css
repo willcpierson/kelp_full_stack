@@ -4,10 +4,10 @@
     height: 50px;
     display: flex;
     justify-content: space-around;
-}
+};
 
 .technologyName {
     margin-top: 5px;
     color: gray;
     font-size: 10px;
-}
+};

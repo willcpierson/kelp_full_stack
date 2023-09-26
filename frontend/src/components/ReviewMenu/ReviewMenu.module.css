@@ -3,13 +3,13 @@
     width: 24px;
     height: 24px;
     border-radius: 20px;
-}
+};
 
 .reviewMenu:hover {
     background-color: rgb(192, 186, 186);
     cursor: pointer;
     transition: 1s;
-}
+};
 
 .deleteReview {
     display: block;
@@ -20,13 +20,13 @@
     border-radius: 4px;
     border: 2px solid rgb(240, 18, 18);
     background-color: rgb(240, 18, 18);
-}
+};
 
 .deleteReview:hover {
     cursor: pointer;
     background-color: rgb(250, 42, 42);
     border: 2px solid rgb(240, 18, 18);
-}
+};
 
 .editReview {
     display:  block;
@@ -36,12 +36,12 @@
     border-radius: 4px;
     background-color: white;
     border: 2px solid black;
-}
+};
 
 .editReview:hover {
     cursor: pointer;
     background-color: rgb(240, 240, 240);
-}
+};
 
 #buttons {
     flex: auto;
@@ -50,4 +50,4 @@
     margin-top: 25px;
     position: absolute;
     left: 480px;
-}
+};

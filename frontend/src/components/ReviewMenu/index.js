@@ -5,8 +5,6 @@ import { destroyReview, updateReview } from '../../store/reviews';
 import styles from './ReviewMenu.module.css';
 
 const ReviewMenu = ({props}) => {
-
-    console.log(props) // contains bussinessId, id (review) and userId, etc
     const businessParam = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
