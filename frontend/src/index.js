@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
+import styles from './FooterStyle.module.css'
 import App from './App';
 import Footer from './components/Footer';
 import configureStore from './store';
@@ -31,7 +32,7 @@ function Root() {
     <Provider store={store}>
       <BrowserRouter>
         <App />
-        <Footer />
+        <Footer id={styles.footer}/>
       </BrowserRouter>
     </Provider>
   );
