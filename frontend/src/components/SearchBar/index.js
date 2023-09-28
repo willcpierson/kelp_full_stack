@@ -62,7 +62,7 @@ const SearchBar = () => {
           background: "white",
         };
       };
-    };
+    }
 
     const searchBarBorder = () => {
         if (window.location.pathname == '/') {
