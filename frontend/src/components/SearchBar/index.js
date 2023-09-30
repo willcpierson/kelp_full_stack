@@ -61,7 +61,7 @@ const SearchBar = () => {
           position: "sticky",
           background: "white",
         };
-      };
+      }
     }
 
     const searchBarBorder = () => {
