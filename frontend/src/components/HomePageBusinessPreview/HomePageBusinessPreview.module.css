@@ -7,9 +7,14 @@
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
-};
+}
 
-#homePageBusinesses {
-    display: flex;
-    flex-wrap: wrap;
-};
+#help {
+     /* display: flex;
+    flex-wrap: wrap; */
+    background-color: pink;
+}
+
+#junk {
+    background-color: pink;
+}
