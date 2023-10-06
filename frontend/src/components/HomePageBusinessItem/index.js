@@ -33,7 +33,7 @@ const HomePageBusinessItem = (props) => {
                         </aside>
                         <aside>
                             <h2 id={styles.businessName}>{business.name}</h2>
-                            <p className={styles.doYouRecommend}>Do you recommend this business?</p>
+                            <p className={styles.doYouRecommend}>Check out this business!</p>
                             <div className={styles.reviewScore}>
                                 <svg className={styles.reviewStar} height='32' width='32'>
                                     <path fill="rgba(255,100,61,1)" opacity="1" d="M6.4 0H16V32H6.4C2.86538 32 0 29.1346 0 25.6V6.4C0 2.86538 2.86538 0 6.4 0Z"></path>
