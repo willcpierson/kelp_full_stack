@@ -23,7 +23,7 @@ const HomePageBusinessItem = (props) => {
     }
 
     if (!business) {
-        return <p>Loading...</p>
+        return <p>Loading Businesses...</p>
     } else {
             return (
                 <div id={styles.displayInlineBlock} onClick={handleClick}>

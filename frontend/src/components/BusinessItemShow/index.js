@@ -67,7 +67,7 @@ const BusinessItemShow = () => {
                     </div>
                     {showMenu}
                 </div>
-                <p className={styles.cityState}> New York, NY </p>
+                <p className={styles.cityState}>New York, NY</p>
                 <br />
                 <p review={review} className={styles.paragraph}> {review.body} </p>
                 {deleteAndUpdateButtons}
@@ -173,6 +173,7 @@ const BusinessItemShow = () => {
                 <h3 id={styles.reviewHeader}>Recommended Reviews</h3>
                 {mappedReviews}
             </div>
+            
             {/* <aside id={styles.googleMap}>
                 <KelpMap businesses={business} />
             </aside> */}
