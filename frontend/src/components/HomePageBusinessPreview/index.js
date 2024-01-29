@@ -6,7 +6,7 @@ const HomePageBusinessPreview = () => {
     return (
         <>
         <div id={styles.HomePageBusinessPreviewContainer}>
-            <h1 id={styles.checkOutTheseBusinesses}>Check out these businesses</h1>
+            <h1 id={styles.checkOutTheseBusinesses}>Check out these businesses!</h1>
            
         </div>
         <div id={styles.shownBusinesses}>

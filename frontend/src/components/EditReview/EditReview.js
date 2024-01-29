@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updateReview } from "../../store/reviews";
 import { getBusiness } from "../../store/businesses";
-import styles from './EditReview.module.css'
+import styles from './EditReview.module.css';
 
 const EditReview = (props) => {
     const dispatch = useDispatch();
